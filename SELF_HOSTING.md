@@ -109,6 +109,12 @@ unless you name that host in `APP_ORIGINS`:
 APP_ORIGINS=http://realtime-monitor.localhost:3000
 ```
 
+The Docker image is built with `VITE_SELF_HOSTED=1`, so the dashboard does not
+load World Monitor's hosted Umami analytics script, does not preconnect to
+`api.worldmonitor.app` or `maps.worldmonitor.app`, and reads country boundary
+overrides from its own `/data/` path. Sentry, Clerk and Convex stay off unless
+you supply their `VITE_*` build variables.
+
 List every origin users load the dashboard from, comma-separated, as exact
 `scheme://host[:port]` values with no path. Entries with a path, query,
 credentials, or a wildcard are ignored rather than widening trust. Bare

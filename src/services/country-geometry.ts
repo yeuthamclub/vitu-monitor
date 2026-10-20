@@ -1,5 +1,6 @@
 import type { FeatureCollection, Geometry, GeoJsonProperties, Position } from 'geojson';
 import { markLcpDebug } from '@/utils/lcp-debug';
+import { SELF_HOSTED_BUILD } from '@/config/self-hosted';
 
 interface IndexedCountryGeometry {
   code: string;
@@ -19,9 +20,10 @@ const COUNTRY_GEOJSON_URL = '/data/countries.geojson';
  * static-asset load but well below "stuck for the session". */
 const COUNTRY_GEOJSON_TIMEOUT_MS = 15_000;
 
-/** Optional higher-resolution boundary overrides sourced from Natural Earth (served from R2 CDN). */
+/** Optional higher-resolution boundary overrides sourced from Natural Earth (served
+ * from R2 CDN; self-hosted builds serve the bundled public/data copy same-origin). */
 const COUNTRY_OVERRIDES_URL = (typeof import.meta.env !== 'undefined' ? import.meta.env.VITE_COUNTRY_OVERRIDES_URL : undefined)
-  ?? 'https://maps.worldmonitor.app/country-boundary-overrides.geojson';
+  ?? (SELF_HOSTED_BUILD ? '/data/country-boundary-overrides.geojson' : 'https://maps.worldmonitor.app/country-boundary-overrides.geojson');
 const COUNTRY_OVERRIDE_TIMEOUT_MS = 3_000;
 
 /**

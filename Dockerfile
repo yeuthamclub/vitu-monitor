@@ -21,6 +21,10 @@ RUN npm ci --ignore-scripts
 
 # Copy full source
 COPY . .
+# Normalize modes copied from the build context. Hosts whose filesystem has no
+# per-file permissions (exFAT, some network or Windows mounts) present every
+# file as 0700, which the non-root runtime user and nginx then cannot read.
+RUN chmod -R u+rwX,go+rX,go-w /app
 
 # The crawlable-corpus step runs the source-attribution drift gate against
 # scripts/, server/, api/, and src/. generate-inventory-facts and
@@ -48,6 +52,9 @@ RUN npm run build:pro
 
 # Build the Vite frontend (outputs to dist/)
 # Skip blog build — blog-site has its own deps not installed here
+# VITE_SELF_HOSTED keeps the self-hosted dashboard off World Monitor's hosted
+# analytics and map CDN (src/config/self-hosted.ts).
+ENV VITE_SELF_HOSTED=1
 RUN npx tsc && npx vite build
 # Assert the /pro pages survived the public/ -> dist/ copy (#6898). build:pro
 # succeeding proves public/pro/ exists; it does NOT prove Vite copied it, and
@@ -107,7 +114,11 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/worldmonitor.conf
 COPY docker/entrypoint.sh /app/entrypoint.sh
 COPY docker/render-nginx-realip.mjs /app/render-nginx-realip.mjs
 COPY docker/validate-session-secret.mjs /app/validate-session-secret.mjs
-RUN chmod +x /app/entrypoint.sh
+# These come straight from the build context, so set modes explicitly (see the
+# chmod note in the builder stage).
+RUN chmod 0644 /etc/nginx/nginx.conf.template /etc/supervisor/conf.d/worldmonitor.conf \
+      /app/render-nginx-realip.mjs /app/validate-session-secret.mjs && \
+    chmod +x /app/entrypoint.sh
 
 # Ensure writable dirs for non-root
 RUN chown -R appuser:appgroup /app /tmp/nginx-client-body /tmp/nginx-proxy \

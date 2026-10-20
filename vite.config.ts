@@ -299,6 +299,12 @@ function htmlVariantPlugin(activeMeta: VariantMeta, activeVariant: string, isDes
           .replace(/\/favico\/og-image/g, `/favico/${activeVariant}/og-image`);
       }
 
+      // Self-hosted builds (VITE_SELF_HOSTED=1, set by the Docker image) never
+      // use World Monitor's hosted API or map CDN, so do not pre-open sockets to them.
+      if (process.env.VITE_SELF_HOSTED === '1') {
+        result = result.replace(/[ \t]*<link rel="preconnect" href="https:\/\/(?:api|maps)\.worldmonitor\.app"[^>]*>\n?/g, '');
+      }
+
       return result;
     },
   };

@@ -14,6 +14,7 @@ import { onSubscriptionChange, type SubscriptionInfo } from './billing';
 import { getClerkUserCreatedAt } from './clerk';
 import { DODO_PRODUCT_IDS } from '@/config/product-ids.generated';
 import { SITE_VARIANT, isSiteVariant } from '@/config/variant';
+import { SELF_HOSTED_BUILD } from '@/config/self-hosted';
 import { isAgentPanelViewSuppressed } from './agent-analytics-privacy';
 import type { ActivationEventName, ActivationStepId } from './pro-activation-state';
 import {
@@ -570,6 +571,9 @@ function flushPendingUmamiCalls(): void {
 }
 
 function loadUmamiScript(): void {
+  // Self-hosted builds never fetch the hosted Umami tracker; calls stay in the
+  // bounded queue and are dropped with it.
+  if (SELF_HOSTED_BUILD) return;
   if (umamiLoadStarted || typeof document === 'undefined') return;
   installCollectorFetchGate();
   const existing = document.querySelector<HTMLScriptElement>(`script[src="${UMAMI_SCRIPT_SRC}"]`);

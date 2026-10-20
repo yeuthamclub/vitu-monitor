@@ -1,6 +1,10 @@
 node_modules
 dist
 .git
+# macOS metadata (AppleDouble files appear beside every file on non-APFS volumes).
+# A stray api/._name.js would otherwise be loaded by the sidecar route table.
+**/._*
+**/.DS_Store
 .github/*
 !.github/workflows/
 .github/workflows/*
