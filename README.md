@@ -1,5 +1,12 @@
 # World Monitor
 
+> **Fork notice — Realtime Monitor (working name).**
+> This repository is a fork of [koala73/worldmonitor](https://github.com/koala73/worldmonitor), licensed under the [GNU AGPL-3.0](LICENSE).
+> The fork adds a `vietnam` variant with Vietnamese news and data sources and is self-hosted with Docker on a test domain.
+> It is not affiliated with or endorsed by the World Monitor project; "World Monitor" and its logos belong to their owners.
+> As required by AGPL-3.0 §13, anyone interacting with a deployment of this fork over a network can obtain its complete corresponding source from this repository.
+> Fork-specific changes live on the `vn/*` branches; `main` tracks upstream. Everything below this notice is the upstream README.
+
 [简体中文](README.zh-CN.md) | [日本語](README.ja-JP.md) | [Русский](README.ru.md)
 
 **Real-time global intelligence dashboard** — AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface.
