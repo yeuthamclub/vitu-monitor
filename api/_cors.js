@@ -4,8 +4,41 @@ const APP_ORIGIN_PATTERN = /^https:\/\/(?:(?:www|app|api|tech|finance|commodity|
 const MAX_ORIGIN_BYTES = 300;
 const ORIGIN_ENCODER = new TextEncoder();
 
+/**
+ * Self-hosted deployments name their own app origins in APP_ORIGINS
+ * (comma-separated, e.g. `http://realtime-monitor.localhost:3000`). Only exact
+ * http(s) origins are accepted — an entry with a path, query, credentials or a
+ * wildcard is ignored, so a typo can never widen trust to a whole suffix.
+ * Keep in sync with parseConfiguredAppOrigins in server/cors.ts.
+ */
+const CONFIGURED_HOSTNAME_PATTERN = /^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*|\[[0-9a-f:.]+\])$/;
+
+export function parseConfiguredAppOrigins(raw) {
+  const origins = new Set();
+  for (const entry of String(raw || '').split(',')) {
+    const value = entry.trim();
+    if (!value) continue;
+    try {
+      const url = new URL(value);
+      // WHATWG URL accepts `*` in a host, so the hostname is checked separately.
+      if ((url.protocol === 'https:' || url.protocol === 'http:')
+        && CONFIGURED_HOSTNAME_PATTERN.test(url.hostname)
+        && value.replace(/\/$/, '') === url.origin) {
+        origins.add(url.origin);
+      }
+    } catch { /* not a URL: ignored */ }
+  }
+  return origins;
+}
+
+const CONFIGURED_APP_ORIGINS = parseConfiguredAppOrigins(process.env.APP_ORIGINS);
+
+export function isConfiguredAppOrigin(origin) {
+  return typeof origin === 'string' && CONFIGURED_APP_ORIGINS.has(origin);
+}
+
 export function isHostedAppOrigin(origin) {
-  return typeof origin === 'string' && APP_ORIGIN_PATTERN.test(origin);
+  return typeof origin === 'string' && (APP_ORIGIN_PATTERN.test(origin) || CONFIGURED_APP_ORIGINS.has(origin));
 }
 
 const ALLOWED_ORIGIN_PATTERNS = [
@@ -145,7 +178,7 @@ function isAllowedOrigin(origin) {
     || ORIGIN_ENCODER.encode(origin).byteLength > MAX_ORIGIN_BYTES) return false;
   if (isWorldMonitorGoogleTranslateOrigin(origin)) return true;
   const candidate = originForAllowlistMatch(origin);
-  return ALLOWED_ORIGIN_PATTERNS.some((pattern) => pattern.test(candidate));
+  return CONFIGURED_APP_ORIGINS.has(candidate) || ALLOWED_ORIGIN_PATTERNS.some((pattern) => pattern.test(candidate));
 }
 
 export function getCorsHeaders(req, methods = 'GET, OPTIONS') {

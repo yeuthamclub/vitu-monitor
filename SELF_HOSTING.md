@@ -97,6 +97,23 @@ stop the container at startup. Leave this variable unset for direct connections;
 never trust a network that can contain untrusted clients, because those clients
 could then supply a false forwarded address and evade the per-IP quota.
 
+### Serving from your own domain
+
+Browser requests that carry an `Origin` header (POSTs, credentialed fetches, the
+YouTube embed bridge, OAuth consent) are checked against the hosted app hosts.
+Serve the dashboard from any other host and those requests are refused with 403
+unless you name that host in `APP_ORIGINS`:
+
+```bash
+# .env
+APP_ORIGINS=http://realtime-monitor.localhost:3000
+```
+
+List every origin users load the dashboard from, comma-separated, as exact
+`scheme://host[:port]` values with no path. Entries with a path, query,
+credentials, or a wildcard are ignored rather than widening trust. Bare
+`localhost` and `127.0.0.1` are already accepted outside `NODE_ENV=production`.
+
 > Need to bring the relay up without auth for local debugging? Set `I_UNDERSTAND_THIS_DISABLES_AUTH=true` (the deprecated `ALLOW_UNAUTHENTICATED_RELAY=true` is still accepted). The relay will log a loud `[SECURITY]` warning at boot and every 5 minutes, and every non-public route will be reachable by anyone who can hit the port — **never use this on an internet-reachable host.**
 
 ## 🤖 Using the MCP server

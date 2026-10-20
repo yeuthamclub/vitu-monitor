@@ -1,3 +1,5 @@
+import { isConfiguredAppOrigin } from '../_cors.js';
+
 export const config = { runtime: 'edge' };
 
 function parseFlag(value, fallback = '1') {
@@ -37,7 +39,8 @@ function sanitizeAllowedOrigin(raw, fallback, allowList = ALLOWED_ORIGINS) {
       return fallback;
     }
     const origin = parsed.origin !== 'null' ? parsed.origin : raw;
-    if (allowList.some(p => p.test(origin))) return origin;
+    // Self-hosted app origins (APP_ORIGINS) are trusted parents like the hosted app.
+    if (isConfiguredAppOrigin(origin) || allowList.some(p => p.test(origin))) return origin;
   } catch { /* invalid URL */ }
   return fallback;
 }

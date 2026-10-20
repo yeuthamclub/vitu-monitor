@@ -34,6 +34,33 @@ const ALLOWED_ORIGIN_PATTERNS: RegExp[] =
     ? PRODUCTION_PATTERNS
     : [...PRODUCTION_PATTERNS, ...DEV_PATTERNS];
 
+/**
+ * Exact app origins a self-hosted deployment names in APP_ORIGINS
+ * (comma-separated). Entries with a path, query, credentials or wildcard are
+ * ignored. Keep in sync with parseConfiguredAppOrigins in api/_cors.js.
+ */
+const CONFIGURED_HOSTNAME_PATTERN = /^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*|\[[0-9a-f:.]+\])$/;
+
+export function parseConfiguredAppOrigins(raw: string | undefined): Set<string> {
+  const origins = new Set<string>();
+  for (const entry of String(raw || '').split(',')) {
+    const value = entry.trim();
+    if (!value) continue;
+    try {
+      const url = new URL(value);
+      // WHATWG URL accepts `*` in a host, so the hostname is checked separately.
+      if ((url.protocol === 'https:' || url.protocol === 'http:')
+        && CONFIGURED_HOSTNAME_PATTERN.test(url.hostname)
+        && value.replace(/\/$/, '') === url.origin) {
+        origins.add(url.origin);
+      }
+    } catch { /* not a URL: ignored */ }
+  }
+  return origins;
+}
+
+const CONFIGURED_APP_ORIGINS = parseConfiguredAppOrigins(process.env.APP_ORIGINS);
+
 const ALLOWED_HEADERS = [
   'Content-Type',
   'Authorization',
@@ -141,7 +168,7 @@ export function isAllowedOrigin(origin: string): boolean {
     || ORIGIN_ENCODER.encode(origin).byteLength > MAX_ORIGIN_BYTES) return false;
   if (isWorldMonitorGoogleTranslateOrigin(origin)) return true;
   const candidate = originForAllowlistMatch(origin);
-  return ALLOWED_ORIGIN_PATTERNS.some((pattern) => pattern.test(candidate));
+  return CONFIGURED_APP_ORIGINS.has(candidate) || ALLOWED_ORIGIN_PATTERNS.some((pattern) => pattern.test(candidate));
 }
 
 export function getCorsHeaders(req: Request): Record<string, string> {
