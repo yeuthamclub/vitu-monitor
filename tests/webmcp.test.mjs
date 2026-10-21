@@ -486,19 +486,19 @@ describe('webmcp.ts: current API contract', () => {
     const tool = tools.find((candidate) => candidate.name === 'switch_monitor');
     assert.ok(tool);
     assert.deepEqual(tool.inputSchema.properties.monitor.enum, [
-      'full', 'tech', 'finance', 'happy', 'commodity', 'energy',
+      'full', 'tech', 'finance', 'happy', 'commodity', 'energy', 'vietnam',
     ]);
     assert.equal(tool.annotations.readOnlyHint, false);
 
     const signal = new AbortController().signal;
-    for (const monitor of ['full', 'tech', 'finance', 'commodity', 'energy', 'happy']) {
+    for (const monitor of ['full', 'tech', 'finance', 'commodity', 'energy', 'happy', 'vietnam']) {
       const result = await tool.execute({ monitor }, { signal });
       assert.equal(result.ok, true, monitor);
       assert.equal(result.destination, monitor, monitor);
       assert.equal(result.context.variant, monitor, monitor);
       assert.equal(result.navigation, monitor === 'full' ? 'none' : 'reload', monitor);
     }
-    assert.deepEqual(switches, ['full', 'tech', 'finance', 'commodity', 'energy', 'happy']);
+    assert.deepEqual(switches, ['full', 'tech', 'finance', 'commodity', 'energy', 'happy', 'vietnam']);
 
     const unknown = await tool.execute({ monitor: 'World' }, {});
     assert.deepEqual(
@@ -506,11 +506,11 @@ describe('webmcp.ts: current API contract', () => {
       { ok: false, status: 'invalid', reason: 'unknown_monitor' },
     );
     assert.equal(unknown.context.variant, 'full');
-    assert.equal(switches.length, 6);
+    assert.equal(switches.length, 7);
 
     const extra = await tool.execute({ monitor: 'tech', url: 'https://example.invalid' }, {});
     assert.equal(extra.reason, 'malformed_arguments');
-    assert.equal(switches.length, 6);
+    assert.equal(switches.length, 7);
 
     const unsupported = await tool.execute({ monitor: 'tech' }, {});
     assert.equal(
@@ -518,7 +518,7 @@ describe('webmcp.ts: current API contract', () => {
       'target_cancellation_unsupported',
       JSON.stringify(unsupported),
     );
-    assert.equal(switches.length, 6);
+    assert.equal(switches.length, 7);
   });
 
   it('opens settings and alerts without mutating their contents', async () => {
@@ -931,7 +931,7 @@ describe('webmcp.ts: current API contract', () => {
       ok: false,
       status: 'invalid',
       reason: 'invalid_monitor',
-      message: 'monitor must be one of: world, tech, finance, commodity, energy, happy.',
+      message: 'monitor must be one of: world, tech, finance, commodity, energy, happy, vietnam.',
     });
     assert.deepEqual(await list.execute({ renderer: 'deck' }), {
       ok: false,

@@ -45,6 +45,7 @@ import {
   enforceFreePanelLimit,
 } from '@/config';
 import { BETA_MODE } from '@/config/beta';
+import { switchesVariantInApp } from '@/config/self-hosted';
 import { NQ_PULSE_DISCLOSURE } from '@/config/nq-context';
 import { t } from '@/services/i18n';
 import { getCurrentTheme } from '@/utils';
@@ -245,6 +246,8 @@ export const VARIANT_SWITCHER_DASHBOARD_URLS = {
   commodity: 'https://commodity.worldmonitor.app/dashboard',
   energy: 'https://energy.worldmonitor.app/dashboard',
   happy: 'https://happy.worldmonitor.app/dashboard',
+  // Fork-only variant with no hosted dashboard; self-hosted builds switch in-app.
+  vietnam: '/dashboard',
 } as const;
 
 export function variantSwitcherHref(
@@ -1071,7 +1074,7 @@ export class PanelLayoutManager implements AppModule {
       <div class="header" role="banner">
         <div class="header-left">
           <div class="variant-switcher">${(() => {
-        const local = this.ctx.isDesktopApp || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        const local = this.ctx.isDesktopApp || switchesVariantInApp(location.hostname);
         const inIframe = window.self !== window.top;
         const vHref = (v: keyof typeof VARIANT_SWITCHER_DASHBOARD_URLS) =>
           variantSwitcherHref(v, SITE_VARIANT, local);
@@ -1129,6 +1132,15 @@ export class PanelLayoutManager implements AppModule {
                title="Good News${SITE_VARIANT === 'happy' ? ` ${t('common.currentVariant')}` : ''}">
               <span class="variant-icon">☀️</span>
               <span class="variant-label">Good News</span>
+            </a>
+            <span class="variant-divider"></span>
+            <a href="${vHref('vietnam')}"
+               class="variant-option ${SITE_VARIANT === 'vietnam' ? 'active' : ''}"
+               data-variant="vietnam"
+               ${vTarget('vietnam')}
+               title="Việt Nam${SITE_VARIANT === 'vietnam' ? ` ${t('common.currentVariant')}` : ''}">
+              <span class="variant-icon">🇻🇳</span>
+              <span class="variant-label">Việt Nam</span>
             </a>`;
       })()}</div>
           <span class="logo">MONITOR</span><span class="logo-mobile">World Monitor</span><span class="version">v${__APP_VERSION__}</span>${BETA_MODE ? '<span class="beta-badge">BETA</span>' : ''}

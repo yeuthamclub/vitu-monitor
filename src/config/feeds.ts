@@ -1127,6 +1127,14 @@ const ENERGY_FEEDS: Record<string, Feed[]> = {
   ],
 };
 
+// Vietnam variant (fork-only) — skeleton preset that reuses existing
+// categories, so it adds no new hosts. The Vietnamese feed set replaces it in
+// PHASE-0-1-PLAN PR-1a.
+const VIETNAM_FEEDS: Record<string, Feed[]> = {
+  asia: FULL_FEEDS.asia ?? [],
+  politics: FULL_FEEDS.politics ?? [],
+};
+
 // Variant-aware exports
 export const FEEDS = SITE_VARIANT === 'tech'
   ? TECH_FEEDS
@@ -1138,7 +1146,9 @@ export const FEEDS = SITE_VARIANT === 'tech'
         ? COMMODITY_FEEDS
         : SITE_VARIANT === 'energy'
           ? ENERGY_FEEDS
-          : FULL_FEEDS;
+          : SITE_VARIANT === 'vietnam'
+            ? VIETNAM_FEEDS
+            : FULL_FEEDS;
 
 // Canonical category→feeds map: the union of every variant's feed set.
 // `FEEDS` (above) is just the active variant's PRESET; users freely customize

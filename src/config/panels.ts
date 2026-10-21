@@ -1150,10 +1150,52 @@ const ENERGY_MOBILE_MAP_LAYERS: MapLayers = {
 };
 
 // ============================================
+// VIETNAM variant — fork-only (Realtime Monitor), selected in-app.
+// Skeleton: reuses registered panels only. Vietnam-specific news categories
+// and their panels arrive with the Vietnamese feed set (PHASE-0-1-PLAN PR-1a).
+// ============================================
+const VIETNAM_PANELS: Record<string, PanelConfig> = {
+  map: { name: 'Bản đồ Việt Nam & Biển Đông', enabled: true, priority: 1 },
+  'live-news': { name: 'Tin trực tiếp', enabled: true, priority: 1 },
+  asia: { name: 'Việt Nam & châu Á', enabled: true, priority: 1 },
+  politics: { name: 'Tin thế giới', enabled: true, priority: 1 },
+  'gdelt-intel': { name: 'Tình báo trực tiếp', enabled: true, priority: 2 },
+  'satellite-fires': { name: 'Cháy rừng', enabled: true, priority: 2 },
+  climate: { name: 'Thời tiết & khí hậu', enabled: true, priority: 2 },
+  markets: { name: 'Thị trường', enabled: true, priority: 2 },
+  'supply-chain': { name: 'Chuỗi cung ứng & tuyến biển', enabled: true, priority: 2 },
+  monitors: { name: 'Theo dõi của tôi', enabled: true, priority: 3 },
+  'world-clock': { name: 'Giờ thế giới', enabled: true, priority: 3 },
+};
+
+// Full-variant layers, narrowed to what matters for Vietnam and the East Sea.
+const VIETNAM_MAP_LAYERS: MapLayers = {
+  ...FULL_MAP_LAYERS,
+  iranAttacks: false,
+  canadaRoads: false,
+  canadaAlerts: false,
+  ais: true,
+  waterways: true,
+  tradeRoutes: true,
+  natural: true,
+  fires: true,
+  weather: true,
+};
+
+const VIETNAM_MOBILE_MAP_LAYERS: MapLayers = {
+  ...FULL_MOBILE_MAP_LAYERS,
+  iranAttacks: false,
+  canadaRoads: false,
+  canadaAlerts: false,
+  natural: true,
+  weather: true,
+};
+
+// ============================================
 // UNIFIED PANEL REGISTRY
 // ============================================
 
-type PanelVariant = 'full' | 'tech' | 'finance' | 'commodity' | 'energy' | 'happy';
+type PanelVariant = 'full' | 'tech' | 'finance' | 'commodity' | 'energy' | 'happy' | 'vietnam';
 
 const VARIANT_PANEL_CONFIGS: Record<PanelVariant, Record<string, PanelConfig>> = {
   full: FULL_PANELS,
@@ -1162,6 +1204,7 @@ const VARIANT_PANEL_CONFIGS: Record<PanelVariant, Record<string, PanelConfig>> =
   commodity: COMMODITY_PANELS,
   energy: ENERGY_PANELS,
   happy: HAPPY_PANELS,
+  vietnam: VIETNAM_PANELS,
 };
 
 function getVariantPanelConfigs(variant: string): Record<string, PanelConfig> | undefined {
@@ -1194,6 +1237,7 @@ export const VARIANT_DEFAULTS: Record<string, string[]> = {
   commodity: Object.keys(VARIANT_PANEL_CONFIGS.commodity),
   energy:    Object.keys(VARIANT_PANEL_CONFIGS.energy),
   happy:     Object.keys(VARIANT_PANEL_CONFIGS.happy),
+  vietnam:   Object.keys(VARIANT_PANEL_CONFIGS.vietnam),
 };
 
 /**
@@ -1469,7 +1513,9 @@ export const DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy'
         ? COMMODITY_MAP_LAYERS
         : SITE_VARIANT === 'energy'
           ? ENERGY_MAP_LAYERS
-          : FULL_MAP_LAYERS;
+          : SITE_VARIANT === 'vietnam'
+            ? VIETNAM_MAP_LAYERS
+            : FULL_MAP_LAYERS;
 
 export const MOBILE_DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy'
   ? HAPPY_MOBILE_MAP_LAYERS
@@ -1481,7 +1527,9 @@ export const MOBILE_DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy'
         ? COMMODITY_MOBILE_MAP_LAYERS
         : SITE_VARIANT === 'energy'
           ? ENERGY_MOBILE_MAP_LAYERS
-          : FULL_MOBILE_MAP_LAYERS;
+          : SITE_VARIANT === 'vietnam'
+            ? VIETNAM_MOBILE_MAP_LAYERS
+            : FULL_MOBILE_MAP_LAYERS;
 
 /** Maps map-layer toggle keys to their data-freshness source IDs (single source of truth). */
 export const LAYER_TO_SOURCE: Partial<Record<keyof MapLayers, DataSourceId[]>> = {

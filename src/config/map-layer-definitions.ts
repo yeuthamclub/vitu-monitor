@@ -10,7 +10,7 @@ import { isDesktopRuntime } from '@/services/runtime';
  * imports this type so the picker, dispatcher, and shell stay in lockstep.
  */
 export type RendererKind = 'svg' | 'deck' | 'globe';
-export type MapVariant = 'full' | 'tech' | 'finance' | 'happy' | 'commodity' | 'energy';
+export type MapVariant = 'full' | 'tech' | 'finance' | 'happy' | 'commodity' | 'energy' | 'vietnam';
 
 const _desktop = isDesktopRuntime();
 
@@ -398,6 +398,13 @@ const VARIANT_LAYER_ORDER: Record<MapVariant, Array<keyof MapLayers>> = {
     // Energy-adjacent context
     'sanctions', 'fires', 'climate', 'weather', 'canadaRoads', 'outages', 'natural', 'canadaAlerts',
     'resilienceScore', 'dayNight',
+  ],
+  vietnam: [
+    // Vietnam and the East Sea — mirror of VIETNAM_MAP_LAYERS in panels.ts
+    'hotspots', 'conflicts', 'military', 'bases',
+    'ais', 'tradeRoutes', 'waterways', 'cables', 'flights', 'aircraftEmergencies',
+    'natural', 'fires', 'weather', 'climate', 'outages', 'protests',
+    'economic', 'sanctions', 'resilienceScore', 'dayNight', 'webcams',
   ],
 };
 

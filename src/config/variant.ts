@@ -1,4 +1,5 @@
 import { isDesktopRuntime } from '@/config/desktop-runtime';
+import { switchesVariantInApp } from '@/config/self-hosted';
 
 /**
  * Every variant a user can switch to. One desktop binary ships and switches
@@ -6,7 +7,7 @@ import { isDesktopRuntime } from '@/config/desktop-runtime';
  * `/api/download` accepts — `tests/desktop-one-binary-model.test.mjs` fails if
  * the two drift apart.
  */
-export const SITE_VARIANTS = ['full', 'tech', 'finance', 'happy', 'commodity', 'energy'] as const;
+export const SITE_VARIANTS = ['full', 'tech', 'finance', 'happy', 'commodity', 'energy', 'vietnam'] as const;
 
 export type SiteVariant = (typeof SITE_VARIANTS)[number];
 
@@ -53,8 +54,10 @@ export const SITE_VARIANT: string = (() => {
   if (h.startsWith('happy.')) return 'happy';
   if (h.startsWith('commodity.')) return 'commodity';
   if (h.startsWith('energy.')) return 'energy';
+  if (h.startsWith('vietnam.')) return 'vietnam';
 
-  if (h === 'localhost' || h === '127.0.0.1') {
+  // Loopback dev servers and self-hosted builds switch variants in-app.
+  if (switchesVariantInApp(h)) {
     const stored = loadStoredVariant();
     if (isSiteVariant(stored)) return stored;
     return buildVariant;

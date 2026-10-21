@@ -6257,6 +6257,9 @@
           "path": "src/config/desktop-runtime.ts"
         },
         {
+          "path": "src/config/variant-meta.ts"
+        },
+        {
           "path": "src/services/wm-session.ts"
         }
       ]

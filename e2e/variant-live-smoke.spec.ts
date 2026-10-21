@@ -8,7 +8,7 @@ import {
 } from './variant-live-smoke-response-capture';
 import { PREMIUM_RPC_PATHS } from '../src/shared/premium-paths';
 
-type VariantName = 'full' | 'tech' | 'finance' | 'commodity' | 'energy' | 'happy';
+type VariantName = 'full' | 'tech' | 'finance' | 'commodity' | 'energy' | 'happy' | 'vietnam';
 
 type PanelDiagnostic = {
   id: string;

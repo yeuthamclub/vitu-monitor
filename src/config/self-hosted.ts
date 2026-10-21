@@ -13,3 +13,12 @@ export const SELF_HOSTED_BUILD: boolean = (() => {
     return false;
   }
 })();
+
+/**
+ * Hosts where the variant switcher stores the choice and reloads in place
+ * instead of navigating to a hosted `<variant>.worldmonitor.app` dashboard:
+ * loopback dev servers, and every host of a self-hosted build.
+ */
+export function switchesVariantInApp(hostname: string): boolean {
+  return hostname === 'localhost' || hostname === '127.0.0.1' || SELF_HOSTED_BUILD;
+}

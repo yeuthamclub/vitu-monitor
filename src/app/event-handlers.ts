@@ -59,6 +59,7 @@ import {
   INTEL_SOURCES,
 } from '@/config';
 import { resolveNewsCategories, enabledNewsCategoryKeys } from '@/config/feed-resolution';
+import { switchesVariantInApp } from '@/config/self-hosted';
 import { VARIANT_META } from '@/config/variant-meta';
 import { isDesktopRuntime } from '@/services/runtime';
 import {
@@ -810,7 +811,7 @@ export class EventHandlerManager implements AppModule {
     };
     document.addEventListener('keydown', this.boundUndoHandler);
 
-    const isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    const isLocalDev = switchesVariantInApp(location.hostname);
     this.ctx.container.querySelectorAll<HTMLAnchorElement>('.variant-option').forEach(link => {
       link.addEventListener('click', (e) => {
         const variant = link.dataset.variant;
@@ -1939,7 +1940,7 @@ export class EventHandlerManager implements AppModule {
       `.variant-option[data-variant="${variant}"]`,
     );
     if (!link) return 'unavailable';
-    const isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    const isLocalDev = switchesVariantInApp(location.hostname);
     return this.navigateToVariant(variant, {
       href: link.href,
       isLocalDev,

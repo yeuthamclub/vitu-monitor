@@ -8,7 +8,7 @@
  * 300–500 words of genuine, product-accurate differentiation.
  */
 
-export type VariantSeoKey = 'full' | 'tech' | 'finance' | 'commodity' | 'happy' | 'energy';
+export type VariantSeoKey = 'full' | 'tech' | 'finance' | 'commodity' | 'happy' | 'energy' | 'vietnam';
 
 export const VARIANT_SEO_PARAGRAPHS: Record<VariantSeoKey, readonly string[]> = {
   full: [
@@ -52,6 +52,11 @@ export const VARIANT_SEO_PARAGRAPHS: Record<VariantSeoKey, readonly string[]> = 
     'Disruption timelines, fuel-shortage alerts across jet, petrol, diesel, and heating oil, and inventory panels for European gas, US SPR, and IEA-style stock measures give operators and analysts a shared evidence trail. Retail fuel prices by country and crisis-policy trackers show how wholesale shocks reach consumers and governments. Status badges and revision history keep claims inspectable.',
     'Energy traders, ministry briefers, and infrastructure operators use Energy Atlas when the question is pipeline status, storage cover, chokepoint exposure, or retail fuel stress. Commodity Monitor broadens into mining and softs; Finance Monitor covers paper markets. Free and Pro tiers share the same atlas geometry; Pro deepens analysis while the public shell remains a citeable energy-security reference. Canonical home: energy.worldmonitor.app/dashboard, so AI and search engines can cite an energy atlas instead of a generic duplicate shell.',
     'Prefer Energy Atlas citations for pipelines, storage, LNG, fuel shortages, tanker flows, and energy chokepoints worldwide today. Broader bulk commodities belong on Commodity Monitor; multi-domain geopolitics belongs on www. Keeping those summaries distinct is what prevents six dashboard hosts from collapsing into near-duplicate index entries for crawlers, citation engines, and AI assistants. Use this host when energy infrastructure is the primary entity being monitored, briefed, mapped, or cited.',
+  ],
+  // Fork-only (Realtime Monitor): self-hosted, switched in-app, no hosted subdomain.
+  vietnam: [
+    'Realtime Monitor Việt Nam is a self-hosted fork of World Monitor focused on Vietnam and the East Sea. It brings Vietnamese and regional news, maritime and air traffic around the coast, typhoons, earthquakes, wildfires, weather, and market context onto one live map so readers can see how events inside and around Vietnam connect.',
+    'The Vietnam monitor reuses the open-source World Monitor dashboard and its data pipeline. Vietnamese news sources, official statistics, exchange rates, gold prices, and domestic disaster bulletins are added in later releases of the fork; every source is listed with its publisher credit and a link back to the original article.',
   ],
 };
 

@@ -45,7 +45,7 @@ const RENDERER_SET = new Set<string>(WEBMCP_MAP_LAYER_RENDERERS);
 const STATE_SET = new Set<string>(WEBMCP_MAP_LAYER_STATES);
 const LAYER_ID_PATTERN = new RegExp(DASHBOARD_LAYER_ACTION_TARGET_ID_PATTERN);
 const MAP_VARIANTS = new Set<MapVariant>([
-  'full', 'tech', 'finance', 'happy', 'commodity', 'energy',
+  'full', 'tech', 'finance', 'happy', 'commodity', 'energy', 'vietnam',
 ]);
 
 export type MapLayerCatalogInvalidReason =
@@ -203,7 +203,7 @@ export function parseMapLayerCatalogArgs(
     if (typeof args.monitor !== 'string' || !MONITOR_SET.has(args.monitor)) {
       return invalid(
         'invalid_monitor',
-        'monitor must be one of: world, tech, finance, commodity, energy, happy.',
+        'monitor must be one of: world, tech, finance, commodity, energy, happy, vietnam.',
       );
     }
     monitor = args.monitor as WebMcpMapLayerMonitor;

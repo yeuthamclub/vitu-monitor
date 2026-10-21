@@ -150,4 +150,25 @@ export const VARIANT_META: { full: VariantMeta; [k: string]: VariantMeta } = {
       'Country energy exposure drill-down',
     ],
   },
+  // Fork-only (Realtime Monitor). URL is the local Docker origin until the fork
+  // has a public domain; plain localhost is already excluded from the
+  // source-attribution manifest, realtime-monitor.localhost is not.
+  vietnam: {
+    title: 'Realtime Monitor Việt Nam - Bảng theo dõi Việt Nam & Biển Đông',
+    description: 'Bảng theo dõi thời gian thực về Việt Nam và Biển Đông: tin tức trong nước và khu vực, tàu thuyền, máy bay, bão, động đất, cháy rừng, thời tiết và thị trường trên một bản đồ.',
+    keywords: 'Việt Nam, Biển Đông, tin tức Việt Nam, bão, động đất, cháy rừng, thời tiết, tàu thuyền, AIS, máy bay, chứng khoán Việt Nam, tỷ giá, giá vàng, Vietnam dashboard, East Sea, South China Sea',
+    url: 'http://localhost:3000/dashboard',
+    siteName: 'Realtime Monitor Việt Nam',
+    shortName: 'RMVietNam',
+    subject: 'Vietnam and East Sea Situation Awareness',
+    classification: 'Vietnam Dashboard, News Aggregator, OSINT Tool',
+    categories: ['news', 'productivity'],
+    features: [
+      'Vietnamese and regional news',
+      'East Sea maritime and air traffic',
+      'Typhoon, earthquake and wildfire alerts',
+      'Weather and climate context',
+      'Market context',
+    ],
+  },
 };

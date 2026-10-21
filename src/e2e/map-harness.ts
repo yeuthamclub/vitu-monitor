@@ -57,7 +57,7 @@ import type { WeatherAlert } from '../services/weather';
 import { CHINA_LOGISTICS_CORRIDORS } from '../../shared/china-logistics-corridors';
 
 type Scenario = 'alpha' | 'beta';
-type HarnessVariant = 'full' | 'tech' | 'finance' | 'commodity' | 'energy' | 'happy';
+type HarnessVariant = 'full' | 'tech' | 'finance' | 'commodity' | 'energy' | 'happy' | 'vietnam';
 type HarnessLayerKey = keyof MapLayers;
 type PulseProtestScenario =
   | 'none'
