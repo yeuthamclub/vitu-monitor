@@ -115,6 +115,7 @@ import type { GoldIntelligencePanel } from '@/components/GoldIntelligencePanel';
 import { isDesktopRuntime, waitForSidecarReady } from '@/services/runtime';
 import { hasPremiumAccess } from '@/services/panel-gating';
 import { BETA_MODE } from '@/config/beta';
+import { VARIANT_META } from '@/config/variant-meta';
 import { track, trackEvent, trackDeeplinkOpened, initAuthAnalytics, trackMapViewChange } from '@/services/analytics';
 import { preloadCountryGeometry, isCountryGeometryLoaded, getCountryNameByCode } from '@/services/country-geometry';
 import { initI18n, t, I18N_RESOURCES_LOADED_EVENT, type I18nResourcesLoadedDetail } from '@/services/i18n';
@@ -2439,17 +2440,21 @@ export class App {
     initDeferredDashboardFonts();
     // Localize the static index.html shell — <title>, meta description, and
     // the accessible <h1> are baked in English before the app boots; once i18n
-    // is ready we swap them to the user's locale.
-    document.title = t('shell.documentTitle');
+    // is ready we swap them to the user's locale. The fork-only vietnam variant
+    // keeps its own Vietnamese title/description (the shell keys say World Monitor).
+    const vietnamMeta = SITE_VARIANT === 'vietnam' ? VARIANT_META.vietnam : undefined;
+    const shellTitle = vietnamMeta?.title ?? t('shell.documentTitle');
+    const shellDescription = vietnamMeta?.description ?? t('shell.metaDescription');
+    document.title = shellTitle;
     const setMeta = (sel: string, val: string) => {
       const el = document.querySelector(sel);
       if (el) el.setAttribute('content', val);
     };
-    setMeta('meta[name="description"]', t('shell.metaDescription'));
-    setMeta('meta[property="og:title"]', t('shell.documentTitle'));
-    setMeta('meta[property="og:description"]', t('shell.metaDescription'));
-    setMeta('meta[name="twitter:title"]', t('shell.documentTitle'));
-    setMeta('meta[name="twitter:description"]', t('shell.metaDescription'));
+    setMeta('meta[name="description"]', shellDescription);
+    setMeta('meta[property="og:title"]', shellTitle);
+    setMeta('meta[property="og:description"]', shellDescription);
+    setMeta('meta[name="twitter:title"]', shellTitle);
+    setMeta('meta[name="twitter:description"]', shellDescription);
     // Mirror of OG_LOCALE in pro-test/src/i18n.ts. The two packages have
     // separate Vite roots and bundlers and can't share an import — keep the
     // tables aligned by hand when adding a locale here OR there.
@@ -2467,7 +2472,7 @@ export class App {
     const baseLang = docLang.split('-')[0] || 'en';
     setMeta('meta[property="og:locale"]', ogLocaleMap[docLang] || ogLocaleMap[baseLang] || `${baseLang}_${baseLang.toUpperCase()}`);
     const srH1 = document.querySelector('body > h1');
-    if (srH1) srH1.textContent = t('shell.documentTitle');
+    if (srH1) srH1.textContent = shellTitle;
     const aiFlow = getAiFlowSettings();
     // Optional local AI initializes independently of the dashboard critical
     // path (#7779): boot proceeds to layout, event handlers and basic panels

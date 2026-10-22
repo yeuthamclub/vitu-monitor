@@ -2,6 +2,7 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import { enqueueSentryCall } from '@/bootstrap/sentry-defer';
+import { SITE_VARIANT } from '@/config/variant';
 import { resolveLanguageTag } from '@/shared/language-tags';
 import { readQueryLanguage, stripQueryLanguage } from '@/utils/i18n-url';
 import { LatestRequestGuard } from '@/utils/latest-request-guard';
@@ -181,6 +182,13 @@ export async function initI18n({ waitForFullTranslation = false }: { waitForFull
     },
     cacheUserLanguage: () => { /* writes go through explicit changeLanguage() */ },
   });
+  // Fork-only: the vietnam variant defaults to Vietnamese instead of the
+  // browser language; ?lang= and an explicit Settings choice still win.
+  detector.addDetector({
+    name: 'wmVariant',
+    lookup: () => (SITE_VARIANT === 'vietnam' ? 'vi' : undefined),
+    cacheUserLanguage: () => { /* derived from the variant, never persisted */ },
+  });
 
   await i18next
     .use(detector)
@@ -196,7 +204,7 @@ export async function initI18n({ waitForFullTranslation = false }: { waitForFull
         escapeValue: false, // not needed for these simple strings
       },
       detection: {
-        order: ['wmQuery', 'wmExplicit', 'navigator'],
+        order: ['wmQuery', 'wmExplicit', 'wmVariant', 'navigator'],
         caches: [], // never auto-write — only changeLanguage() persists
       },
     });
