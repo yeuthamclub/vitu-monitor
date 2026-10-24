@@ -245,6 +245,14 @@ export const COMMANDS: Command[] = [
   { id: 'panel:internet-disruptions', keywords: ['internet disruptions', 'outages', 'internet outage', 'connectivity'], label: 'Internet Disruptions', icon: '\u{1F310}', category: 'panels' },
   { id: 'panel:service-status', keywords: ['service status', 'uptime', 'status page', 'downtime'], label: 'Service Status', icon: '\u{1F7E2}', category: 'panels' },
   { id: 'panel:fin-regulation', keywords: ['financial regulation', 'sec', 'cftc', 'banking regulation'], label: 'Financial Regulation', icon: '\u{1F4DC}', category: 'panels' },
+  // Vietnam variant (fork-only)
+  { id: 'panel:vn-breaking', keywords: ['vietnam news', 'tin nóng', 'tin mới', 'vnexpress', 'tuổi trẻ'], label: 'Vietnam Breaking News', icon: '\u{1F1FB}\u{1F1F3}', category: 'panels' },
+  { id: 'panel:vn-politics', keywords: ['vietnam politics', 'thời sự', 'chính sách', 'chính phủ'], label: 'Vietnam Politics & Policy', icon: '\u{1F3DB}\u{FE0F}', category: 'panels' },
+  { id: 'panel:vn-east-sea', keywords: ['east sea', 'biển đông', 'south china sea', 'hoàng sa', 'trường sa'], label: 'East Sea (South China Sea)', icon: '\u{1F30A}', category: 'panels' },
+  { id: 'panel:vn-economy', keywords: ['vietnam economy', 'kinh tế', 'chứng khoán', 'cafef', 'vneconomy'], label: 'Vietnam Economy', icon: '\u{1F4C8}', category: 'panels' },
+  { id: 'panel:vn-world', keywords: ['thế giới', 'quốc tế', 'world news vietnamese'], label: 'World (Vietnamese Press)', icon: '\u{1F30F}', category: 'panels' },
+  { id: 'panel:vn-international', keywords: ['vietnam english news', 'vnexpress international', 'bbc tiếng việt', 'rfi tiếng việt'], label: 'International Press on Vietnam', icon: '\u{1F4F0}', category: 'panels' },
+  { id: 'panel:vn-law-health-tech', keywords: ['pháp luật', 'sức khỏe', 'công nghệ', 'vietnam law', 'vietnam health'], label: 'Vietnam Law, Health & Tech', icon: '\u{2696}\u{FE0F}', category: 'panels' },
 
   // Finance variant panels
   { id: 'panel:analysis', keywords: ['market analysis', 'equity analysis', 'technical analysis'], label: 'Market Analysis', icon: '\u{1F4CA}', category: 'panels' },

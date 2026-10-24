@@ -383,6 +383,7 @@
     "panelCatCommodityEcon": "Economie și comerț",
     "panelCatHappyNews": "Știri bune",
     "panelCatHappyPlanet": "Planetă și donații",
+    "panelCatVietnamNews": "Știri din Vietnam",
     "embed": "Încorporează"
   },
   "panels": {
@@ -445,6 +446,13 @@
     "policy": "Politica și reglementarea AI",
     "regulation": "Tabloul de bord pentru reglementarea AI",
     "finRegulation": "Reglementare financiară",
+    "vnBreaking": "Știri de ultimă oră din Vietnam",
+    "vnPolitics": "Politică și guvernare în Vietnam",
+    "vnWorld": "Lumea (presa vietnameză)",
+    "vnEconomy": "Economia Vietnamului",
+    "vnEastSea": "Marea de Est (Marea Chinei de Sud)",
+    "vnInternational": "Presa internațională despre Vietnam",
+    "vnLawHealthTech": "Drept, sănătate și tehnologie în Vietnam",
     "hardware": "Semiconductori",
     "cloud": "Cloud și infrastructură",
     "dev": "Comunitatea dezvoltatorilor",

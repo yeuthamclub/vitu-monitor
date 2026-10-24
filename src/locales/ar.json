@@ -389,6 +389,7 @@
     "panelCatCommodityEcon": "الاقتصاد والتجارة",
     "panelCatHappyNews": "أخبار إيجابية",
     "panelCatHappyPlanet": "الكوكب والعطاء",
+    "panelCatVietnamNews": "أخبار فيتنام",
     "embed": "تضمين"
   },
   "panels": {
@@ -445,6 +446,13 @@
     "policy": "سياسات وتنظيمات AI",
     "regulation": "لوحة تنظيمات AI",
     "finRegulation": "التنظيم المالي",
+    "vnBreaking": "أخبار فيتنام العاجلة",
+    "vnPolitics": "السياسة والشؤون العامة في فيتنام",
+    "vnWorld": "العالم (الصحافة الفيتنامية)",
+    "vnEconomy": "اقتصاد فيتنام",
+    "vnEastSea": "بحر الشرق (بحر الصين الجنوبي)",
+    "vnInternational": "الصحافة الدولية عن فيتنام",
+    "vnLawHealthTech": "القانون والصحة والتقنية في فيتنام",
     "hardware": "أشباه الموصلات والعتاد",
     "cloud": "السحابة والبنية التحتية",
     "dev": "مجتمع المطورين",

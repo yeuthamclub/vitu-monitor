@@ -379,6 +379,7 @@
     "panelCatCommodityEcon": "Kinh tế & Thương mại",
     "panelCatHappyNews": "Tin tốt",
     "panelCatHappyPlanet": "Hành tinh & Trao tặng",
+    "panelCatVietnamNews": "Tin Việt Nam",
     "embed": "Nhúng"
   },
   "panels": {
@@ -441,6 +442,13 @@
     "policy": "Chính sách & Quy định AI",
     "regulation": "Bảng Quy định AI",
     "finRegulation": "Quy định Tài chính",
+    "vnBreaking": "Tin nóng",
+    "vnPolitics": "Thời sự – Chính sách",
+    "vnWorld": "Thế giới",
+    "vnEconomy": "Kinh tế",
+    "vnEastSea": "Biển Đông",
+    "vnInternational": "Báo chí quốc tế về Việt Nam",
+    "vnLawHealthTech": "Pháp luật – Sức khỏe – Công nghệ",
     "hardware": "Bán dẫn & Phần cứng",
     "cloud": "Đám mây & Hạ tầng",
     "dev": "Cộng đồng Lập trình viên",

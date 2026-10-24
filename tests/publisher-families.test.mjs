@@ -141,6 +141,11 @@ describe('publisher-families map data', () => {
       asharq: 'asharqbusiness.com and asharq.com — one newsroom, two properties',
       interfax: 'interfax.ru Russian feed and interfax.com English edition — one Interfax newsroom',
       ndtv: 'both labels arrive via feedburner, which identifies no publisher',
+      // Fork-only (Realtime Monitor): Vietnamese newsrooms with an English edition.
+      'nhan-dan': 'nhandan.vn and its English edition en.nhandan.vn — one Nhân Dân newsroom',
+      'tuoi-tre': 'tuoitre.vn and its English edition news.tuoitre.vn — one Tuổi Trẻ newsroom',
+      vietnamplus: 'vietnamplus.vn and its English edition en.vietnamplus.vn — one VNA newsroom',
+      vnexpress: 'vnexpress.net and its English edition e.vnexpress.net — one VnExpress newsroom',
       pivot: 'one show across a tier-only label and a megaphone.fm feed',
       'sightline-media': 'defensenews.com and militarytimes.com — two Sightline Media Group titles, one owner',
     };

@@ -73,6 +73,18 @@ const PUBLISHER_LINK_DOMAINS = {
   // feed, but item links point at the publisher apex (wsj.com). Mirrors the
   // domain-only 'wsj' family in shared/publisher-families.js.
   'wsj': ['wsj.com'],
+  // Fork-only (Realtime Monitor): vietnam variant publishers.
+  'rfi': ['rfi.fr'],
+  'bao-chinh-phu': ['baochinhphu.vn'],
+  'cafef': ['cafef.vn'],
+  'dan-tri': ['dantri.com.vn'],
+  'nhan-dan': ['nhandan.vn'],
+  'thanh-nien': ['thanhnien.vn'],
+  'tuoi-tre': ['tuoitre.vn'],
+  'vietnamnet': ['vietnamnet.vn'],
+  'vietnamplus': ['vietnamplus.vn'],
+  'vnexpress': ['vnexpress.net'],
+  'vtv': ['vtv.vn'],
 };
 
 function normalizeLinkHostname(hostname) {
@@ -272,6 +284,48 @@ const PUBLISHER_LINK_LABELS = {
   // The bare feed label "Wall Street Journal" intentionally stays a
   // singleton — only the publisher NAME resolves here.
   "wall street journal": "wsj",
+  // Fork-only (Realtime Monitor): vietnam variant publishers.
+  "bbc tiếng việt": "bbc",
+  "rfi afrique": "rfi",
+  "rfi tiếng việt": "rfi",
+  "rfi": "rfi",
+  "báo chính phủ thời sự": "bao-chinh-phu",
+  "báo chính phủ chính sách mới": "bao-chinh-phu",
+  "báo chính phủ quốc tế": "bao-chinh-phu",
+  "báo chính phủ": "bao-chinh-phu",
+  "cafef": "cafef",
+  "cafef vĩ mô": "cafef",
+  "cafef doanh nghiệp": "cafef",
+  "cafef chứng khoán": "cafef",
+  "dân trí": "dan-tri",
+  "dân trí thế giới": "dan-tri",
+  "dân trí kinh doanh": "dan-tri",
+  "nhân dân": "nhan-dan",
+  "nhân dân english": "nhan-dan",
+  "thanh niên": "thanh-nien",
+  "thanh niên thời sự": "thanh-nien",
+  "thanh niên thế giới": "thanh-nien",
+  "tuổi trẻ": "tuoi-tre",
+  "tuổi trẻ thời sự": "tuoi-tre",
+  "tuổi trẻ thế giới": "tuoi-tre",
+  "tuoi tre news": "tuoi-tre",
+  "vietnamnet thời sự": "vietnamnet",
+  "vietnamnet thế giới": "vietnamnet",
+  "vietnamnet kinh doanh": "vietnamnet",
+  "vietnamnet": "vietnamnet",
+  "vietnamplus": "vietnamplus",
+  "vietnamplus english": "vietnamplus",
+  "vnexpress": "vnexpress",
+  "vnexpress thời sự": "vnexpress",
+  "vnexpress thế giới": "vnexpress",
+  "vnexpress kinh doanh": "vnexpress",
+  "vnexpress pháp luật": "vnexpress",
+  "vnexpress sức khỏe": "vnexpress",
+  "vnexpress khoa học công nghệ": "vnexpress",
+  "vnexpress international": "vnexpress",
+  "vtv": "vtv",
+  "vtv chính trị": "vtv",
+  "vtv thế giới": "vtv",
 };
 
 /**

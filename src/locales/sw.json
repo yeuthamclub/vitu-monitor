@@ -450,7 +450,8 @@
     "panelCatMining": "Mnyororo wa Uchimbaji na Ugavi",
     "panelCatCommodityEcon": "Uchumi na Biashara",
     "panelCatHappyNews": "Habari Njema",
-    "panelCatHappyPlanet": "Sayari & Kutoa"
+    "panelCatHappyPlanet": "Sayari & Kutoa",
+    "panelCatVietnamNews": "Habari za Vietnam"
   },
   "panels": {
     "liveNews": "Habari za Moja kwa Moja",
@@ -518,6 +519,13 @@
     "policy": "Sera na Udhibiti wa AI",
     "regulation": "Dashibodi ya Udhibiti wa AI",
     "finRegulation": "Udhibiti wa Fedha",
+    "vnBreaking": "Habari za dharura za Vietnam",
+    "vnPolitics": "Siasa na sera za Vietnam",
+    "vnWorld": "Dunia (vyombo vya habari vya Vietnam)",
+    "vnEconomy": "Uchumi wa Vietnam",
+    "vnEastSea": "Bahari ya Mashariki (Bahari ya Kusini ya China)",
+    "vnInternational": "Vyombo vya habari vya kimataifa kuhusu Vietnam",
+    "vnLawHealthTech": "Sheria, afya na teknolojia nchini Vietnam",
     "hardware": "Semiconductors & Hardware",
     "cloud": "Wingu na Miundombinu",
     "dev": "Jumuiya ya Wasanidi Programu",

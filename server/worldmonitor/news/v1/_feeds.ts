@@ -789,6 +789,73 @@ export const VARIANT_FEEDS: Record<string, Record<string, ServerFeed[]>> = {
       { name: 'Shareable', url: 'https://www.shareable.net/feed/' },
     ],
   },
+
+  // Fork-only (Realtime Monitor). Keys mirror VIETNAM_FEEDS in
+  // src/config/feeds.ts. Vietnamnet returns ~1000 items per fetch, so its
+  // feeds start first in a cold digest build.
+  vietnam: {
+    'vn-breaking': [
+      { name: 'VnExpress', url: 'https://vnexpress.net/rss/tin-moi-nhat.rss', lang: 'vi', strategicDefault: true },
+      { name: 'Tuổi Trẻ', url: 'https://tuoitre.vn/home.rss', lang: 'vi', strategicDefault: true },
+      { name: 'Thanh Niên', url: 'https://thanhnien.vn/rss/home.rss', lang: 'vi' },
+      { name: 'Dân trí', url: 'https://dantri.com.vn/rss/home.rss', lang: 'vi' },
+      { name: 'VTV', url: 'https://vtv.vn/rss/home.rss', lang: 'vi' },
+      { name: 'VietnamPlus', url: 'https://www.vietnamplus.vn/rss/home.rss', lang: 'vi', strategicDefault: true },
+      { name: 'Nhân Dân', url: 'https://nhandan.vn/rss/home.rss', lang: 'vi' },
+      { name: 'Tiền Phong', url: 'https://tienphong.vn/rss/home.rss', lang: 'vi' },
+      { name: 'Sài Gòn Giải Phóng', url: 'https://www.sggp.org.vn/rss/home.rss', lang: 'vi' },
+      { name: 'Công an Nhân dân', url: 'https://cand.vn/rss/home.rss', lang: 'vi' },
+      { name: 'Kinh tế & Đô thị', url: 'https://kinhtedothi.vn/rss/home.rss', lang: 'vi' },
+    ],
+    'vn-politics': [
+      { name: 'VnExpress Thời sự', url: 'https://vnexpress.net/rss/thoi-su.rss', lang: 'vi', strategicDefault: true },
+      { name: 'Tuổi Trẻ Thời sự', url: 'https://tuoitre.vn/rss/thoi-su.rss', lang: 'vi' },
+      { name: 'Thanh Niên Thời sự', url: 'https://thanhnien.vn/rss/thoi-su.rss', lang: 'vi' },
+      { name: 'VTV Chính trị', url: 'https://vtv.vn/rss/chinh-tri.rss', lang: 'vi' },
+      { name: 'Báo Chính phủ Thời sự', url: 'https://baochinhphu.vn/thoi-su.rss', lang: 'vi', strategicDefault: true },
+      { name: 'Báo Chính phủ Chính sách mới', url: 'https://baochinhphu.vn/chinh-sach-moi.rss', lang: 'vi' },
+      { name: 'Vietnamnet Thời sự', url: 'https://vietnamnet.vn/thoi-su.rss', lang: 'vi', deadlinePriority: 1 },
+    ],
+    'vn-world': [
+      { name: 'VnExpress Thế giới', url: 'https://vnexpress.net/rss/the-gioi.rss', lang: 'vi', strategicDefault: true },
+      { name: 'Tuổi Trẻ Thế giới', url: 'https://tuoitre.vn/rss/the-gioi.rss', lang: 'vi' },
+      { name: 'Thanh Niên Thế giới', url: 'https://thanhnien.vn/rss/the-gioi.rss', lang: 'vi' },
+      { name: 'Dân trí Thế giới', url: 'https://dantri.com.vn/rss/the-gioi.rss', lang: 'vi' },
+      { name: 'VTV Thế giới', url: 'https://vtv.vn/rss/the-gioi.rss', lang: 'vi' },
+      { name: 'Vietnamnet Thế giới', url: 'https://vietnamnet.vn/the-gioi.rss', lang: 'vi', deadlinePriority: 1 },
+      { name: 'Báo Chính phủ Quốc tế', url: 'https://baochinhphu.vn/quoc-te.rss', lang: 'vi' },
+    ],
+    'vn-economy': [
+      { name: 'VnExpress Kinh doanh', url: 'https://vnexpress.net/rss/kinh-doanh.rss', lang: 'vi', strategicDefault: true },
+      { name: 'Dân trí Kinh doanh', url: 'https://dantri.com.vn/rss/kinh-doanh.rss', lang: 'vi' },
+      { name: 'Vietnamnet Kinh doanh', url: 'https://vietnamnet.vn/kinh-doanh.rss', lang: 'vi', deadlinePriority: 1 },
+      { name: 'CafeF', url: 'https://cafef.vn/home.rss', lang: 'vi' },
+      { name: 'CafeF Vĩ mô', url: 'https://cafef.vn/vi-mo-dau-tu.rss', lang: 'vi' },
+      { name: 'CafeF Doanh nghiệp', url: 'https://cafef.vn/doanh-nghiep.rss', lang: 'vi' },
+      { name: 'CafeF Chứng khoán', url: 'https://cafef.vn/thi-truong-chung-khoan.rss', lang: 'vi' },
+      // vneconomy.vn's own RSS returns an empty channel ("No Content").
+      { name: 'VnEconomy', url: gnLocale('site:vneconomy.vn when:1d', 'vi', 'VN', 'VN:vi'), lang: 'vi' },
+      { name: 'Vietstock Cổ phiếu', url: 'https://vietstock.vn/830/chung-khoan/co-phieu.rss', lang: 'vi' },
+    ],
+    'vn-east-sea': [
+      { name: 'Google News Biển Đông', url: gnLocale('"Biển Đông" when:1d', 'vi', 'VN', 'VN:vi'), lang: 'vi', strategicDefault: true },
+      { name: 'Google News South China Sea Vietnam', url: gn('"South China Sea" Vietnam when:1d'), lang: 'en', strategicDefault: true },
+      { name: 'AMTI', url: 'https://amti.csis.org/feed/', lang: 'en' },
+    ],
+    'vn-international': [
+      { name: 'VnExpress International', url: 'https://e.vnexpress.net/rss/news.rss', lang: 'en' },
+      { name: 'VietnamPlus English', url: 'https://en.vietnamplus.vn/rss/home.rss', lang: 'en' },
+      { name: 'Nhân Dân English', url: 'https://en.nhandan.vn/rss/home.rss', lang: 'en' },
+      { name: 'Tuoi Tre News', url: 'https://news.tuoitre.vn/rss', lang: 'vi' },
+      { name: 'BBC Tiếng Việt', url: 'https://feeds.bbci.co.uk/vietnamese/rss.xml', lang: 'vi' },
+      { name: 'RFI Tiếng Việt', url: 'https://www.rfi.fr/vi/rss', lang: 'vi' },
+    ],
+    'vn-law-health-tech': [
+      { name: 'VnExpress Pháp luật', url: 'https://vnexpress.net/rss/phap-luat.rss', lang: 'vi' },
+      { name: 'VnExpress Sức khỏe', url: 'https://vnexpress.net/rss/suc-khoe.rss', lang: 'vi' },
+      { name: 'VnExpress Khoa học công nghệ', url: 'https://vnexpress.net/rss/khoa-hoc-cong-nghe.rss', lang: 'vi' },
+    ],
+  },
 };
 
 export const INTEL_SOURCES: ServerFeed[] = [

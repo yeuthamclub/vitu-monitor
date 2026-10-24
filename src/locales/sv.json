@@ -48,6 +48,13 @@
     "monitors": "Mina monitorer",
     "regulation": "AI-regleringspanel",
     "finRegulation": "Finansiell reglering",
+    "vnBreaking": "Senaste nytt från Vietnam",
+    "vnPolitics": "Politik och styre i Vietnam",
+    "vnWorld": "Världen (vietnamesisk press)",
+    "vnEconomy": "Vietnams ekonomi",
+    "vnEastSea": "Östra havet (Sydkinesiska havet)",
+    "vnInternational": "Internationell press om Vietnam",
+    "vnLawHealthTech": "Juridik, hälsa och teknik i Vietnam",
     "serviceStatus": "Servicestatus",
     "stablecoins": "Stablecoins",
     "deduction": "Bedöm situation",
@@ -3334,6 +3341,7 @@
     "panelCatCommodityEcon": "Ekonomi & Handel",
     "panelCatHappyNews": "Goda Nyheter",
     "panelCatHappyPlanet": "Planet & Välgörenhet",
+    "panelCatVietnamNews": "Nyheter från Vietnam",
     "embed": "Bädda in"
   },
   "countryBrief": {

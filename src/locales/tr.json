@@ -381,6 +381,7 @@
     "panelCatCommodityEcon": "Ekonomi & Ticaret",
     "panelCatHappyNews": "İyi Haberler",
     "panelCatHappyPlanet": "Gezegen & Hayırseverlik",
+    "panelCatVietnamNews": "Vietnam Haberleri",
     "embed": "Göm"
   },
   "panels": {
@@ -443,6 +444,13 @@
     "policy": "Yapay Zeka Politikasi ve Duzenlemeler",
     "regulation": "Yapay Zeka Duzenleme Paneli",
     "finRegulation": "Finansal Düzenleme",
+    "vnBreaking": "Vietnam'dan Son Dakika",
+    "vnPolitics": "Vietnam Siyaseti ve Politikaları",
+    "vnWorld": "Dünya (Vietnam basını)",
+    "vnEconomy": "Vietnam Ekonomisi",
+    "vnEastSea": "Doğu Denizi (Güney Çin Denizi)",
+    "vnInternational": "Vietnam Hakkında Uluslararası Basın",
+    "vnLawHealthTech": "Vietnam'da Hukuk, Sağlık ve Teknoloji",
     "hardware": "Yaricileticiler ve Donanim",
     "cloud": "Bulut ve Altyapi",
     "dev": "Gelistirici Toplulugu",

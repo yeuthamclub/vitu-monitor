@@ -385,6 +385,7 @@
     "panelCatCommodityEcon": "Ekonomika a obchod",
     "panelCatHappyNews": "Dobré zprávy",
     "panelCatHappyPlanet": "Planeta a dárcovství",
+    "panelCatVietnamNews": "Zprávy z Vietnamu",
     "embed": "Vložit"
   },
   "panels": {
@@ -447,6 +448,13 @@
     "policy": "AI politika a regulace",
     "regulation": "Dashboard AI regulací",
     "finRegulation": "Finanční regulace",
+    "vnBreaking": "Aktuální zprávy z Vietnamu",
+    "vnPolitics": "Politika a veřejná správa ve Vietnamu",
+    "vnWorld": "Svět (vietnamský tisk)",
+    "vnEconomy": "Ekonomika Vietnamu",
+    "vnEastSea": "Východní moře (Jihočínské moře)",
+    "vnInternational": "Mezinárodní tisk o Vietnamu",
+    "vnLawHealthTech": "Právo, zdraví a technologie ve Vietnamu",
     "hardware": "Polovodiče a hardware",
     "cloud": "Cloud a infrastruktura",
     "dev": "Vývojářská komunita",

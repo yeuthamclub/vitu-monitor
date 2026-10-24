@@ -379,6 +379,7 @@
     "panelCatCommodityEcon": "경제 & 무역",
     "panelCatHappyNews": "좋은 소식",
     "panelCatHappyPlanet": "지구 & 기부",
+    "panelCatVietnamNews": "베트남 뉴스",
     "embed": "삽입"
   },
   "panels": {
@@ -441,6 +442,13 @@
     "policy": "AI 정책 & 규제",
     "regulation": "AI 규제 대시보드",
     "finRegulation": "금융 규제",
+    "vnBreaking": "베트남 속보",
+    "vnPolitics": "베트남 정치·정책",
+    "vnWorld": "세계(베트남 언론)",
+    "vnEconomy": "베트남 경제",
+    "vnEastSea": "베트남 동해(남중국해)",
+    "vnInternational": "베트남 관련 국제 언론",
+    "vnLawHealthTech": "베트남 법률·보건·기술",
     "hardware": "반도체 & 하드웨어",
     "cloud": "클라우드 & 인프라",
     "dev": "개발자 커뮤니티",

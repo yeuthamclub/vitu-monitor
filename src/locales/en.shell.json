@@ -84,7 +84,8 @@
     "panelCatMining": "Mining & Supply Chain",
     "panelCatCommodityEcon": "Economy & Trade",
     "panelCatHappyNews": "Good News",
-    "panelCatHappyPlanet": "Planet & Giving"
+    "panelCatHappyPlanet": "Planet & Giving",
+    "panelCatVietnamNews": "Vietnam News"
   },
   "panels": {
     "liveNews": "Live News",
@@ -152,6 +153,13 @@
     "policy": "AI Policy & Regulation",
     "regulation": "AI Regulation Dashboard",
     "finRegulation": "Financial Regulation",
+    "vnBreaking": "Vietnam Breaking News",
+    "vnPolitics": "Vietnam Politics & Policy",
+    "vnWorld": "World (Vietnamese Press)",
+    "vnEconomy": "Vietnam Economy",
+    "vnEastSea": "East Sea (South China Sea)",
+    "vnInternational": "International Press on Vietnam",
+    "vnLawHealthTech": "Vietnam Law, Health & Tech",
     "hardware": "Semiconductors & Hardware",
     "cloud": "Cloud & Infrastructure",
     "dev": "Developer Community",

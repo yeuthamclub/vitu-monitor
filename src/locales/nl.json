@@ -48,6 +48,13 @@
     "monitors": "Mijn monitoren",
     "regulation": "Dashboard voor AI-regulering",
     "finRegulation": "Financiële regelgeving",
+    "vnBreaking": "Breaking news uit Vietnam",
+    "vnPolitics": "Politiek en beleid in Vietnam",
+    "vnWorld": "Wereld (Vietnamese pers)",
+    "vnEconomy": "Economie van Vietnam",
+    "vnEastSea": "Oostelijke Zee (Zuid-Chinese Zee)",
+    "vnInternational": "Internationale pers over Vietnam",
+    "vnLawHealthTech": "Recht, gezondheid en technologie in Vietnam",
     "serviceStatus": "Servicestatus",
     "stablecoins": "Stabiele munten",
     "deduction": "Situatie afleiden",
@@ -3334,6 +3341,7 @@
     "panelCatCommodityEcon": "Economie & Handel",
     "panelCatHappyNews": "Goed Nieuws",
     "panelCatHappyPlanet": "Planeet & Geven",
+    "panelCatVietnamNews": "Nieuws uit Vietnam",
     "embed": "Insluiten"
   },
   "countryBrief": {

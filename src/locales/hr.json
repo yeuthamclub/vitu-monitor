@@ -453,6 +453,7 @@
     "panelCatCommodityEcon": "Ekonomija i trgovina",
     "panelCatHappyNews": "Dobre vijesti",
     "panelCatHappyPlanet": "Planet i pomoć",
+    "panelCatVietnamNews": "Vijesti iz Vijetnama",
     "embed": "Ugradi"
   },
   "panels": {
@@ -521,6 +522,13 @@
     "policy": "AI Politika & Regulacija",
     "regulation": "AI Ploča Regulacije",
     "finRegulation": "Financijska Regulacija",
+    "vnBreaking": "Udarne vijesti iz Vijetnama",
+    "vnPolitics": "Politika i javne politike u Vijetnamu",
+    "vnWorld": "Svijet (vijetnamski tisak)",
+    "vnEconomy": "Gospodarstvo Vijetnama",
+    "vnEastSea": "Istočno more (Južnokinesko more)",
+    "vnInternational": "Međunarodni tisak o Vijetnamu",
+    "vnLawHealthTech": "Pravo, zdravlje i tehnologija u Vijetnamu",
     "hardware": "Polupropvodnici & Hardver",
     "cloud": "Cloud & Infrastruktura",
     "dev": "Zajednica Razvijatelja",

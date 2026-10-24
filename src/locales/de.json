@@ -381,6 +381,7 @@
     "panelCatCommodityEcon": "Wirtschaft & Handel",
     "panelCatHappyNews": "Gute Nachrichten",
     "panelCatHappyPlanet": "Planet & Spenden",
+    "panelCatVietnamNews": "Vietnam-Nachrichten",
     "embed": "Einbetten"
   },
   "panels": {
@@ -438,6 +439,13 @@
     "policy": "KI-Politik & Regulierung",
     "regulation": "KI-Regulierungs-Dashboard",
     "finRegulation": "Finanzregulierung",
+    "vnBreaking": "Vietnam – Eilmeldungen",
+    "vnPolitics": "Vietnam – Politik & Regierungspolitik",
+    "vnWorld": "Welt (vietnamesische Presse)",
+    "vnEconomy": "Wirtschaft Vietnams",
+    "vnEastSea": "Ostmeer (Südchinesisches Meer)",
+    "vnInternational": "Internationale Presse über Vietnam",
+    "vnLawHealthTech": "Vietnam – Recht, Gesundheit & Technik",
     "hardware": "Halbleiter & Hardware",
     "cloud": "Cloud & Infrastruktur",
     "dev": "Entwickler-Community",

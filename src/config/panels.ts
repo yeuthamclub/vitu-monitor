@@ -1151,14 +1151,19 @@ const ENERGY_MOBILE_MAP_LAYERS: MapLayers = {
 
 // ============================================
 // VIETNAM variant — fork-only (Realtime Monitor), selected in-app.
-// Skeleton: reuses registered panels only. Vietnam-specific news categories
-// and their panels arrive with the Vietnamese feed set (PHASE-0-1-PLAN PR-1a).
+// vn-* panels are news panels keyed to VIETNAM_FEEDS categories in
+// src/config/feeds.ts; the rest reuse registered panels.
 // ============================================
 const VIETNAM_PANELS: Record<string, PanelConfig> = {
   map: { name: 'Bản đồ Việt Nam & Biển Đông', enabled: true, priority: 1 },
   'live-news': { name: 'Tin trực tiếp', enabled: true, priority: 1 },
-  asia: { name: 'Việt Nam & châu Á', enabled: true, priority: 1 },
-  politics: { name: 'Tin thế giới', enabled: true, priority: 1 },
+  'vn-breaking': { name: 'Tin nóng', enabled: true, priority: 1 },
+  'vn-politics': { name: 'Thời sự – Chính sách', enabled: true, priority: 1 },
+  'vn-east-sea': { name: 'Biển Đông', enabled: true, priority: 1 },
+  'vn-economy': { name: 'Kinh tế', enabled: true, priority: 1 },
+  'vn-world': { name: 'Thế giới', enabled: true, priority: 1 },
+  'vn-international': { name: 'Báo chí quốc tế về Việt Nam', enabled: true, priority: 2 },
+  'vn-law-health-tech': { name: 'Pháp luật – Sức khỏe – Công nghệ', enabled: true, priority: 2 },
   'gdelt-intel': { name: 'Tình báo trực tiếp', enabled: true, priority: 2 },
   'satellite-fires': { name: 'Cháy rừng', enabled: true, priority: 2 },
   climate: { name: 'Thời tiết & khí hậu', enabled: true, priority: 2 },
@@ -1227,6 +1232,9 @@ export const ALL_PANELS: Record<string, PanelConfig> = {
   ...TECH_PANELS,
   ...FINANCE_PANELS,
   ...FULL_PANELS,
+  // Only the vn-* panels are new; the shared keys VIETNAM_PANELS reuses keep
+  // their upstream configs and order.
+  ...Object.fromEntries(Object.entries(VIETNAM_PANELS).filter(([key]) => key.startsWith('vn-'))),
 };
 
 /** Per-variant canonical panel order (keys = which panels are enabled by default). */
@@ -1679,6 +1687,13 @@ export const PANEL_CATEGORY_MAP: Record<string, { labelKey: string; panelKeys: s
     labelKey: 'header.panelCatHappyPlanet',
     panelKeys: ['species', 'renewable', 'giving'],
     variants: ['happy'],
+  },
+
+  // Vietnam variant (fork-only)
+  vietnamNews: {
+    labelKey: 'header.panelCatVietnamNews',
+    panelKeys: ['vn-breaking', 'vn-politics', 'vn-east-sea', 'vn-economy', 'vn-world', 'vn-international', 'vn-law-health-tech'],
+    variants: ['vietnam'],
   },
 };
 

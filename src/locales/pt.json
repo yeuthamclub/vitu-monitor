@@ -48,6 +48,13 @@
     "monitors": "Meus monitores",
     "regulation": "Painel de regulamentação de IA",
     "finRegulation": "Regulamentação financeira",
+    "vnBreaking": "Últimas notícias do Vietnã",
+    "vnPolitics": "Política e governo do Vietnã",
+    "vnWorld": "Mundo (imprensa vietnamita)",
+    "vnEconomy": "Economia do Vietnã",
+    "vnEastSea": "Mar do Leste (Mar do Sul da China)",
+    "vnInternational": "Imprensa internacional sobre o Vietnã",
+    "vnLawHealthTech": "Direito, saúde e tecnologia no Vietnã",
     "serviceStatus": "Status do serviço",
     "stablecoins": "Moedas estáveis",
     "deduction": "Deduzir situação",
@@ -3352,6 +3359,7 @@
     "panelCatCommodityEcon": "Economia & Comércio",
     "panelCatHappyNews": "Boas Notícias",
     "panelCatHappyPlanet": "Planeta & Doações",
+    "panelCatVietnamNews": "Notícias do Vietnã",
     "embed": "Incorporar"
   },
   "countryBrief": {

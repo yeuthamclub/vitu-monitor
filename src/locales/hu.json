@@ -450,6 +450,7 @@
     "panelCatCommodityEcon": "Gazdaság & Kereskedelem",
     "panelCatHappyNews": "Jó Hírek",
     "panelCatHappyPlanet": "Bolygó & Adományozás",
+    "panelCatVietnamNews": "Vietnámi hírek",
     "embed": "Beágyazás"
   },
   "panels": {
@@ -518,6 +519,13 @@
     "policy": "AI Politika & Szabályozás",
     "regulation": "AI Szabályozási Irányítópult",
     "finRegulation": "Pénzügyi Szabályozás",
+    "vnBreaking": "Vietnámi friss hírek",
+    "vnPolitics": "Vietnámi politika és kormányzás",
+    "vnWorld": "Világ (vietnámi sajtó)",
+    "vnEconomy": "Vietnám gazdasága",
+    "vnEastSea": "Keleti-tenger (Dél-kínai-tenger)",
+    "vnInternational": "Nemzetközi sajtó Vietnámról",
+    "vnLawHealthTech": "Jog, egészség és technológia Vietnámban",
     "hardware": "Félvezetők & Hardware",
     "cloud": "Cloud & Infrastruktúra",
     "dev": "Fejlesztői Közösség",

@@ -379,6 +379,7 @@
     "panelCatCommodityEcon": "经济与贸易",
     "panelCatHappyNews": "好消息",
     "panelCatHappyPlanet": "地球与慈善",
+    "panelCatVietnamNews": "越南新闻",
     "embed": "嵌入"
   },
   "panels": {
@@ -441,6 +442,13 @@
     "policy": "AI政策与监管",
     "regulation": "AI监管仪表盘",
     "finRegulation": "金融监管",
+    "vnBreaking": "越南突发新闻",
+    "vnPolitics": "越南政治与政策",
+    "vnWorld": "世界（越南媒体）",
+    "vnEconomy": "越南经济",
+    "vnEastSea": "越南东海（南海）",
+    "vnInternational": "国际媒体看越南",
+    "vnLawHealthTech": "越南法律、健康与科技",
     "hardware": "半导体与硬件",
     "cloud": "云计算与基础设施",
     "dev": "开发者社区",

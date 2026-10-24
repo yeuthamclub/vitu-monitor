@@ -8,7 +8,9 @@ const APP_SOURCE = 'src/App.ts';
 const EN_LOCALE = 'src/locales/en.json';
 const EN_SHELL_LOCALE = 'src/locales/en.shell.json';
 const COMPONENTS_DIR = 'src/components';
-const SHELL_BUDGET_BYTES = 52 * 1024;
+// Fork (Realtime Monitor): +1 KiB for the vietnam variant's panel and
+// category labels, which first paint needs like every other panel name.
+const SHELL_BUDGET_BYTES = 53 * 1024;
 
 function tsFilesUnder(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {

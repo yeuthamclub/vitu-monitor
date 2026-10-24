@@ -379,6 +379,7 @@
     "panelCatCommodityEcon": "経済・貿易",
     "panelCatHappyNews": "ニュース",
     "panelCatHappyPlanet": "地球・社会貢献",
+    "panelCatVietnamNews": "ベトナムニュース",
     "embed": "埋め込む"
   },
   "panels": {
@@ -441,6 +442,13 @@
     "policy": "AI政策・規制",
     "regulation": "AI規制ダッシュボード",
     "finRegulation": "金融規制",
+    "vnBreaking": "ベトナム速報",
+    "vnPolitics": "ベトナムの政治・政策",
+    "vnWorld": "世界（ベトナムの報道）",
+    "vnEconomy": "ベトナム経済",
+    "vnEastSea": "ベトナムの東海（南シナ海）",
+    "vnInternational": "ベトナムに関する海外報道",
+    "vnLawHealthTech": "ベトナムの法律・健康・テクノロジー",
     "hardware": "半導体・ハードウェア",
     "cloud": "クラウド・インフラ",
     "dev": "開発者コミュニティ",

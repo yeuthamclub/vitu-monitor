@@ -439,6 +439,8 @@ const HOST_ORIGINS = Object.freeze({
   'www.coindesk.com': 'US',
   'www.crisisgroup.org': 'BE',
   'www.csis.org': 'US',
+  'amti.csis.org': 'US',
+  'e.vnexpress.net': 'VN',
   'www.dabangasudan.org': 'SD',
   'www.dailygood.org': 'US',
   'www.dailysabah.com': 'TR',

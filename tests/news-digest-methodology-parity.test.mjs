@@ -498,7 +498,7 @@ describe('news digest methodology parity', () => {
     const rows = extractFeedInventoryRows(feedsSrc);
     assert.equal(
       rows.length,
-      67,
+      74,
       'server news feed inventory row count changed; update _feeds.ts, docs/data-sources.mdx, and this assertion together',
     );
     for (const row of rows) {

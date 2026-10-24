@@ -454,7 +454,8 @@
     "panelCatMining": "Mining & Supply Chain",
     "panelCatCommodityEcon": "Economy & Trade",
     "panelCatHappyNews": "Good News",
-    "panelCatHappyPlanet": "Planet & Giving"
+    "panelCatHappyPlanet": "Planet & Giving",
+    "panelCatVietnamNews": "Новини В'єтнаму"
   },
   "panels": {
     "liveNews": "Live News",
@@ -522,6 +523,13 @@
     "policy": "AI Policy & Regulation",
     "regulation": "AI Regulation Dashboard",
     "finRegulation": "Financial Regulation",
+    "vnBreaking": "Термінові новини В'єтнаму",
+    "vnPolitics": "Політика та державне управління В'єтнаму",
+    "vnWorld": "Світ (в'єтнамська преса)",
+    "vnEconomy": "Економіка В'єтнаму",
+    "vnEastSea": "Східне море (Південнокитайське море)",
+    "vnInternational": "Міжнародна преса про В'єтнам",
+    "vnLawHealthTech": "Право, здоров'я та технології у В'єтнамі",
     "hardware": "Semiconductors & Hardware",
     "cloud": "Cloud & Infrastructure",
     "dev": "Developer Community",

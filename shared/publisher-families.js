@@ -69,6 +69,7 @@ const PUBLISHER_FAMILY_DATA = {
       "BBC Russian",
       "BBC Northern Ireland",
       "BBC Science",
+      "BBC Tiếng Việt",
       "BBC Turkce",
       "BBC UK",
       "BBC World",
@@ -203,6 +204,37 @@ const PUBLISHER_FAMILY_DATA = {
   'wsj': { publisher: "Wall Street Journal", labels: [] },
   'y-combinator': { publisher: "Y Combinator", labels: ["YC Launches", "Y Combinator Blog"] },
   'yahoo-finance': { publisher: "Yahoo Finance", labels: ["Yahoo Finance", "Yahoo Finance Commodities"] },
+  // Fork-only (Realtime Monitor): vietnam variant publishers. Section feeds of
+  // one newsroom fold into it so it cannot corroborate itself.
+  'rfi': { publisher: "RFI", labels: ["RFI Afrique", "RFI Tiếng Việt"] },
+  'bao-chinh-phu': {
+    publisher: "Báo Chính phủ",
+    labels: ["Báo Chính phủ Thời sự", "Báo Chính phủ Chính sách mới", "Báo Chính phủ Quốc tế"],
+  },
+  'cafef': { publisher: "CafeF", labels: ["CafeF", "CafeF Vĩ mô", "CafeF Doanh nghiệp", "CafeF Chứng khoán"] },
+  'dan-tri': { publisher: "Dân trí", labels: ["Dân trí", "Dân trí Thế giới", "Dân trí Kinh doanh"] },
+  'nhan-dan': { publisher: "Nhân Dân", labels: ["Nhân Dân", "Nhân Dân English"] },
+  'thanh-nien': { publisher: "Thanh Niên", labels: ["Thanh Niên", "Thanh Niên Thời sự", "Thanh Niên Thế giới"] },
+  'tuoi-tre': {
+    publisher: "Tuổi Trẻ",
+    labels: ["Tuổi Trẻ", "Tuổi Trẻ Thời sự", "Tuổi Trẻ Thế giới", "Tuoi Tre News"],
+  },
+  'vietnamnet': { publisher: "Vietnamnet", labels: ["Vietnamnet Thời sự", "Vietnamnet Thế giới", "Vietnamnet Kinh doanh"] },
+  'vietnamplus': { publisher: "VietnamPlus", labels: ["VietnamPlus", "VietnamPlus English"] },
+  'vnexpress': {
+    publisher: "VnExpress",
+    labels: [
+      "VnExpress",
+      "VnExpress Thời sự",
+      "VnExpress Thế giới",
+      "VnExpress Kinh doanh",
+      "VnExpress Pháp luật",
+      "VnExpress Sức khỏe",
+      "VnExpress Khoa học công nghệ",
+      "VnExpress International",
+    ],
+  },
+  'vtv': { publisher: "VTV", labels: ["VTV", "VTV Chính trị", "VTV Thế giới"] },
 };
 
 export const PUBLISHER_FAMILIES = Object.freeze(PUBLISHER_FAMILY_DATA);
@@ -260,6 +292,18 @@ const PUBLISHER_FAMILY_DOMAINS = Object.freeze({
   // #8398: see the 'wsj' family entry above — the Dow Jones delivery host
   // is not the article host.
   'wsj': ['wsj.com'],
+  // Fork-only (Realtime Monitor): vietnam variant publishers.
+  'rfi': ['rfi.fr'],
+  'bao-chinh-phu': ['baochinhphu.vn'],
+  'cafef': ['cafef.vn'],
+  'dan-tri': ['dantri.com.vn'],
+  'nhan-dan': ['nhandan.vn'],
+  'thanh-nien': ['thanhnien.vn'],
+  'tuoi-tre': ['tuoitre.vn'],
+  'vietnamnet': ['vietnamnet.vn'],
+  'vietnamplus': ['vietnamplus.vn'],
+  'vnexpress': ['vnexpress.net'],
+  'vtv': ['vtv.vn'],
 });
 export const PUBLISHER_FAMILY_DOMAIN_TABLE = PUBLISHER_FAMILY_DOMAINS;
 

@@ -450,7 +450,8 @@
     "panelCatMining": "Mining & Supply Chain",
     "panelCatCommodityEcon": "Economy & Trade",
     "panelCatHappyNews": "Good News",
-    "panelCatHappyPlanet": "Planet & Giving"
+    "panelCatHappyPlanet": "Planet & Giving",
+    "panelCatVietnamNews": "اخبار ویتنام"
   },
   "panels": {
     "liveNews": "Live News",
@@ -518,6 +519,13 @@
     "policy": "AI Policy & Regulation",
     "regulation": "AI Regulation Dashboard",
     "finRegulation": "Financial Regulation",
+    "vnBreaking": "اخبار فوری ویتنام",
+    "vnPolitics": "سیاست و حکمرانی در ویتنام",
+    "vnWorld": "جهان (مطبوعات ویتنامی)",
+    "vnEconomy": "اقتصاد ویتنام",
+    "vnEastSea": "دریای شرق (دریای چین جنوبی)",
+    "vnInternational": "مطبوعات بین‌المللی درباره ویتنام",
+    "vnLawHealthTech": "حقوق، سلامت و فناوری در ویتنام",
     "hardware": "Semiconductors & Hardware",
     "cloud": "Cloud & Infrastructure",
     "dev": "Developer Community",

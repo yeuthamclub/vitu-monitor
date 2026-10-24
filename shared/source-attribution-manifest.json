@@ -398,6 +398,23 @@
       ]
     },
     {
+      "host": "amti.csis.org",
+      "provider": "amti.csis.org",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit amti.csis.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "amu.tv",
       "provider": "Amu TV",
       "kind": "feed",
@@ -1939,6 +1956,23 @@
       ]
     },
     {
+      "host": "baochinhphu.vn",
+      "provider": "baochinhphu.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit baochinhphu.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "basemaps.cartocdn.com",
       "provider": "basemaps.cartocdn.com",
       "kind": "structured",
@@ -2168,6 +2202,23 @@
       ]
     },
     {
+      "host": "cafef.vn",
+      "provider": "cafef.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cafef.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "calgaryherald.com",
       "provider": "calgaryherald.com",
       "kind": "feed",
@@ -2195,6 +2246,23 @@
       "references": [
         {
           "path": "scripts/seed-global-tenders.mjs"
+        }
+      ]
+    },
+    {
+      "host": "cand.vn",
+      "provider": "cand.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit cand.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
         }
       ]
     },
@@ -2908,6 +2976,23 @@
       ]
     },
     {
+      "host": "dantri.com.vn",
+      "provider": "dantri.com.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit dantri.com.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "dash4.antik.sk",
       "provider": "dash4.antik.sk",
       "kind": "feed",
@@ -3493,6 +3578,23 @@
       ]
     },
     {
+      "host": "e.vnexpress.net",
+      "provider": "e.vnexpress.net",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit e.vnexpress.net and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "e00-elmundo.uecdn.es",
       "provider": "e00-elmundo.uecdn.es",
       "kind": "feed",
@@ -3747,6 +3849,23 @@
       ]
     },
     {
+      "host": "en.nhandan.vn",
+      "provider": "en.nhandan.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit en.nhandan.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "en.sge.com.cn",
       "provider": "en.sge.com.cn",
       "kind": "structured",
@@ -3771,6 +3890,23 @@
       "references": [
         {
           "path": "scripts/seed-supply-chain-trade.mjs"
+        }
+      ]
+    },
+    {
+      "host": "en.vietnamplus.vn",
+      "provider": "en.vietnamplus.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit en.vietnamplus.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
         }
       ]
     },
@@ -5828,6 +5964,23 @@
       ]
     },
     {
+      "host": "kinhtedothi.vn",
+      "provider": "kinhtedothi.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit kinhtedothi.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "kitco.com",
       "provider": "kitco.com",
       "kind": "feed",
@@ -6955,6 +7108,9 @@
       "status": "terms-review",
       "references": [
         {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
           "path": "src/config/feeds.ts"
         }
       ]
@@ -7037,6 +7193,23 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit newsmaker.md and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
+      "host": "nhandan.vn",
+      "provider": "nhandan.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit nhandan.vn and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -9693,6 +9866,23 @@
       ]
     },
     {
+      "host": "thanhnien.vn",
+      "provider": "thanhnien.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit thanhnien.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "thebetterindia.com",
       "provider": "thebetterindia.com",
       "kind": "feed",
@@ -10027,6 +10217,23 @@
       ]
     },
     {
+      "host": "tienphong.vn",
+      "provider": "tienphong.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit tienphong.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "tiles.openfreemap.org",
       "provider": "tiles.openfreemap.org",
       "kind": "structured",
@@ -10178,6 +10385,23 @@
       "references": [
         {
           "path": "src/main.ts"
+        }
+      ]
+    },
+    {
+      "host": "tuoitre.vn",
+      "provider": "tuoitre.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit tuoitre.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
         }
       ]
     },
@@ -10505,6 +10729,40 @@
       ]
     },
     {
+      "host": "vietnamnet.vn",
+      "provider": "vietnamnet.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit vietnamnet.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
+      "host": "vietstock.vn",
+      "provider": "vietstock.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit vietstock.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "viewfromthewing.com",
       "provider": "viewfromthewing.com",
       "kind": "structured",
@@ -10518,6 +10776,23 @@
         },
         {
           "path": "server/worldmonitor/aviation/v1/list-aviation-news.ts"
+        }
+      ]
+    },
+    {
+      "host": "vneconomy.vn",
+      "provider": "vneconomy.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit vneconomy.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
         }
       ]
     },
@@ -10559,6 +10834,23 @@
       "observed": true,
       "license": "Provider terms for this feed publisher; verify before redistribution",
       "attribution": "Credit vsquare.org and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
+      "host": "vtv.vn",
+      "provider": "vtv.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit vtv.vn and link to the original feed publisher.",
       "status": "terms-review",
       "references": [
         {
@@ -14242,6 +14534,23 @@
       ]
     },
     {
+      "host": "www.sggp.org.vn",
+      "provider": "www.sggp.org.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.sggp.org.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
+        }
+      ]
+    },
+    {
       "host": "www.shareable.net",
       "provider": "www.shareable.net",
       "kind": "feed",
@@ -14942,6 +15251,23 @@
       "references": [
         {
           "path": "server/worldmonitor/infrastructure/v1/list-service-statuses.ts"
+        }
+      ]
+    },
+    {
+      "host": "www.vietnamplus.vn",
+      "provider": "www.vietnamplus.vn",
+      "kind": "feed",
+      "observed": true,
+      "license": "Provider terms for this feed publisher; verify before redistribution",
+      "attribution": "Credit www.vietnamplus.vn and link to the original feed publisher.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "server/worldmonitor/news/v1/_feeds.ts"
+        },
+        {
+          "path": "src/config/feeds.ts"
         }
       ]
     },

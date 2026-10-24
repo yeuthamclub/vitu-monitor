@@ -450,6 +450,7 @@
     "panelCatCommodityEcon": "अर्थव्यवस्था और व्यापार",
     "panelCatHappyNews": "अच्छी खबरें",
     "panelCatHappyPlanet": "प्लैनेट और दान",
+    "panelCatVietnamNews": "वियतनाम समाचार",
     "embed": "एम्बेड"
   },
   "panels": {
@@ -518,6 +519,13 @@
     "policy": "एआई नीति और नियम",
     "regulation": "एआई नियम डैशबोर्ड",
     "finRegulation": "वित्तीय नियम",
+    "vnBreaking": "वियतनाम ब्रेकिंग न्यूज़",
+    "vnPolitics": "वियतनाम राजनीति और नीति",
+    "vnWorld": "विश्व (वियतनामी प्रेस)",
+    "vnEconomy": "वियतनाम की अर्थव्यवस्था",
+    "vnEastSea": "पूर्वी सागर (दक्षिण चीन सागर)",
+    "vnInternational": "वियतनाम पर अंतरराष्ट्रीय प्रेस",
+    "vnLawHealthTech": "वियतनाम: कानून, स्वास्थ्य और तकनीक",
     "hardware": "सेमीकंडक्टर और हार्डवेयर",
     "cloud": "क्लाउड और इंफ्रास्ट्रक्चर",
     "dev": "डेवलपर समुदाय",
