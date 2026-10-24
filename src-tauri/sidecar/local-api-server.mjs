@@ -334,7 +334,7 @@ globalThis.fetch = async function ipv4Fetch(input, init) {
             if (v) responseHeaders.set(k, Array.isArray(v) ? v.join(', ') : v);
           }
           try {
-            settle(resolve, buildSafeResponse(res.statusCode, res.statusMessage, responseHeaders, buf));
+            settle(resolve, buildSafeResponse(res.statusCode, res.statusMessage, responseHeaders, decodeContentEncoding(responseHeaders, buf)));
           } catch (error) {
             settle(reject, error);
           }

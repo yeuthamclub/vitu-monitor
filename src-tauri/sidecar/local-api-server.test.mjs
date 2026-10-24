@@ -526,6 +526,29 @@ function authFetch(url, options = {}) {
   return fetch(url, { ...options, headers });
 }
 
+// authFetch over plain node:http, returning the wire body undecoded. The
+// patched globalThis.fetch decodes Content-Encoding like a real fetch, so tests
+// that assert what the sidecar put on the wire (compression) must use this.
+function rawAuthFetch(url, options = {}) {
+  const headers = { Authorization: `Bearer ${TEST_LOCAL_API_TOKEN}`, ...(options.headers || {}) };
+  return new Promise((resolve, reject) => {
+    const req = httpRequest(url, { method: options.method || 'GET', headers }, (res) => {
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('error', reject);
+      res.on('end', () => {
+        const responseHeaders = new Headers();
+        for (const [k, v] of Object.entries(res.headers)) {
+          if (v) responseHeaders.set(k, Array.isArray(v) ? v.join(', ') : v);
+        }
+        resolve(new Response(Buffer.concat(chunks), { status: res.statusCode, headers: responseHeaders }));
+      });
+    });
+    req.on('error', reject);
+    req.end();
+  });
+}
+
 async function listen(server, host = '127.0.0.1', port = 0) {
   await new Promise((resolve, reject) => {
     const onListening = () => {
@@ -2290,7 +2313,7 @@ test('preserves Origin in Vary when gzip compression is applied', async () => {
   const { port } = await app.start();
 
   try {
-    const response = await authFetch(`http://127.0.0.1:${port}/api/large`, {
+    const response = await rawAuthFetch(`http://127.0.0.1:${port}/api/large`, {
       headers: {
         Origin: 'https://tauri.localhost',
         'Accept-Encoding': 'gzip',
@@ -3015,7 +3038,7 @@ test('prefers Brotli compression for payloads larger than 1KB when supported by 
   const { port } = await app.start();
 
   try {
-    const response = await authFetch(`http://127.0.0.1:${port}/api/compression-check`, {
+    const response = await rawAuthFetch(`http://127.0.0.1:${port}/api/compression-check`, {
       headers: { 'Accept-Encoding': 'gzip, br' },
     });
     assert.equal(response.status, 200);
@@ -3056,7 +3079,7 @@ test('uses gzip compression when Brotli is unavailable but gzip is accepted', as
   const { port } = await app.start();
 
   try {
-    const response = await authFetch(`http://127.0.0.1:${port}/api/compression-check`, {
+    const response = await rawAuthFetch(`http://127.0.0.1:${port}/api/compression-check`, {
       headers: { 'Accept-Encoding': 'gzip' },
     });
     assert.equal(response.status, 200);
@@ -3937,6 +3960,39 @@ test('nested self-origin fetches do not hold upstream semaphore slots (#5449)', 
       assert.equal(result.status, 200);
       assert.deepEqual(result.json, { ok: true });
     }
+  } finally {
+    await app.close();
+    await localApi.cleanup();
+  }
+});
+
+test('the patched globalThis.fetch decodes a gzip-encoded response body', async () => {
+  // Fork (Realtime Monitor) PR-1d: the digest read VietnamPlus, Nhân Dân and
+  // others through this fetch; it returned the raw gzip bytes, which failed
+  // the RSS shape check, so those feeds were always empty. The sidecar
+  // compresses its own large responses, which gives a loopback gzip origin.
+  const payload = { title: 'Tin nóng', filler: 'x'.repeat(4096) };
+  const localApi = await setupApiDir({
+    'big.js': `
+      export default async function handler() {
+        return new Response(${JSON.stringify(JSON.stringify(payload))}, { status: 200, headers: { 'content-type': 'application/json' } });
+      }
+    `,
+  });
+  const app = await createLocalApiServer({
+    port: 0,
+    apiDir: localApi.apiDir,
+    logger: { log() { }, warn() { }, error() { } },
+  });
+  const { port } = await app.start();
+  try {
+    const res = await globalThis.fetch(`http://127.0.0.1:${port}/api/big`, {
+      headers: { 'X-WorldMonitor-Local-Token': TEST_LOCAL_API_TOKEN, 'Accept-Encoding': 'gzip' },
+      signal: AbortSignal.timeout(3000),
+    });
+    assert.equal(res.status, 200);
+    assert.equal(res.headers.get('content-encoding'), null, 'decoded body must not keep the encoding header');
+    assert.deepEqual(await res.json(), payload);
   } finally {
     await app.close();
     await localApi.cleanup();
