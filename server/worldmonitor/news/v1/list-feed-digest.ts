@@ -129,6 +129,7 @@ import {
 import { getRelayBaseUrl, getRelayHeaders } from '../../../_shared/relay';
 import diplomacyKeywordsData from '../../../../shared/diplomacy-keywords.json';
 import { NEWS_LANGUAGES } from '../../../../src/shared/public-rpc-cache';
+import { decodeFeedText, parseFeedDateMs } from './_feed-text';
 // #6428: entity corroboration must count publishers, not feed labels.
 import {
   MIN_CORROBORATING_PUBLISHERS,
@@ -998,6 +999,9 @@ export async function fetchAndParseRss(
   // v9→v10 (#7748): retain a bounded country headline pool beyond entry five.
   // v10→v11 (#8398): items gained the publisher-link ingest gate. Warm v10
   // rows carry un-gated links, so force a cold parse to gate every link.
+  // v11→v12 (fork PR-1d): titles decode named HTML entities and NFC, and
+  // zoneless .vn dates read as +07:00. Warm v11 rows hold the raw entities and
+  // dropped those feeds as undated, so force a cold parse.
   const cacheKey = rssFeedCacheKey(variant, feed.url);
 
   try {
@@ -1290,8 +1294,7 @@ function parseRssXml(xml: string, feed: ServerFeed, variant: string): ParseResul
       if (forDigest) droppedUndated++;
       continue;
     }
-    const parsedDate = new Date(pubDateStr);
-    const parsedMs = parsedDate.getTime();
+    const parsedMs = parseFeedDateMs(pubDateStr, feed.url);
     if (Number.isNaN(parsedMs)) {
       if (forDigest) droppedUndated++;
       continue;
@@ -1525,11 +1528,14 @@ function extractTag(xml: string, tag: string): string {
   const cdataRe = cached?.cdata ?? new RegExp(`<${tag}[^>]*>\\s*<!\\[CDATA\\[([\\s\\S]*?)\\]\\]>\\s*<\\/${tag}>`, 'i');
   const plainRe = cached?.plain ?? new RegExp(`<${tag}[^>]*>([^<]*)<\\/${tag}>`, 'i');
 
+  // decodeFeedText: named HTML entities some publishers put even inside CDATA
+  // (never lt/gt/amp/quot/apos), plus NFC. It runs before decodeXmlEntities so
+  // an escaped `&amp;oacute;` stays literal rather than decoding twice.
   const cdataMatch = xml.match(cdataRe);
-  if (cdataMatch) return cdataMatch[1]!.trim();
+  if (cdataMatch) return decodeFeedText(cdataMatch[1]!.trim());
 
   const match = xml.match(plainRe);
-  return match ? decodeXmlEntities(match[1]!.trim()) : '';
+  return match ? decodeXmlEntities(decodeFeedText(match[1]!.trim())).normalize('NFC') : '';
 }
 
 /**
