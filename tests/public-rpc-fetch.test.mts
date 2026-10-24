@@ -19,6 +19,18 @@ describe('publicRpcFetch', () => {
     );
   });
 
+  // Fork-only (Realtime Monitor): the vietnam variant's digest is a public shape too.
+  it('allows the vietnam digest through the shared public cache contract', () => {
+    assert.equal(
+      isPublicSharedRpcRequest('https://api.worldmonitor.app/api/news/v1/list-feed-digest?variant=vietnam&lang=vi&public=1'),
+      true,
+    );
+    assert.equal(
+      isPublicSharedRpcRequest('https://api.worldmonitor.app/api/news/v1/list-feed-digest?variant=vietnamx&lang=vi&public=1'),
+      false,
+    );
+  });
+
   it('keeps the allowlist-only transport scoped to the displacement summary call', () => {
     const source = readFileSync(new URL('../src/services/displacement/index.ts', import.meta.url), 'utf8');
 

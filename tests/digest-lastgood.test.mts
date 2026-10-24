@@ -426,6 +426,40 @@ describe('durable last-good wiring (#7084)', () => {
     }
   });
 
+  // Fork-only (Realtime Monitor): variant=vietnam used to fall back to full,
+  // so the vn-* panels never found their buckets.
+  it('serves variant=vietnam from its own scope, not the full digest', async () => {
+    for (const lang of ['vi', 'en']) {
+      reset();
+      const data = body(['https://vnexpress.net/a-1.html'], COVERAGE);
+      stub.fetchMeta = { data, source: 'cache', leader: false };
+      const result = await mod.listFeedDigest(ctx(), { variant: 'vietnam', lang });
+      assert.deepEqual(stub.fetchKeys, [`news:digest:v1:vietnam:${lang}`]);
+      assert.ok(mod.__testing__.fallbackDigestCache.has(`vietnam:${lang}`));
+      assert.ok(!mod.__testing__.fallbackDigestCache.has(`full:${lang}`));
+      assert.deepEqual(result.categories, data.categories);
+    }
+  });
+
+  it('builds the vietnam digest from the vn-* buckets only', () => {
+    const vnCategories = ['vn-breaking', 'vn-politics', 'vn-world', 'vn-economy', 'vn-east-sea', 'vn-international', 'vn-law-health-tech'];
+    const { allEntries, batches } = mod.__testing__.buildDigestFeedBatches('vietnam', 'vi');
+    assert.deepEqual([...new Set(allEntries.map((e: any) => e.category))].sort(), [...vnCategories].sort());
+    assert.ok(!allEntries.some((e: any) => e.category === 'intel'), 'INTEL_SOURCES belong to full only');
+    // Vietnamnet returns ~1000 items per fetch; deadlinePriority starts it first.
+    assert.match(batches[0][0].feed.name, /^Vietnamnet /);
+
+    // An English request keeps English feeds plus the strategic Vietnamese ones,
+    // so an English UI still sees the core VN news.
+    const en = mod.__testing__.buildDigestFeedBatches('vietnam', 'en').allEntries;
+    assert.ok(en.length > 0 && en.length < allEntries.length);
+    for (const { feed } of en) {
+      assert.ok(feed.lang === 'en' || feed.strategicDefault === true, `${feed.name} must not reach an English digest`);
+    }
+    assert.ok(en.some((e: any) => e.feed.name === 'VnExpress International'));
+    assert.ok(en.some((e: any) => e.feed.name === 'VnExpress'));
+  });
+
   it('keeps the warm full:en shard when other langs are sprayed past the cap', async () => {
     // The scenario the eviction policy exists for, and the one the original
     // test missed: full:en is already warm, then enough OTHER keys are written

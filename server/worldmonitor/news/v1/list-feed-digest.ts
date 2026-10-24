@@ -140,7 +140,9 @@ import {
 
 const RSS_ACCEPT = 'application/rss+xml, application/xml, text/xml, */*';
 
-const VALID_VARIANTS = new Set(['full', 'tech', 'finance', 'happy', 'commodity']);
+// 'vietnam' is fork-only (Realtime Monitor): its vn-* buckets live in
+// VARIANT_FEEDS.vietnam in _feeds.ts.
+const VALID_VARIANTS = new Set(['full', 'tech', 'finance', 'happy', 'commodity', 'vietnam']);
 // The one digest language set, shared with the gateway's public-shape
 // classifier so a CDN-shielded `?lang=xx&public=1` shape and the handler can
 // never disagree. Anything outside it is a 400 (#8360).
@@ -169,7 +171,7 @@ function touchIsolateEntry(key: string): void {
  * Evict the least-recently-used entry, never the default-language shard.
  *
  * #8385 review: the cap (50) is below the legitimate key space — VALID_VARIANTS
- * x DIGEST_LANGUAGES is 135 — so ordinary multi-locale traffic, not just
+ * x DIGEST_LANGUAGES is 162 (135 upstream, plus the fork's vietnam variant) — so ordinary multi-locale traffic, not just
  * abuse, can cycle past it. Pinning `<variant>:en` costs one slot per variant
  * and keeps the shard every degraded serve falls back to, which is the whole
  * point of this tier. Raising the cap to 135 instead would mean ~17MB of 126KB
