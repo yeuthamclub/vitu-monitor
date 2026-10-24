@@ -199,6 +199,30 @@ export const SOURCE_TYPES: Record<string, SourceType> = {
   'Times of India': 'mainstream',
   'The Guardian Post': 'mainstream', 'Tchadinfos': 'mainstream',
   'Alwihda Info': 'mainstream', 'Radio Ndeke Luka': 'mainstream',
+  // Vietnam variant feeds (Realtime Monitor fork, PR-1b). Factual ownership
+  // categories only; propaganda risk stays unreviewed pending an editorial
+  // decision, so these names deliberately have no SOURCE_PROPAGANDA_RISK entry.
+  'Báo Chính phủ Thời sự': 'gov', 'Báo Chính phủ Chính sách mới': 'gov',
+  'Báo Chính phủ Quốc tế': 'gov',
+  'VietnamPlus': 'wire', 'VietnamPlus English': 'wire',
+  'CafeF': 'market', 'CafeF Vĩ mô': 'market', 'CafeF Doanh nghiệp': 'market',
+  'CafeF Chứng khoán': 'market', 'VnEconomy': 'market', 'Vietstock Cổ phiếu': 'market',
+  'AMTI': 'intel',
+  'Google News Biển Đông': 'other', 'Google News South China Sea Vietnam': 'other',
+  'VnExpress': 'mainstream', 'VnExpress Thời sự': 'mainstream', 'VnExpress Thế giới': 'mainstream',
+  'VnExpress Kinh doanh': 'mainstream', 'VnExpress Pháp luật': 'mainstream',
+  'VnExpress Sức khỏe': 'mainstream', 'VnExpress Khoa học công nghệ': 'mainstream',
+  'VnExpress International': 'mainstream',
+  'Tuổi Trẻ': 'mainstream', 'Tuổi Trẻ Thời sự': 'mainstream', 'Tuổi Trẻ Thế giới': 'mainstream',
+  'Tuoi Tre News': 'mainstream',
+  'Thanh Niên': 'mainstream', 'Thanh Niên Thời sự': 'mainstream', 'Thanh Niên Thế giới': 'mainstream',
+  'Dân trí': 'mainstream', 'Dân trí Thế giới': 'mainstream', 'Dân trí Kinh doanh': 'mainstream',
+  'VTV': 'mainstream', 'VTV Chính trị': 'mainstream', 'VTV Thế giới': 'mainstream',
+  'Vietnamnet Thời sự': 'mainstream', 'Vietnamnet Thế giới': 'mainstream', 'Vietnamnet Kinh doanh': 'mainstream',
+  'Nhân Dân': 'mainstream', 'Nhân Dân English': 'mainstream',
+  'Tiền Phong': 'mainstream', 'Sài Gòn Giải Phóng': 'mainstream', 'Công an Nhân dân': 'mainstream',
+  'Kinh tế & Đô thị': 'mainstream',
+  'BBC Tiếng Việt': 'mainstream', 'RFI Tiếng Việt': 'mainstream',
 
   // Telegram channels (#6600). Additive keys keyed by channel display label.
   ...TELEGRAM_SOURCE_TYPES,
