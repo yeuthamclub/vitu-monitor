@@ -7,7 +7,7 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { readdir } from 'node:fs/promises';
 import { isIP } from 'node:net';
 import { promisify } from 'node:util';
-import { brotliCompress, gzipSync } from 'node:zlib';
+import { brotliCompress, brotliDecompressSync, gunzipSync, gzipSync, inflateSync } from 'node:zlib';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -63,6 +63,24 @@ async function resolveRequestBody(input, init, method, isRequest) {
   }
 
   return null;
+}
+
+// node:https hands back the raw wire body; unlike fetch() it does not decode
+// Content-Encoding. Some feeds (VietnamPlus, Nhân Dân, …) gzip even when the
+// request sends no Accept-Encoding, so decode here. Capped against zip bombs.
+const MAX_DECODED_BODY_BYTES = 32 * 1024 * 1024;
+
+function decodeContentEncoding(headers, body) {
+  const encoding = (headers.get('content-encoding') || '').trim().toLowerCase();
+  const decode = encoding === 'gzip' || encoding === 'x-gzip' ? gunzipSync
+    : encoding === 'deflate' ? inflateSync
+      : encoding === 'br' ? brotliDecompressSync
+        : null;
+  if (!decode || body.length === 0) return body;
+  const decoded = decode(body, { maxOutputLength: MAX_DECODED_BODY_BYTES });
+  headers.delete('content-encoding');
+  headers.delete('content-length');
+  return decoded;
 }
 
 function buildSafeResponse(statusCode, statusText, headers, bodyBuffer) {
@@ -1341,7 +1359,7 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = 12000) {
             if (value) headers.set(key, Array.isArray(value) ? value.join(', ') : value);
           }
           try {
-            resolve(buildSafeResponse(res.statusCode, res.statusMessage, headers, body));
+            resolve(buildSafeResponse(res.statusCode, res.statusMessage, headers, decodeContentEncoding(headers, body)));
           } catch (error) {
             reject(error);
           }
@@ -2181,6 +2199,7 @@ export const __testing__ = {
   canCompress,
   jsonForScript,
   isYahooFinanceHost,
+  decodeContentEncoding,
   setUpstreamIdleTimeoutMs(ms) {
     _upstreamIdleTimeoutMs = ms;
   },

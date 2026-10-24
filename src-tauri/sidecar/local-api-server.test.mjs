@@ -37,6 +37,22 @@ test('jsonForScript keeps any value inside an inline <script> as data', () => {
   assert.equal(runInNewContext(`(${jsonForScript('live_stream')})`), 'live_stream');
 });
 
+test('decodeContentEncoding decodes gzip/deflate/br wire bodies and drops the encoding headers', async () => {
+  const { decodeContentEncoding } = __testing__;
+  const { gzipSync, deflateSync, brotliCompressSync } = await import('node:zlib');
+  const xml = '<rss><channel><item><title>Tin nóng</title></item></channel></rss>';
+  for (const [encoding, encode] of [['gzip', gzipSync], ['deflate', deflateSync], ['br', brotliCompressSync]]) {
+    const headers = new Headers({ 'content-encoding': encoding, 'content-length': '1' });
+    const out = decodeContentEncoding(headers, encode(Buffer.from(xml)));
+    assert.equal(out.toString('utf8'), xml, encoding);
+    assert.equal(headers.get('content-encoding'), null, encoding);
+    assert.equal(headers.get('content-length'), null, encoding);
+  }
+  const plain = Buffer.from(xml);
+  assert.equal(decodeContentEncoding(new Headers(), plain), plain);
+  assert.throws(() => decodeContentEncoding(new Headers({ 'content-encoding': 'gzip' }), Buffer.from('not gzip')));
+});
+
 test('isYahooFinanceHost matches finance.yahoo.com and its subdomains only', () => {
   const { isYahooFinanceHost } = __testing__;
   for (const host of ['finance.yahoo.com', 'query1.finance.yahoo.com', 'query2.finance.yahoo.com',
