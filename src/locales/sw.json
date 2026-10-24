@@ -2964,7 +2964,8 @@
       "tabs": {
         "stress": "Mkazo wa fedha",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Currency",
       "pair": "Pair",
@@ -2983,13 +2984,19 @@
         "stress": "Mkazo wa kubadilishana kwa fedha za nje",
         "usd": "US dollar rates",
         "eur": "Bei za euro za European Central Bank",
-        "rub": "Bank of Russia rates"
+        "rub": "Bank of Russia rates",
+        "vn": "Viwango vya Vietcombank"
       },
       "sourceYahoo": "Source: Yahoo Finance",
       "sourceEcb": "Chanzo: European Central Bank",
       "rubBase": "Bank of Russia — RUB per 1 unit",
       "rubPerUnit": "RUB per unit",
-      "sourceCbr": "Source: Bank of Russia"
+      "sourceCbr": "Source: Bank of Russia",
+      "vnBase": "Vietcombank — VND kwa kila kitengo 1",
+      "vnBuy": "Nunua",
+      "vnTransfer": "Hamisha",
+      "vnSell": "Uza",
+      "sourceVcb": "Chanzo: Vietcombank (kwa marejeleo tu)"
     },
     "passkeyOffer": {
       "title": "Hifadhi passkey?",

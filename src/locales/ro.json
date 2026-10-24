@@ -2914,7 +2914,8 @@
       "tabs": {
         "stress": "Stres valutar",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Monedă",
       "pair": "Pereche",
@@ -2935,11 +2936,17 @@
         "stress": "Stres în schimbul valutar",
         "usd": "Ratele dolarului american",
         "eur": "Rate euro ale Băncii Centrale Europene",
-        "rub": "Ratele Băncii Rusiei"
+        "rub": "Ratele Băncii Rusiei",
+        "vn": "Cursuri Vietcombank"
       },
       "rubBase": "Banca Rusiei — ruble per 1 unitate",
       "rubPerUnit": "Ruble per unitate",
-      "sourceCbr": "Sursă: Banca Rusiei"
+      "sourceCbr": "Sursă: Banca Rusiei",
+      "vnBase": "Vietcombank — VND pentru 1 unitate",
+      "vnBuy": "Cumpără",
+      "vnTransfer": "Transfer",
+      "vnSell": "Vinde",
+      "sourceVcb": "Sursă: Vietcombank (doar cu titlu de referință)"
     },
     "passkeyOffer": {
       "title": "Salvezi o cheie de acces?",

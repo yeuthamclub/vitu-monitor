@@ -3016,7 +3016,8 @@
       "tabs": {
         "stress": "Currency stress",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VNĐ)"
       },
       "currency": "Currency",
       "pair": "Pair",
@@ -3035,13 +3036,19 @@
         "stress": "Foreign exchange stress",
         "usd": "US dollar rates",
         "eur": "European Central Bank euro rates",
-        "rub": "Bank of Russia rates"
+        "rub": "Bank of Russia rates",
+        "vn": "Vietcombank rates"
       },
       "sourceYahoo": "Source: Yahoo Finance",
       "sourceEcb": "Source: European Central Bank",
       "rubBase": "Bank of Russia — RUB per 1 unit",
       "rubPerUnit": "RUB per unit",
-      "sourceCbr": "Source: Bank of Russia"
+      "sourceCbr": "Source: Bank of Russia",
+      "vnBase": "Vietcombank — VNĐ per 1 unit",
+      "vnBuy": "Buy",
+      "vnTransfer": "Transfer",
+      "vnSell": "Sell",
+      "sourceVcb": "Source: Vietcombank (reference only)"
     },
     "passkeyOffer": {
       "title": "Save a passkey?",

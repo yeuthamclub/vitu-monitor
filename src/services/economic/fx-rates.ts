@@ -100,17 +100,42 @@ export type FxRubQuoteRow = {
 };
 
 /**
+ * One Vietcombank board row — the fork's `vn:fx-rates:v1` (PR-2a).
+ *
+ * `vn:fx-rates:v1` quotes a FOURTH direction: VND per 1 unit of the foreign
+ * currency, as buy/transfer/sell board rates rather than a single mid rate
+ * (`scripts/seed-vn-fx-rates.mjs`). Buy is what the bank pays for foreign
+ * cash (lowest), sell is what it charges (highest); folding these into any
+ * existing table would quote the pair the wrong way round, so they get their
+ * own tab and the direction lives in the field names.
+ */
+export type FxVnBankRateRow = {
+  currency: string;
+  /** VND the bank pays for 1 unit of `currency`; null when the board dashes the leg. */
+  buyVndPerUnit: number | null;
+  /** VND per 1 unit on transfer (no cash handling) — between buy and sell. */
+  transferVndPerUnit: number | null;
+  /** VND the bank charges for 1 unit of `currency`. */
+  sellVndPerUnit: number | null;
+  /** Board publisher, e.g. 'Vietcombank'. */
+  bank: string;
+  /** The board's own DateTime, normalized to +07:00 ISO. */
+  asOf: string | null;
+};
+
+/**
  * Everything the FX panel renders. Declared here rather than in the component
  * so the service layer that assembles it does not have to import from
  * `src/components/` — a direction `npm run lint:boundaries` rejects.
  */
-export type FxSourceId = 'stress' | 'usd' | 'eur' | 'rub';
+export type FxSourceId = 'stress' | 'usd' | 'eur' | 'rub' | 'vn';
 
 export type FxPanelRows = {
   stress: FxStressRow[];
   usd: FxUsdSpotRow[];
   eur: FxEurSpotRow[];
   rub: FxRubQuoteRow[];
+  vn: FxVnBankRateRow[];
   /**
    * Sources that yielded no usable rows this load.
    *
@@ -153,6 +178,7 @@ export function degradedSources(rows: Omit<FxPanelRows, 'degraded'>): FxSourceId
   if (rows.usd.length === 0) degraded.push('usd');
   if (rows.eur.length === 0) degraded.push('eur');
   if (rows.rub.length === 0) degraded.push('rub');
+  if (rows.vn.length === 0) degraded.push('vn');
   return degraded;
 }
 
@@ -187,6 +213,47 @@ function finiteNumber(value: unknown): number | null {
 
 function nonEmptyString(value: unknown): string | null {
   return typeof value === 'string' && value !== '' ? value : null;
+}
+
+/**
+ * Project `vn:fx-rates:v1` onto Vietcombank board rows, currency-code order.
+ *
+ * A row is dropped when any of its three amounts is not a positive finite
+ * number — the board's whole content is the buy/transfer/sell triple, and a
+ * partial row would render an empty cell that reads as a free exchange. The
+ * upstream ~19-currency board has no plausible genuine empty, so an all-empty
+ * result is treated as a dead source by `degradedSources`.
+ *
+ * @param payload the `vn:fx-rates:v1` value, enveloped or not
+ */
+export function toVnBankRateRows(payload: unknown): FxVnBankRateRow[] {
+  const unwrapped = unwrapEnvelope(payload, 'rates');
+  if (!isRecord(unwrapped)) return [];
+  const rates = unwrapped.rates;
+  if (!isRecord(rates)) return [];
+  const bank = nonEmptyString(unwrapped.bank) ?? 'Vietcombank';
+  const asOf = nonEmptyString(unwrapped.asOf);
+
+  // A dashed leg (the bank does not trade that pair for cash) arrives as null
+  // and stays null; a non-positive number is malformed and reads as absent.
+  const leg = (value: unknown): number | null => {
+    const n = finiteNumber(value);
+    return n !== null && n > 0 ? n : null;
+  };
+
+  const rows: FxVnBankRateRow[] = [];
+  for (const [currency, value] of Object.entries(rates)) {
+    if (!isRecord(value)) continue;
+    const buyVndPerUnit = leg(value.buy);
+    const transferVndPerUnit = leg(value.transfer);
+    const sellVndPerUnit = leg(value.sell);
+    // A row with no usable quote at all renders three empty cells that read
+    // as a free exchange — drop it.
+    if (buyVndPerUnit === null && transferVndPerUnit === null && sellVndPerUnit === null) continue;
+    rows.push({ currency, buyVndPerUnit, transferVndPerUnit, sellVndPerUnit, bank, asOf });
+  }
+
+  return rows.sort((a, b) => a.currency.localeCompare(b.currency));
 }
 
 /**

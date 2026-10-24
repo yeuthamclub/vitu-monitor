@@ -2510,7 +2510,8 @@
       "tabs": {
         "stress": "Valutastress",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Valuta",
       "pair": "Paar",
@@ -2531,11 +2532,17 @@
         "stress": "Valutastress",
         "usd": "Koersen Amerikaanse dollar",
         "eur": "Europese Centrale Bank euro-koersen",
-        "rub": "Koersen van de Centrale Bank van Rusland"
+        "rub": "Koersen van de Centrale Bank van Rusland",
+        "vn": "Vietcombank-koersen"
       },
       "rubBase": "Centrale Bank van Rusland — roebel per 1 eenheid",
       "rubPerUnit": "Roebel per eenheid",
-      "sourceCbr": "Bron: Centrale Bank van Rusland"
+      "sourceCbr": "Bron: Centrale Bank van Rusland",
+      "vnBase": "Vietcombank — VND per 1 eenheid",
+      "vnBuy": "Koop",
+      "vnTransfer": "Overboeking",
+      "vnSell": "Verkoop",
+      "sourceVcb": "Bron: Vietcombank (alleen ter referentie)"
     },
     "passkeyOffer": {
       "title": "Wachtsleutel opslaan?",

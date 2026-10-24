@@ -2971,7 +2971,8 @@
       "tabs": {
         "stress": "إجهاد العملات",
         "spot": "الفورية",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "العملة",
       "pair": "الزوج",
@@ -2992,11 +2993,17 @@
         "stress": "إجهاد الصرف الأجنبي",
         "usd": "أسعار الدولار الأمريكي",
         "eur": "أسعار اليورو للبنك المركزي الأوروبي",
-        "rub": "أسعار بنك روسيا"
+        "rub": "أسعار بنك روسيا",
+        "vn": "أسعار Vietcombank"
       },
       "rubBase": "بنك روسيا — روبل لكل وحدة واحدة",
       "rubPerUnit": "روبل لكل وحدة",
-      "sourceCbr": "المصدر: بنك روسيا"
+      "sourceCbr": "المصدر: بنك روسيا",
+      "vnBase": "Vietcombank — VND لكل وحدة واحدة",
+      "vnBuy": "شراء",
+      "vnTransfer": "تحويل",
+      "vnSell": "بيع",
+      "sourceVcb": "المصدر: Vietcombank (للمراجعة فقط)"
     },
     "passkeyOffer": {
       "title": "حفظ مفتاح المرور؟",

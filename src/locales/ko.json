@@ -2876,7 +2876,8 @@
       "tabs": {
         "stress": "통화 스트레스",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "통화",
       "pair": "통화쌍",
@@ -2897,11 +2898,17 @@
         "stress": "외환 스트레스",
         "usd": "미국 달러 환율",
         "eur": "유럽중앙은행 유로 환율",
-        "rub": "러시아 중앙은행 환율"
+        "rub": "러시아 중앙은행 환율",
+        "vn": "Vietcombank 환율"
       },
       "rubBase": "러시아 중앙은행 — 단위당 루블",
       "rubPerUnit": "단위당 루블",
-      "sourceCbr": "출처: 러시아 중앙은행"
+      "sourceCbr": "출처: 러시아 중앙은행",
+      "vnBase": "Vietcombank — 1단위당 VND",
+      "vnBuy": "매입",
+      "vnTransfer": "이체",
+      "vnSell": "매도",
+      "sourceVcb": "출처: Vietcombank (참고용)"
     },
     "passkeyOffer": {
       "title": "패스키를 저장하시겠어요?",

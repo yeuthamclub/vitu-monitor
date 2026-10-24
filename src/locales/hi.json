@@ -2964,7 +2964,8 @@
       "tabs": {
         "stress": "मुद्रा तनाव",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "मुद्रा",
       "pair": "जोड़ी",
@@ -2985,11 +2986,17 @@
         "stress": "विदेशी मुद्रा तनाव",
         "usd": "US डॉलर दरें",
         "eur": "यूरोपीय केंद्रीय बैंक की यूरो दरें",
-        "rub": "बैंक ऑफ रूस दरें"
+        "rub": "बैंक ऑफ रूस दरें",
+        "vn": "Vietcombank दरें"
       },
       "rubBase": "बैंक ऑफ रूस — प्रति 1 इकाई रूबल",
       "rubPerUnit": "प्रति इकाई रूबल",
-      "sourceCbr": "स्रोत: बैंक ऑफ रूस"
+      "sourceCbr": "स्रोत: बैंक ऑफ रूस",
+      "vnBase": "Vietcombank — प्रति 1 इकाई VND",
+      "vnBuy": "खरीद",
+      "vnTransfer": "ट्रांसफर",
+      "vnSell": "बिक्री",
+      "sourceVcb": "स्रोत: Vietcombank (केवल संदर्भ हेतु)"
     },
     "passkeyOffer": {
       "title": "एक पासकी सेव करें?",

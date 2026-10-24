@@ -2990,7 +2990,8 @@
       "tabs": {
         "stress": "Devizni stress",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Valuta",
       "pair": "Par",
@@ -3011,11 +3012,17 @@
         "stress": "Devizni stress",
         "usd": "Tečajevi američkog dolara",
         "eur": "Kamatne stope eura Europske centralne banke",
-        "rub": "Tečajevi Središnje banke Rusije"
+        "rub": "Tečajevi Središnje banke Rusije",
+        "vn": "Vietcombank tečajevi"
       },
       "rubBase": "Središnja banka Rusije — rubalja po 1 jedinici",
       "rubPerUnit": "Rubalja po jedinici",
-      "sourceCbr": "Izvor: Središnja banka Rusije"
+      "sourceCbr": "Izvor: Središnja banka Rusije",
+      "vnBase": "Vietcombank — VND po 1 jedinici",
+      "vnBuy": "Kupovina",
+      "vnTransfer": "Prijenos",
+      "vnSell": "Prodaja",
+      "sourceVcb": "Izvor: Vietcombank (samo za referencu)"
     },
     "passkeyOffer": {
       "title": "Spremi ključ pristupa?",

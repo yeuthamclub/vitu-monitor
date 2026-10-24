@@ -4,7 +4,7 @@ import { joinSafeHtml, safeHtml } from '@/utils/sanitize';
 import type { SafeHtml } from '@/utils/sanitize';
 
 import { FX_STRESS_THRESHOLD_PCT } from '@/services/economic/fx-rates';
-import type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow, FxUsdSpotRow } from '@/services/economic/fx-rates';
+import type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow, FxUsdSpotRow, FxVnBankRateRow } from '@/services/economic/fx-rates';
 
 /**
  * FX panel — issue #6199 (#6231).
@@ -30,7 +30,7 @@ import type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow,
  * down.
  */
 
-export type FxTabId = 'stress' | 'spot' | 'rub';
+export type FxTabId = 'stress' | 'spot' | 'rub' | 'vn';
 
 /**
  * FX rates span six orders of magnitude — one Kuwaiti dinar is 3.25 USD and one
@@ -85,6 +85,7 @@ export class FxPanel extends Panel {
   private usd: FxUsdSpotRow[] = [];
   private eur: FxEurSpotRow[] = [];
   private rub: FxRubQuoteRow[] = [];
+  private vn: FxVnBankRateRow[] = [];
   private degraded: FxSourceId[] = [];
   private tab: FxTabId = DEFAULT_TAB;
   /** True when the tab-fallback moved us, not the user. See render(). */
@@ -140,6 +141,7 @@ export class FxPanel extends Panel {
     this.usd = data.usd;
     this.eur = data.eur;
     this.rub = data.rub;
+    this.vn = data.vn;
     this.degraded = data.degraded;
     this.loaded = true;
     this.render();
@@ -198,18 +200,23 @@ export class FxPanel extends Panel {
     return this.rub.length > 0;
   }
 
+  private hasVn(): boolean {
+    return this.vn.length > 0;
+  }
+
   private render(): void {
     if (!this.loaded) return;
 
-    // Four independent sources all returning nothing is an outage, not an
+    // Five independent sources all returning nothing is an outage, not an
     // empty feed — there is no world in which 45 currencies, 47 USD rates, 7
-    // ECB pairs and 54 CBR pairs are all legitimately absent. `ensureHydrated`
+    // ECB pairs, 54 CBR pairs and the ~19-currency Vietcombank board are all
+    // legitimately absent. `ensureHydrated`
     // swallows fetch, timeout and JSON errors into `undefined`, so a dead
     // bootstrap is indistinguishable from a miss at this layer; reporting "No
     // data" would state as fact something we cannot know, and would skip the
     // retry that recovers it. Surface it as a failure so the error state
     // schedules one.
-    if (!this.hasStress() && !this.hasSpot() && !this.hasRub()) {
+    if (!this.hasStress() && !this.hasSpot() && !this.hasRub() && !this.hasVn()) {
       this.showError(t('common.failedMarketData'), () => void this.fetchData());
       return;
     }
@@ -231,11 +238,12 @@ export class FxPanel extends Panel {
     // the new tab), so all-empty surfaces as the error branch above.
     if (this.tab === 'stress' && !this.hasStress()) { this.tab = 'spot'; this.tabForced = true; }
     if (this.tab === 'spot' && !this.hasSpot()) { this.tab = 'rub'; this.tabForced = true; }
-    if (this.tab === 'rub' && !this.hasRub()) { this.tab = 'stress'; this.tabForced = true; }
+    if (this.tab === 'rub' && !this.hasRub()) { this.tab = 'vn'; this.tabForced = true; }
+    if (this.tab === 'vn' && !this.hasVn()) { this.tab = 'stress'; this.tabForced = true; }
 
     const body = this.tab === 'stress'
       ? this.renderStress()
-      : this.tab === 'spot' ? this.renderSpot() : this.renderRub();
+      : this.tab === 'spot' ? this.renderSpot() : this.tab === 'rub' ? this.renderRub() : this.renderVn();
     this.setSafeContent(safeHtml`${this.renderTabs()}${body}${this.renderDegradedNotice()}`);
   }
 
@@ -263,6 +271,9 @@ export class FxPanel extends Panel {
     }
     if (this.hasRub()) {
       tabs.push(safeHtml`<button class="panel-tab ${this.tab === 'rub' ? 'active' : ''}" data-tab="rub">${t('components.fx.tabs.rub')}</button>`);
+    }
+    if (this.hasVn()) {
+      tabs.push(safeHtml`<button class="panel-tab ${this.tab === 'vn' ? 'active' : ''}" data-tab="vn">${t('components.fx.tabs.vn')}</button>`);
     }
     return safeHtml`<div class="panel-tabs">${joinSafeHtml(tabs)}</div>`;
   }
@@ -440,5 +451,47 @@ export class FxPanel extends Panel {
         </table>
       </div>
       <div class="fx-footer">${t('components.fx.sourceCbr')}</div>`;
+  }
+
+  /**
+   * The Vietcombank board — fork PR-2a (`vn:fx-rates:v1`).
+   *
+   * A FOURTH quote direction: every amount is VNĐ for 1 unit of the listed
+   * currency, quoted as a buy/transfer/sell triple rather than a mid rate, so
+   * like the RUB table it stays its own tab instead of joining Spot. Buy and
+   * sell differ by the bank's spread, and the board file itself says the rates
+   * are for reference only — the footer carries that caveat.
+   */
+  private renderVn(): SafeHtml {
+    // A dashed leg (the bank does not trade that pair for cash) is a null and
+    // renders as an explicit "--", never as an empty or zero cell.
+    const cell = (value: number | null): SafeHtml => (
+      value === null ? safeHtml`<td class="fx-na">--</td>` : safeHtml`<td>${formatRate(value)}</td>`
+    );
+    const rows = joinSafeHtml(this.vn.map((r) => safeHtml`
+      <tr>
+        <td class="fx-ccy"><span class="fx-ccy-code">${r.currency}</span></td>
+        ${cell(r.buyVndPerUnit)}
+        ${cell(r.transferVndPerUnit)}
+        ${cell(r.sellVndPerUnit)}
+      </tr>`));
+
+    const asOf = this.vn.find((r) => r.asOf !== null)?.asOf ?? null;
+    return safeHtml`
+      <div class="fx-section-title">${t('components.fx.vnBase')}</div>
+      <div class="fx-scroll">
+        <table class="fx-table">
+          <thead>
+            <tr>
+              <th scope="col" class="fx-ccy">${t('components.fx.currency')}</th>
+              <th scope="col">${t('components.fx.vnBuy')}</th>
+              <th scope="col">${t('components.fx.vnTransfer')}</th>
+              <th scope="col">${t('components.fx.vnSell')}</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <div class="fx-footer">${t('components.fx.sourceVcb')}${asOf ? ` · ${asOf}` : ''}</div>`;
   }
 }

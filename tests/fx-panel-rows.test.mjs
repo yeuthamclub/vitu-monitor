@@ -1,6 +1,6 @@
 // FX panel row mappers — issue #6199 (#6231).
 //
-// Four seeded payloads feed one panel, and they do NOT agree on quote
+// Five seeded payloads feed one panel, and they do NOT agree on quote
 // direction, envelope shape, or nullability. That disagreement is the whole
 // reason these mappers exist rather than object literals at the call site:
 //
@@ -8,6 +8,7 @@
 //   shared:fx-rates:v1   { CCY: number } flat    value       = USD per 1 CCY
 //   economic:ecb-fx-rates:v1 (via RPC)           rate        = CCY per 1 EUR
 //   economic:cbr-rates:v1 { rates: {...} }       rate        = RUB per 1 CCY
+//   vn:fx-rates:v1       { rates: {...} }        buy/transfer/sell = VNĐ per 1 CCY
 //
 // Rendering any of these under the wrong base quotes the rate upside down —
 // the exact failure the issue calls out for the RUB table. These tests pin the
@@ -23,6 +24,7 @@ import {
   toRubQuoteRows,
   toUsdSpotRows,
   toEurSpotRows,
+  toVnBankRateRows,
 } from '../src/services/economic/fx-rates.ts';
 
 // ─── economic:fx:yoy:v1 ────────────────────────────────────────────────────────
@@ -243,32 +245,34 @@ test('tolerates a raw envelope and rejects unusable USD payloads', () => {
 //
 // The client loaders return the same value for a transport failure and a cache
 // miss, so "this source is empty" is the only signal available. None of the
-// four has a plausible genuine empty — 45 currencies, 47 USD rates, 7 ECB
-// pairs, 54 CBR pairs — so an empty one is a dead one, and that inference is
-// what drives the panel's degraded notice and its retry.
+// five has a plausible genuine empty — 45 currencies, 47 USD rates, 7 ECB
+// pairs, 54 CBR pairs, ~19 Vietcombank board currencies — so an empty one is a
+// dead one, and that inference is what drives the panel's degraded notice and
+// its retry.
 
 test('names exactly the sources that came back empty', () => {
-  const full = { stress: [{}], usd: [{}], eur: [{}], rub: [{}] };
+  const full = { stress: [{}], usd: [{}], eur: [{}], rub: [{}], vn: [{}] };
   assert.deepEqual(degradedSources(full), []);
   assert.deepEqual(degradedSources({ ...full, stress: [] }), ['stress']);
   assert.deepEqual(degradedSources({ ...full, usd: [] }), ['usd']);
   assert.deepEqual(degradedSources({ ...full, eur: [] }), ['eur']);
   assert.deepEqual(degradedSources({ ...full, rub: [] }), ['rub']);
+  assert.deepEqual(degradedSources({ ...full, vn: [] }), ['vn']);
 });
 
 test('reports every empty source, not just the first', () => {
   // A one-source-only report would leave the panel silently omitting a table
   // it never named.
   assert.deepEqual(
-    degradedSources({ stress: [], usd: [], eur: [], rub: [] }),
-    ['stress', 'usd', 'eur', 'rub'],
+    degradedSources({ stress: [], usd: [], eur: [], rub: [], vn: [] }),
+    ['stress', 'usd', 'eur', 'rub', 'vn'],
   );
   assert.deepEqual(
-    degradedSources({ stress: [], usd: [{}], eur: [], rub: [] }),
-    ['stress', 'eur', 'rub'],
+    degradedSources({ stress: [], usd: [{}], eur: [], rub: [], vn: [] }),
+    ['stress', 'eur', 'rub', 'vn'],
   );
   assert.deepEqual(
-    degradedSources({ stress: [], usd: [{}], eur: [], rub: [{}] }),
+    degradedSources({ stress: [], usd: [{}], eur: [], rub: [{}], vn: [{}] }),
     ['stress', 'eur'],
   );
 });
@@ -451,4 +455,74 @@ test('tolerates a raw envelope and rejects unusable RUB payloads', () => {
   for (const bad of [undefined, null, {}, { rates: [] }, { rates: null }, [], 'x', 42]) {
     assert.deepEqual(toRubQuoteRows(bad), [], `expected [] for ${JSON.stringify(bad)}`);
   }
+});
+
+// ─── vn:fx-rates:v1 ────────────────────────────────────────────────────────────
+//
+// Shape per scripts/seed-vn-fx-rates.mjs: { bank, asOf, asOfDate, rates: { CCY:
+// { buy, transfer, sell } } }. A FOURTH quote direction — VNĐ per 1 unit of the
+// listed currency — and a buy/transfer/sell board triple rather than a mid
+// rate, so it can never join the Spot tables.
+
+function vnBoard(rates, extra = {}) {
+  return { bank: 'Vietcombank', asOf: '2026-10-24T19:03:04+07:00', rates, ...extra };
+}
+
+test('maps the Vietcombank board with the direction named in every field', () => {
+  const rows = toVnBankRateRows(vnBoard({
+    USD: { buy: 26330, transfer: 26368, sell: 26456 },
+    EUR: { buy: 28058.32, transfer: 28339.36, sell: 29027.42 },
+    JPY: { buy: 171.83, transfer: 173.54, sell: 177.75 },
+  }));
+  assert.deepEqual(rows.map((r) => r.currency), ['EUR', 'JPY', 'USD']);
+  const usd = rows.find((r) => r.currency === 'USD');
+  // VNĐ per 1 USD (~26k), never the inverse (~0.000038).
+  assert.equal(usd.buyVndPerUnit, 26330);
+  assert.equal(usd.transferVndPerUnit, 26368);
+  assert.equal(usd.sellVndPerUnit, 26456);
+  assert.equal(usd.bank, 'Vietcombank');
+  assert.equal(usd.asOf, '2026-10-24T19:03:04+07:00');
+});
+
+test('keeps VN rows with a dashed leg, drops rows with no usable quote at all', () => {
+  const rows = toVnBankRateRows(vnBoard({
+    USD: { buy: 26330, transfer: 26368, sell: 26456 },
+    // The live board dashes the cash-buy leg on pairs it does not trade
+    // (DKK, SAR, …) — the row stays with a null buy, rendered as "--".
+    DKK: { buy: null, transfer: 3705, sell: 3742 },
+    // A partially-missing payload leg is absent (null), not a drop reason.
+    EUR: { buy: 28058.32 },
+    GBP: { buy: 0, transfer: 0, sell: 0 },           // zeros are not quotes
+    SGD: { buy: -1, transfer: -1, sell: -1 },        // neither are negatives
+    THB: { buy: '785.12', transfer: '792.97', sell: '811.83' }, // strings
+    HKD: null,                                       // whole record malformed
+  }));
+  assert.deepEqual(rows.map((r) => r.currency), ['DKK', 'EUR', 'USD']);
+  const dkk = rows.find((r) => r.currency === 'DKK');
+  assert.equal(dkk.buyVndPerUnit, null);
+  assert.equal(dkk.transferVndPerUnit, 3705);
+  const eur = rows.find((r) => r.currency === 'EUR');
+  assert.equal(eur.buyVndPerUnit, 28058.32);
+  assert.equal(eur.transferVndPerUnit, null);
+  assert.equal(eur.sellVndPerUnit, null);
+});
+
+test('falls back to the Vietcombank bank label and tolerates a missing asOf', () => {
+  const rows = toVnBankRateRows({ rates: { USD: { buy: 26330, transfer: 26368, sell: 26456 } } });
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].bank, 'Vietcombank');
+  assert.equal(rows[0].asOf, null);
+});
+
+test('tolerates a raw envelope and rejects unusable VN payloads', () => {
+  const payload = vnBoard({ USD: { buy: 26330, transfer: 26368, sell: 26456 } });
+  assert.equal(toVnBankRateRows({ _seed: {}, data: payload }).length, 1);
+  for (const bad of [undefined, null, {}, { rates: [] }, { rates: null }, [], 'x', 42]) {
+    assert.deepEqual(toVnBankRateRows(bad), [], `expected [] for ${JSON.stringify(bad)}`);
+  }
+});
+
+test('an empty VN board degrades the panel: named, not silently missing', () => {
+  assert.deepEqual(degradedSources({ stress: [1], usd: [1], eur: [1], rub: [1], vn: [1] }), []);
+  assert.deepEqual(degradedSources({ stress: [1], usd: [1], eur: [1], rub: [1], vn: [] }), ['vn']);
 });

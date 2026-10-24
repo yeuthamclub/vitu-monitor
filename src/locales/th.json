@@ -2876,7 +2876,8 @@
       "tabs": {
         "stress": "ความเครียดสกุลเงิน",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "สกุลเงิน",
       "pair": "คู่สกุลเงิน",
@@ -2897,11 +2898,17 @@
         "stress": "ความเครียด Foreign exchange",
         "usd": "อัตราดอลลาร์สหรัฐ",
         "eur": "อัตรา euro European Central Bank",
-        "rub": "อัตราของธนาคารกลางรัสเซีย"
+        "rub": "อัตราของธนาคารกลางรัสเซีย",
+        "vn": "อัตราแลกเปลี่ยน Vietcombank"
       },
       "rubBase": "ธนาคารกลางรัสเซีย — รูเบิลต่อ 1 หน่วย",
       "rubPerUnit": "รูเบิลต่อหน่วย",
-      "sourceCbr": "แหล่งที่มา: ธนาคารกลางรัสเซีย"
+      "sourceCbr": "แหล่งที่มา: ธนาคารกลางรัสเซีย",
+      "vnBase": "Vietcombank — VND ต่อ 1 หน่วย",
+      "vnBuy": "ซื้อ",
+      "vnTransfer": "โอน",
+      "vnSell": "ขาย",
+      "sourceVcb": "ที่มา: Vietcombank (สำหรับอ้างอิงเท่านั้น)"
     },
     "passkeyOffer": {
       "title": "บันทึกพาสคีย์ใช่ไหม?",

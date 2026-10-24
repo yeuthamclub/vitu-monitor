@@ -2510,7 +2510,8 @@
       "tabs": {
         "stress": "Valutastress",
         "spot": "Avista",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Valuta",
       "pair": "Valutapar",
@@ -2531,11 +2532,17 @@
         "stress": "Utländsk valutastress",
         "usd": "USD-kurser",
         "eur": "Europeiska centralbankens eurokurser",
-        "rub": "Kurser från Rysslands centralbank"
+        "rub": "Kurser från Rysslands centralbank",
+        "vn": "Vietcombank-kurser"
       },
       "rubBase": "Rysslands centralbank — rubel per 1 enhet",
       "rubPerUnit": "Rubel per enhet",
-      "sourceCbr": "Källa: Rysslands centralbank"
+      "sourceCbr": "Källa: Rysslands centralbank",
+      "vnBase": "Vietcombank — VND per 1 enhet",
+      "vnBuy": "Köp",
+      "vnTransfer": "Överföring",
+      "vnSell": "Sälj",
+      "sourceVcb": "Källa: Vietcombank (endast som referens)"
     },
     "passkeyOffer": {
       "title": "Spara en passkey?",

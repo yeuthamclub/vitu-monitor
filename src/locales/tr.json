@@ -2895,7 +2895,8 @@
       "tabs": {
         "stress": "Döviz stresi",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Para Birimi",
       "pair": "Çift",
@@ -2916,11 +2917,17 @@
         "stress": "Döviz stresi",
         "usd": "ABD doları kurları",
         "eur": "Avrupa Merkez Bankası euro oranları",
-        "rub": "Rusya Merkez Bankası kurları"
+        "rub": "Rusya Merkez Bankası kurları",
+        "vn": "Vietcombank kurları"
       },
       "rubBase": "Rusya Merkez Bankası — 1 birim için ruble",
       "rubPerUnit": "Birim başına ruble",
-      "sourceCbr": "Kaynak: Rusya Merkez Bankası"
+      "sourceCbr": "Kaynak: Rusya Merkez Bankası",
+      "vnBase": "Vietcombank — 1 birim başına VND",
+      "vnBuy": "Alış",
+      "vnTransfer": "Havale/EFT",
+      "vnSell": "Satış",
+      "sourceVcb": "Kaynak: Vietcombank (yalnızca bilgilendirme amaçlıdır)"
     },
     "passkeyOffer": {
       "title": "Passkey kaydedilsin mi?",

@@ -2876,7 +2876,8 @@
       "tabs": {
         "stress": "货币压力",
         "spot": "即期",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "货币",
       "pair": "货币对",
@@ -2897,11 +2898,17 @@
         "stress": "外汇压力",
         "usd": "美元汇率",
         "eur": "欧洲央行欧元汇率",
-        "rub": "俄罗斯央行汇率"
+        "rub": "俄罗斯央行汇率",
+        "vn": "Vietcombank 汇率"
       },
       "rubBase": "俄罗斯央行 — 每 1 单位卢布",
       "rubPerUnit": "每单位卢布",
-      "sourceCbr": "来源：俄罗斯央行"
+      "sourceCbr": "来源：俄罗斯央行",
+      "vnBase": "Vietcombank — 每 1 单位 VND",
+      "vnBuy": "买入",
+      "vnTransfer": "转账",
+      "vnSell": "卖出",
+      "sourceVcb": "来源：Vietcombank（仅供参考）"
     },
     "passkeyOffer": {
       "title": "保存通行密钥？",

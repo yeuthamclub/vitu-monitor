@@ -2933,7 +2933,8 @@
       "tabs": {
         "stress": "Měnová zátěž",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Měna",
       "pair": "Pár",
@@ -2954,11 +2955,17 @@
         "stress": "Devizová zátěž",
         "usd": "Kurzy amerického dolaru",
         "eur": "Sazby eura Evropské centrální banky",
-        "rub": "Kurzy ruské centrální banky"
+        "rub": "Kurzy ruské centrální banky",
+        "vn": "Kurzy Vietcombank"
       },
       "rubBase": "Ruská centrální banka — rubly za 1 jednotku",
       "rubPerUnit": "Rublů za jednotku",
-      "sourceCbr": "Zdroj: Ruská centrální banka"
+      "sourceCbr": "Zdroj: Ruská centrální banka",
+      "vnBase": "Vietcombank — VND za 1 jednotku",
+      "vnBuy": "Nákup",
+      "vnTransfer": "Převod",
+      "vnSell": "Prodej",
+      "sourceVcb": "Zdroj: Vietcombank (pouze pro informaci)"
     },
     "passkeyOffer": {
       "title": "Uložit přístupový klíč?",

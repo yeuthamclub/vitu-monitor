@@ -103,6 +103,14 @@ const ON_DEMAND_CACHE_PROFILES = {
     browser: 'max-age=60, stale-while-revalidate=60, stale-if-error=300',
     cdn: 'public, s-maxage=300, stale-while-revalidate=60, stale-if-error=300',
   },
+  // Vietcombank board, seeded every 10 minutes against a 30-minute health
+  // budget (fork PR-2a). The complete CDN window is 22m, so the shield never
+  // outlives a full seed cycle and the source's own 1-request/5-minute limit
+  // is honored behind it.
+  vnFxRates: {
+    browser: 'max-age=60, stale-while-revalidate=60, stale-if-error=600',
+    cdn: 'public, s-maxage=600, stale-while-revalidate=120, stale-if-error=600',
+  },
   // Hourly publisher, 90-minute health budget. The conservative full CDN
   // serving window is 80m, so one failed refresh cannot be hidden past health.
   forecasts: {

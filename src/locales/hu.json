@@ -2964,7 +2964,8 @@
       "tabs": {
         "stress": "Valuta stressz",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Deviza",
       "pair": "Pár",
@@ -2985,11 +2986,17 @@
         "stress": "Deviza stressz",
         "usd": "USD árfolyamok",
         "eur": "Európai Központi Bank euro árfolyamok",
-        "rub": "Orosz jegybanki árfolyamok"
+        "rub": "Orosz jegybanki árfolyamok",
+        "vn": "Vietcombank árfolyamok"
       },
       "rubBase": "Orosz jegybank — rubel 1 egységenként",
       "rubPerUnit": "Rubel egységenként",
-      "sourceCbr": "Forrás: Orosz jegybank"
+      "sourceCbr": "Forrás: Orosz jegybank",
+      "vnBase": "Vietcombank — VND egységenként",
+      "vnBuy": "Vétel",
+      "vnTransfer": "Átutalás",
+      "vnSell": "Eladás",
+      "sourceVcb": "Forrás: Vietcombank (csak tájékoztató jelleggel)"
     },
     "passkeyOffer": {
       "title": "Passkey mentése?",

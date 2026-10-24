@@ -2914,7 +2914,8 @@
       "tabs": {
         "stress": "Stress des devises",
         "spot": "Comptant",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VND)"
       },
       "currency": "Devise",
       "pair": "Paire",
@@ -2935,11 +2936,17 @@
         "stress": "Stress des devises",
         "usd": "Taux du dollar américain",
         "eur": "Taux euro de la Banque centrale européenne",
-        "rub": "Taux de la Banque de Russie"
+        "rub": "Taux de la Banque de Russie",
+        "vn": "Taux de Vietcombank"
       },
       "rubBase": "Banque de Russie — roubles pour 1 unité",
       "rubPerUnit": "Roubles par unité",
-      "sourceCbr": "Source : Banque de Russie"
+      "sourceCbr": "Source : Banque de Russie",
+      "vnBase": "Vietcombank — VND par unité",
+      "vnBuy": "Achat",
+      "vnTransfer": "Virement",
+      "vnSell": "Vente",
+      "sourceVcb": "Source : Vietcombank (à titre de référence)"
     },
     "passkeyOffer": {
       "title": "Enregistrer une clé d'accès ?",

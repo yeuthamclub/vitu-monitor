@@ -2876,7 +2876,8 @@
       "tabs": {
         "stress": "Căng thẳng tiền tệ",
         "spot": "Spot",
-        "rub": "RUB"
+        "rub": "RUB",
+        "vn": "Vietcombank (VNĐ)"
       },
       "currency": "Đồng Tiền",
       "pair": "Cặp Ngoại Tệ",
@@ -2897,11 +2898,17 @@
         "stress": "Căng thẳng tỷ giá hối đoái",
         "usd": "Tỷ giá đô la Mỹ",
         "eur": "Tỷ giá euro của Ngân hàng Trung ương Châu Âu",
-        "rub": "Tỷ giá của Ngân hàng Trung ương Nga"
+        "rub": "Tỷ giá của Ngân hàng Trung ương Nga",
+        "vn": "Tỷ giá Vietcombank"
       },
       "rubBase": "Ngân hàng Trung ương Nga — rúp cho 1 đơn vị",
       "rubPerUnit": "Rúp trên mỗi đơn vị",
-      "sourceCbr": "Nguồn: Ngân hàng Trung ương Nga"
+      "sourceCbr": "Nguồn: Ngân hàng Trung ương Nga",
+      "vnBase": "Vietcombank — VNĐ trên 1 đơn vị",
+      "vnBuy": "Mua",
+      "vnTransfer": "Chuyển khoản",
+      "vnSell": "Bán",
+      "sourceVcb": "Nguồn: Vietcombank (chỉ để tham khảo)"
     },
     "passkeyOffer": {
       "title": "Lưu khóa truy cập?",

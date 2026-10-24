@@ -209,6 +209,8 @@ const EXCLUDED_FROM_MCP = new Map([
     'deferred: strict health seed probe added by #5055; future economic-data MCP expansion can expose energy prices directly.'],
   ['shared:fx-rates:v1',
     'deferred to a future FX tool. Shared infrastructure consumed server-side by seeders for currency conversion, and since #6199 also rendered client-side by the FX panel Spot tab — but still exposed by no MCP tool.'],
+  ['vn:fx-rates:v1',
+    'deferred to a future FX tool (fork PR-2a). Vietcombank VNĐ buy/transfer/sell board rendered by the FX panel VN tab; the panel is the only consumer, and an MCP slice would duplicate what a future multi-source FX tool should expose.'],
   ['patents:defense:latest',
     'deferred: strict health seed probe added by #5055; future military or defense-innovation MCP expansion can expose patent summaries.'],
   ['conflict:acled:v1:all:0:0',

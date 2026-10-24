@@ -460,6 +460,7 @@ const STANDALONE_KEYS = {
   bisExchange:           'economic:bis:eer:v1',
   fxYoy:                 'economic:fx:yoy:v1',
   sharedFxRates:          'shared:fx-rates:v1',
+  vnFxRates:              'vn:fx-rates:v1',
   // Operational batch written by seed-fred-rates. The UI and MCP surfaces
   // consume the individual FRED series keys, not this producer envelope.
   fredRatesSeeder:        'economic:fred:batch:v1',
@@ -1021,6 +1022,7 @@ const SEED_META = {
   // bisExchange + bisCredit: extras written by same BIS script via writeExtraKey, no dedicated seed-meta
   fxYoy:            { key: 'seed-meta:economic:fx-yoy',           maxStaleMin: 1500 }, // daily cron; 25h tolerance + 1h drift
   sharedFxRates:    { key: 'seed-meta:shared:fx-rates',           maxStaleMin: 3600 }, // daily seed; 60h tolerance covers a missed 25h cache refresh
+  vnFxRates:        { key: 'seed-meta:vn:fx-rates',               maxStaleMin: 30 }, // Vietcombank board; 10min cron, 3× cycle per BUILD-PLAN §5.8; the source file's own header caps requests at 1/5min
   gpsjam:           { key: 'seed-meta:intelligence:gpsjam',       maxStaleMin: 1440 }, // Wingbits API (scripts/fetch-gpsjam.mjs); 1440min = 24h tolerance gives operator headroom to handle upstream outages and monthly quota exhaustion (HTTP 402 observed 2026-04-29) without dashboard noise. Seeder catch-block extends TTL on fail without refreshing fetchedAt, so STALE_SEED via age is the only alarm path.
   positiveGeoEvents:{ key: 'seed-meta:positive-events:geo',       maxStaleMin: 60 },
   riskScores:       { key: 'seed-meta:intelligence:risk-scores',  maxStaleMin: 30, minRecordCount: 3 }, // CII warm-ping every 8min; recordCount is realtime signal-density coverage for score-relevant conflict (ACLED or UCDP), news, and cyber families, not raw feed availability; quiet-but-fresh feeds may warn COVERAGE_PARTIAL.

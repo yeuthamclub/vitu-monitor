@@ -7900,6 +7900,20 @@
       ]
     },
     {
+      "host": "portal.vietcombank.com.vn",
+      "provider": "portal.vietcombank.com.vn",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit Vietcombank and link to the published exchange-rate board; the board file states its rates are for reference only.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-fx-rates.mjs"
+        }
+      ]
+    },
+    {
       "host": "portfolio.hu",
       "provider": "portfolio.hu",
       "kind": "feed",
