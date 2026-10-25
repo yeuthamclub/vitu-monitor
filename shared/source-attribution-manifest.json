@@ -305,6 +305,20 @@
       ]
     },
     {
+      "host": "air-quality-api.open-meteo.com",
+      "provider": "air-quality-api.open-meteo.com",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit air-quality-api.open-meteo.com and link to the original upstream API/dataset.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-weather.mjs"
+        }
+      ]
+    },
+    {
       "host": "airinfoagadez.com",
       "provider": "Aïr Info",
       "kind": "feed",
@@ -980,6 +994,20 @@
       "references": [
         {
           "path": "scripts/seo-indexnow-submit.mjs"
+        }
+      ]
+    },
+    {
+      "host": "api.open-meteo.com",
+      "provider": "api.open-meteo.com",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit api.open-meteo.com and link to the original upstream API/dataset.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-weather.mjs"
         }
       ]
     },
