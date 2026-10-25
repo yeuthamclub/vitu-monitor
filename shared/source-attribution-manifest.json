@@ -3655,15 +3655,18 @@
       "provider": "earthquake.usgs.gov",
       "kind": "structured",
       "observed": true,
-      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
-      "attribution": "Credit earthquake.usgs.gov and link to the original upstream API/dataset.",
-      "status": "terms-review",
+      "license": "USGS public domain data; credit the U.S. Geological Survey",
+      "attribution": "Credit U.S. Geological Survey (USGS FDSN). Domestic bulletin parity needs Viện Vật lý Địa cầu, DNS-unreachable from the current egress (PR-3b).",
+      "status": "reviewed",
       "references": [
         {
           "path": "api/mcp/skill-extension/generated.ts"
         },
         {
           "path": "scripts/seed-earthquakes.mjs"
+        },
+        {
+          "path": "scripts/seed-vn-earthquakes.mjs"
         }
       ]
     },

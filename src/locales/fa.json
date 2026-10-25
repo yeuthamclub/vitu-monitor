@@ -571,7 +571,8 @@
     "climateNews": "Climate News",
     "fx": "نرخ تبادل ارز",
     "vn-stocks": "سهام ویتنام",
-    "vn-weather-warnings": "هشدارهای هواشناسی"
+    "vn-weather-warnings": "هشدارهای هواشناسی",
+    "vn-earthquakes": "زمین‌لرزه‌ها (منطقه ویتنام)"
   },
   "commands": {
     "prefixes": {
@@ -3095,6 +3096,14 @@
     "vnWeather": {
       "source": "منبع: مرکز ملی پیش‌بینی هیدرومتئورولوژیک (NCHMF)",
       "empty": "در حال حاضر خبری فعال نیست."
+    },
+    "vnEarthquakes": {
+      "source": "منبع: USGS FDSN — M≥3 در منطقه ویتنام، ۳۰ روز گذشته",
+      "empty": "بدون زمین‌لرزه M≥3 در ۳۰ روز گذشته.",
+      "magnitude": "قدرت",
+      "depth": "عمق (کیلومتر)",
+      "time": "زمان",
+      "place": "مکان"
     }
   },
   "popups": {

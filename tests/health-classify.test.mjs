@@ -1848,6 +1848,7 @@ const ISSUE_5055_HEALTH_REGISTRATIONS = [
   ['vnStockQuotes', 'vn:stock-quotes:v1', 'seed-meta:vn:stock-quotes', 15],
   ['vnFuelPrices', 'vn:fuel-prices:v1', 'seed-meta:vn:fuel-prices', 11520],
   ['vnWeatherWarnings', 'vn:weather-warnings:v1', 'seed-meta:vn:weather-warnings', 60],
+  ['vnEarthquakes', 'vn:earthquakes:v1', 'seed-meta:vn:earthquakes', 30],
   ['submarineCables', 'infrastructure:submarine-cables:v1', 'seed-meta:infrastructure:submarine-cables', 25200],
 ];
 

@@ -500,7 +500,8 @@
     "climateNews": "気候ニュース",
     "fx": "外国為替レート",
     "vn-stocks": "ベトナム株",
-    "vn-weather-warnings": "気象警報"
+    "vn-weather-warnings": "気象警報",
+    "vn-earthquakes": "地震（ベトナム地域）"
   },
   "commands": {
     "prefixes": {
@@ -3006,6 +3007,14 @@
     "vnWeather": {
       "source": "出典：国家水文気象予報センター（NCHMF）",
       "empty": "現在発表中の報はありません。"
+    },
+    "vnEarthquakes": {
+      "source": "出典：USGS FDSN — ベトナム地域のM≥3、直近30日",
+      "empty": "過去30日にM≥3の地震はありません。",
+      "magnitude": "マグニチュード",
+      "depth": "深さ (km)",
+      "time": "時刻",
+      "place": "場所"
     }
   },
   "popups": {

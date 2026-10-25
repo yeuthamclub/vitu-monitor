@@ -97,6 +97,7 @@ const SEED_DOMAINS = {
   'vn:stock-quotes':          { key: 'seed-meta:vn:stock-quotes',          intervalMin: 5 }, // 15min staleness budget in api/health.js
   'vn:fuel-prices':           { key: 'seed-meta:vn:fuel-prices',           intervalMin: 60 }, // 8-day staleness budget in api/health.js
   'vn:weather-warnings':      { key: 'seed-meta:vn:weather-warnings',      intervalMin: 30 }, // 60min staleness budget in api/health.js
+  'vn:earthquakes':           { key: 'seed-meta:vn:earthquakes',           intervalMin: 5 }, // 30min staleness budget in api/health.js
   // Phase 3 — Hybrid endpoints
   'natural:events':           { key: 'seed-meta:natural:events',           intervalMin: 270 },
   'weather:hko-warnings':     { key: 'seed-meta:weather:hko-warnings',     intervalMin: 270 },

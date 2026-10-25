@@ -502,7 +502,8 @@
     "climateNews": "İklim Haberleri",
     "fx": "Döviz kurları",
     "vn-stocks": "Vietnam hisseleri",
-    "vn-weather-warnings": "Hava uyarıları"
+    "vn-weather-warnings": "Hava uyarıları",
+    "vn-earthquakes": "Depremler (Vietnam bölgesi)"
   },
   "commands": {
     "prefixes": {
@@ -3026,6 +3027,14 @@
     "vnWeather": {
       "source": "Kaynak: Ulusal Hidrometeorolojik Öngörü Merkezi (NCHMF)",
       "empty": "Şu anda aktif bülten yok."
+    },
+    "vnEarthquakes": {
+      "source": "Kaynak: USGS FDSN — Vietnam bölgesinde M≥3, son 30 gün",
+      "empty": "Son 30 günde M≥3 deprem yok.",
+      "magnitude": "Büyüklük",
+      "depth": "Derinlik (km)",
+      "time": "Zaman",
+      "place": "Yer"
     }
   },
   "popups": {

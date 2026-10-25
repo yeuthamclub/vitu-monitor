@@ -500,7 +500,8 @@
     "climateNews": "气候新闻",
     "fx": "外汇汇率",
     "vn-stocks": "越南股票",
-    "vn-weather-warnings": "气象预警"
+    "vn-weather-warnings": "气象预警",
+    "vn-earthquakes": "地震（越南地区）"
   },
   "commands": {
     "prefixes": {
@@ -3006,6 +3007,14 @@
     "vnWeather": {
       "source": "来源：国家水文气象预报中心（NCHMF）",
       "empty": "当前没有生效的公告。"
+    },
+    "vnEarthquakes": {
+      "source": "来源：USGS FDSN — 越南地区 M≥3，近 30 天",
+      "empty": "近 30 天无 M≥3 地震。",
+      "magnitude": "震级",
+      "depth": "深度 (公里)",
+      "time": "时间",
+      "place": "位置"
     }
   },
   "popups": {

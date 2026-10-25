@@ -571,7 +571,8 @@
     "climateNews": "Klíma hírek",
     "fx": "Devizaárfolyamok",
     "vn-stocks": "Vietnami részvények",
-    "vn-weather-warnings": "Időjárási figyelmeztetések"
+    "vn-weather-warnings": "Időjárási figyelmeztetések",
+    "vn-earthquakes": "Földrengések (Vietnám-régió)"
   },
   "commands": {
     "prefixes": {
@@ -3095,6 +3096,14 @@
     "vnWeather": {
       "source": "Forrás: Nemzeti Hydrometeorológiai Előrejelző Központ (NCHMF)",
       "empty": "Jelenleg nincs aktív közlemény."
+    },
+    "vnEarthquakes": {
+      "source": "Forrás: USGS FDSN — M≥3 a Vietnám-régióban, 30 nap",
+      "empty": "Nincs M≥3 földrengés az elmúlt 30 napban.",
+      "magnitude": "Magn.",
+      "depth": "Mélység (km)",
+      "time": "Idő",
+      "place": "Helyszín"
     }
   },
   "popups": {

@@ -506,7 +506,8 @@
     "climateNews": "Zprávy o klimatu",
     "fx": "Kurzy zahraniční měny",
     "vn-stocks": "Vietnamské akcie",
-    "vn-weather-warnings": "Varování počasí"
+    "vn-weather-warnings": "Varování počasí",
+    "vn-earthquakes": "Zemětřesení (region Vietnam)"
   },
   "commands": {
     "prefixes": {
@@ -3066,6 +3067,14 @@
     "vnWeather": {
       "source": "Zdroj: Národní hydrometeorologické předpovědní centrum (NCHMF)",
       "empty": "Momentálně žádná aktivní zpravodajství."
+    },
+    "vnEarthquakes": {
+      "source": "Zdroj: USGS FDSN — M≥3 v regionu Vietnamu za 30 dní",
+      "empty": "Žádná zemětřesení M≥3 za posledních 30 dní.",
+      "magnitude": "Magn.",
+      "depth": "Hloubka (km)",
+      "time": "Čas",
+      "place": "Místo"
     }
   },
   "popups": {

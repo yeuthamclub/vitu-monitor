@@ -574,7 +574,8 @@
     "climateNews": "Klimatske Vijesti",
     "fx": "Tečajevi deviza",
     "vn-stocks": "Vijetnamske dionice",
-    "vn-weather-warnings": "Upozorenja za vrijeme"
+    "vn-weather-warnings": "Upozorenja za vrijeme",
+    "vn-earthquakes": "Potresi (regija Vijetnama)"
   },
   "commands": {
     "prefixes": {
@@ -3122,6 +3123,14 @@
     "vnWeather": {
       "source": "Izvor: Nacionalni hidrometeorološki prognostički centar (NCHMF)",
       "empty": "Trenutno nema aktivnih biltena."
+    },
+    "vnEarthquakes": {
+      "source": "Izvor: USGS FDSN — M≥3 u regiji Vijetnama, 30 dana",
+      "empty": "Nema potresa M≥3 u posljednjih 30 dana.",
+      "magnitude": "Magn.",
+      "depth": "Dubina (km)",
+      "time": "Vrijeme",
+      "place": "Lokacija"
     }
   },
   "popups": {

@@ -593,7 +593,8 @@
     "climateNews": "Climate News",
     "fx": "Foreign exchange rates",
     "vn-stocks": "VN Stocks",
-    "vn-weather-warnings": "Weather warnings"
+    "vn-weather-warnings": "Weather warnings",
+    "vn-earthquakes": "Earthquakes (VN region)"
   },
   "commands": {
     "prefixes": {
@@ -3117,6 +3118,14 @@
     "vnWeather": {
       "source": "Source: NCHMF — National Hydrometeorological Forecast Center",
       "empty": "No active bulletins right now."
+    },
+    "vnEarthquakes": {
+      "source": "Source: USGS FDSN — M≥3 within the Vietnam region, last 30 days",
+      "empty": "No M≥3 earthquakes in the last 30 days.",
+      "magnitude": "Mag",
+      "depth": "Depth (km)",
+      "time": "Time",
+      "place": "Location"
     }
   },
   "popups": {

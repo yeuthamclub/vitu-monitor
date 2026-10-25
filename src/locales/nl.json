@@ -117,7 +117,8 @@
     "climateNews": "Klimaatnieuws",
     "fx": "Wisselkoersen",
     "vn-stocks": "Vietnamese aandelen",
-    "vn-weather-warnings": "Weerwaarschuwingen"
+    "vn-weather-warnings": "Weerwaarschuwingen",
+    "vn-earthquakes": "Aardbevingen (regio Vietnam)"
   },
   "commands": {
     "prefixes": {
@@ -2641,6 +2642,14 @@
     "vnWeather": {
       "source": "Bron: Nationaal hydrometeorologisch voorspellingscentrum (NCHMF)",
       "empty": "Momenteel geen actieve bulletins."
+    },
+    "vnEarthquakes": {
+      "source": "Bron: USGS FDSN — M≥3 in de regio Vietnam, 30 dagen",
+      "empty": "Geen aardbevingen M≥3 in de laatste 30 dagen.",
+      "magnitude": "Magn.",
+      "depth": "Diepte (km)",
+      "time": "Tijd",
+      "place": "Locatie"
     }
   },
   "popups": {

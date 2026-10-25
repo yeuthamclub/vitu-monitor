@@ -504,7 +504,8 @@
     "climateNews": "Actualités climatiques",
     "fx": "Taux de change",
     "vn-stocks": "Actions vietnamiennes",
-    "vn-weather-warnings": "Alertes météo"
+    "vn-weather-warnings": "Alertes météo",
+    "vn-earthquakes": "Séismes (région du Vietnam)"
   },
   "commands": {
     "prefixes": {
@@ -3046,6 +3047,14 @@
     "vnWeather": {
       "source": "Source : Centre national de prévision hydrométéorologique (NCHMF)",
       "empty": "Aucun bulletin actif pour le moment."
+    },
+    "vnEarthquakes": {
+      "source": "Source : USGS FDSN — M≥3 dans la région du Vietnam, 30 jours",
+      "empty": "Aucun séisme M≥3 au cours des 30 derniers jours.",
+      "magnitude": "Magn.",
+      "depth": "Prof. (km)",
+      "time": "Heure",
+      "place": "Lieu"
     }
   },
   "popups": {

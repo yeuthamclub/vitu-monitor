@@ -504,7 +504,8 @@
     "climateNews": "Știri despre climă",
     "fx": "Cursuri de schimb valutar",
     "vn-stocks": "Acțiuni vietnameze",
-    "vn-weather-warnings": "Avertizări meteo"
+    "vn-weather-warnings": "Avertizări meteo",
+    "vn-earthquakes": "Cutremure (regiunea Vietnam)"
   },
   "commands": {
     "prefixes": {
@@ -3046,6 +3047,14 @@
     "vnWeather": {
       "source": "Sursă: Centrul Național de Prognoză Hidrometeorologică (NCHMF)",
       "empty": "Niciun buletin activ momentan."
+    },
+    "vnEarthquakes": {
+      "source": "Sursă: USGS FDSN — M≥3 în regiunea Vietnam, 30 de zile",
+      "empty": "Niciun cutremur M≥3 în ultimele 30 de zile.",
+      "magnitude": "Magn.",
+      "depth": "Adâncime (km)",
+      "time": "Ora",
+      "place": "Loc"
     }
   },
   "popups": {

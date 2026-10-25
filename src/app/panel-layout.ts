@@ -3106,6 +3106,9 @@ export class PanelLayoutManager implements AppModule {
     this.lazyPanel('fx', () =>
       this.importPanel('fx', () => import('@/components/FxPanel'), 'FxPanel', (FxPanel) => new FxPanel()),
     );
+    this.lazyPanel('vn-earthquakes', () =>
+      this.importPanel('vn-earthquakes', () => import('@/components/VnEarthquakesPanel'), 'VnEarthquakesPanel', (VnEarthquakesPanel) => new VnEarthquakesPanel()),
+    );
     this.lazyPanel('vn-weather-warnings', () =>
       this.importPanel('vn-weather-warnings', () => import('@/components/VnWeatherWarningsPanel'), 'VnWeatherWarningsPanel', (VnWeatherWarningsPanel) => new VnWeatherWarningsPanel()),
     );

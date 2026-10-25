@@ -571,7 +571,8 @@
     "climateNews": "Habari za Hali ya Hewa",
     "fx": "Kiwango cha ubadilishaji wa fedha za kigeni",
     "vn-stocks": "Hisa za Vietnam",
-    "vn-weather-warnings": "Tahadhari za hali ya hewa"
+    "vn-weather-warnings": "Tahadhari za hali ya hewa",
+    "vn-earthquakes": "Mitetemeko ya ardhi (eneo la Vietnam)"
   },
   "commands": {
     "prefixes": {
@@ -3095,6 +3096,14 @@
     "vnWeather": {
       "source": "Chanzo: Kituo cha Kitaifa cha Utabiri wa Hidrometeorolojia (NCHMF)",
       "empty": "Hakuna taarifa hai kwa sasa."
+    },
+    "vnEarthquakes": {
+      "source": "Chanzo: USGS FDSN — M≥3 ndani ya eneo la Vietnam, siku 30",
+      "empty": "Hakuna mtetemeko M≥3 katika siku 30 zilizopita.",
+      "magnitude": "Ukubwa",
+      "depth": "Kina (km)",
+      "time": "Waktu",
+      "place": "Mahali"
     }
   },
   "popups": {

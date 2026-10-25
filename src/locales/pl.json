@@ -506,7 +506,8 @@
     "climateNews": "Wiadomości Klimatyczne",
     "fx": "Kursy walutowe",
     "vn-stocks": "Wietnamskie akcje",
-    "vn-weather-warnings": "Ostrzeżenia pogodowe"
+    "vn-weather-warnings": "Ostrzeżenia pogodowe",
+    "vn-earthquakes": "Trzęsienia ziemi (region Wietnamu)"
   },
   "commands": {
     "prefixes": {
@@ -3066,6 +3067,14 @@
     "vnWeather": {
       "source": "Źródło: Narodowe Centrum Prognoz Hydrometeorologicznych (NCHMF)",
       "empty": "Obecnie brak aktywnych komunikatów."
+    },
+    "vnEarthquakes": {
+      "source": "Źródło: USGS FDSN — M≥3 w regionie Wietnamu, 30 dni",
+      "empty": "Brak trzęsień ziemi M≥3 w ostatnich 30 dniach.",
+      "magnitude": "Magn.",
+      "depth": "Głębokość (km)",
+      "time": "Czas",
+      "place": "Miejsce"
     }
   },
   "popups": {

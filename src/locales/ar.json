@@ -510,7 +510,8 @@
     "climateNews": "أخبار المناخ",
     "fx": "أسعار الصرف الأجنبي",
     "vn-stocks": "أسهم فيتنام",
-    "vn-weather-warnings": "تحذيرات الطقس"
+    "vn-weather-warnings": "تحذيرات الطقس",
+    "vn-earthquakes": "زلازل (منطقة فيتنام)"
   },
   "commands": {
     "prefixes": {
@@ -3106,6 +3107,14 @@
     "vnWeather": {
       "source": "المصدر: المركز الوطني للأرصاد المائية (NCHMF)",
       "empty": "لا توجد نشرات نشطة حالياً."
+    },
+    "vnEarthquakes": {
+      "source": "المصدر: USGS FDSN — بدرجة ≥3 داخل منطقة فيتنام خلال 30 يوماً",
+      "empty": "لا زلازل بدرجة ≥3 خلال 30 يوماً.",
+      "magnitude": "الشدّة",
+      "depth": "العمق (كم)",
+      "time": "الوقت",
+      "place": "الموقع"
     }
   },
   "popups": {

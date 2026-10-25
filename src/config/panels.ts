@@ -1177,6 +1177,8 @@ const VIETNAM_PANELS: Record<string, PanelConfig> = {
   'fuel-prices': { name: 'Giá xăng dầu', enabled: false, priority: 2 },
   // Hazard headline surface — the one market panel that ships enabled (PR-3a).
   'vn-weather-warnings': { name: 'Cảnh báo thời tiết', enabled: true, priority: 1 },
+  // Hazard panel: USGS FDSN VN-region quakes until IGP is reachable (PR-3b).
+  'vn-earthquakes': { name: 'Động đất', enabled: true, priority: 2 },
   'supply-chain': { name: 'Chuỗi cung ứng & tuyến biển', enabled: true, priority: 2 },
   monitors: { name: 'Theo dõi của tôi', enabled: true, priority: 3 },
   'world-clock': { name: 'Giờ thế giới', enabled: true, priority: 3 },

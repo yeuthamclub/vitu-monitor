@@ -221,6 +221,8 @@ const EXCLUDED_FROM_MCP = new Map([
     'deferred to a future VN market tool (fork PR-2d). Petrolimex retail board rendered by the Fuel Prices panel VN section; the panel is the only consumer, and a licensed feed remains the commercialization path (BUILD-PLAN §5.10).'],
   ['vn:weather-warnings:v1',
     'deferred to a future VN hazards tool (fork PR-3a). NCHMF warning bulletin board rendered by the VN Weather Warnings panel; the panel is the only consumer, and a future hazards MCP tool should expose JTWC/JMA/alert layers together.'],
+  ['vn:earthquakes:v1',
+    'deferred to a future VN hazards tool (fork PR-3b). USGS FDSN VN-region board rendered by the VN Earthquakes panel; the panel is the only consumer, and a future hazards MCP tool should expose USGS/global and IGP/domestic together.'],
   ['patents:defense:latest',
     'deferred: strict health seed probe added by #5055; future military or defense-innovation MCP expansion can expose patent summaries.'],
   ['conflict:acled:v1:all:0:0',

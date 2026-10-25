@@ -117,7 +117,8 @@
     "climateNews": "Klimatnyheter",
     "fx": "Valutakurser",
     "vn-stocks": "Vietnamesiska aktier",
-    "vn-weather-warnings": "Vädervarningar"
+    "vn-weather-warnings": "Vädervarningar",
+    "vn-earthquakes": "Jordbävningar (Vietnam-regionen)"
   },
   "commands": {
     "prefixes": {
@@ -2641,6 +2642,14 @@
     "vnWeather": {
       "source": "Källa: Nationella hydrometeorologiska prognoscentret (NCHMF)",
       "empty": "Inga aktiva bulletiner just nu."
+    },
+    "vnEarthquakes": {
+      "source": "Källa: USGS FDSN — M≥3 i Vietnam-regionen, 30 dagar",
+      "empty": "Inga M≥3-jordbävningar de senaste 30 dagarna.",
+      "magnitude": "Magn.",
+      "depth": "Djup (km)",
+      "time": "Tid",
+      "place": "Plats"
     }
   },
   "popups": {

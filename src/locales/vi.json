@@ -500,7 +500,8 @@
     "climateNews": "Tin tức về Khí hậu",
     "fx": "Tỷ giá ngoại hối",
     "vn-stocks": "Chứng khoán VN",
-    "vn-weather-warnings": "Cảnh báo thời tiết"
+    "vn-weather-warnings": "Cảnh báo thời tiết",
+    "vn-earthquakes": "Động đất (vùng VN)"
   },
   "commands": {
     "prefixes": {
@@ -3006,6 +3007,14 @@
     "vnWeather": {
       "source": "Nguồn: Trung tâm Dự báo Khí tượng Thủy văn Quốc gia (NCHMF)",
       "empty": "Hiện không có tin nào."
+    },
+    "vnEarthquakes": {
+      "source": "Nguồn: USGS FDSN — M≥3 trong vùng Việt Nam, 30 ngày qua",
+      "empty": "Không có động đất M≥3 trong 30 ngày qua.",
+      "magnitude": "Độ lớn",
+      "depth": "Sâu (km)",
+      "time": "Thời gian",
+      "place": "Vị trí"
     }
   },
   "popups": {
