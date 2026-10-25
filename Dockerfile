@@ -55,6 +55,10 @@ RUN npm run build:pro
 # VITE_SELF_HOSTED keeps the self-hosted dashboard off World Monitor's hosted
 # analytics and map CDN (src/config/self-hosted.ts).
 ENV VITE_SELF_HOSTED=1
+# Realtime Monitor fork: a fresh visitor (no stored variant) lands on the
+# Vietnam dashboard. Override with --build-arg VITE_VARIANT=full.
+ARG VITE_VARIANT=vietnam
+ENV VITE_VARIANT=$VITE_VARIANT
 RUN npx tsc && npx vite build
 # Assert the /pro pages survived the public/ -> dist/ copy (#6898). build:pro
 # succeeding proves public/pro/ exists; it does NOT prove Vite copied it, and

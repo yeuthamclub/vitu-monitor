@@ -1173,27 +1173,27 @@ const VIETNAM_PANELS: Record<string, PanelConfig> = {
   'world-clock': { name: 'Giờ thế giới', enabled: true, priority: 3 },
 };
 
-// Full-variant layers, narrowed to what matters for Vietnam and the East Sea.
+// Every layer off, then only what matters for Vietnam and the East Sea: storms
+// and earthquakes (natural), weather and fires, plus shipping (ais, tradeRoutes,
+// waterways) on desktop. Inheriting the full set put 13 layers on by default,
+// which tripped the map's performance warning on first load.
+const NO_MAP_LAYERS = Object.fromEntries(Object.keys(FULL_MAP_LAYERS).map((key) => [key, false])) as unknown as MapLayers;
+
 const VIETNAM_MAP_LAYERS: MapLayers = {
-  ...FULL_MAP_LAYERS,
-  iranAttacks: false,
-  canadaRoads: false,
-  canadaAlerts: false,
-  ais: true,
-  waterways: true,
-  tradeRoutes: true,
+  ...NO_MAP_LAYERS,
   natural: true,
-  fires: true,
   weather: true,
+  fires: true,
+  ais: true,
+  tradeRoutes: true,
+  waterways: true,
 };
 
 const VIETNAM_MOBILE_MAP_LAYERS: MapLayers = {
-  ...FULL_MOBILE_MAP_LAYERS,
-  iranAttacks: false,
-  canadaRoads: false,
-  canadaAlerts: false,
+  ...NO_MAP_LAYERS,
   natural: true,
   weather: true,
+  fires: true,
 };
 
 // ============================================
