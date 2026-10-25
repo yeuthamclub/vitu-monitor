@@ -573,7 +573,7 @@
     "marketBreadth": "Širina Tržišta",
     "climateNews": "Klimatske Vijesti",
     "fx": "Tečajevi deviza",
-      "vn-stocks": "Vijetnamske dionice"
+    "vn-stocks": "Vijetnamske dionice"
   },
   "commands": {
     "prefixes": {
@@ -2311,7 +2311,12 @@
     },
     "fuelPrices": {
       "infoTooltip": "<strong>Cijene goriva</strong> Maloprodajne cijene na crpkama za benzin i dizel u 30+ zemalja, normirane na USD/litar za usporedbu. Cijene potječu iz službenih vladinih programa otvorenih podataka i ažuriraju se tjedno. Najjeftinije i najskupnije zemlje su istaknuté. Promjena tjedna kroz tjedan se prikazuje kada su dostupni podaci iz prethodnog tjedna.",
-      "countries": "zemlje"
+      "countries": "zemlje",
+      "vnTitle": "Vijetnam — Petrolimex (VND/litra)",
+      "vnProduct": "Proizvod",
+      "vnZone1": "Zona 1",
+      "vnZone2": "Zona 2",
+      "vnSource": "Izvor: maloprodajni cjenik Petrolimex"
     },
     "faoFoodPriceIndex": {
       "infoTooltip": "<strong>FAO indeks cijena hrane</strong> Indeks cijena hrane Svjetske organizacije za hranu i poljoprivredu prati međunarodne izvozne cijene za košaricu hrane (Žitarice, Mliječni proizvodi, Meso, Ulja, Šećer), bazna vrijednost 2014-2016=100. Ažurira se mjesečno prvi petak svakog mjeseca.",

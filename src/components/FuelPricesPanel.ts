@@ -1,7 +1,8 @@
 import { Panel } from './Panel';
 import { t } from '@/services/i18n';
 import { escapeHtml, unsafeRawHtml } from '@/utils/sanitize';
-import { getHydratedData } from '@/services/bootstrap';
+import { ensureHydrated, getHydratedData } from '@/services/bootstrap';
+import { toVnFuelRows, type VnFuelRow } from '@/services/economic/vn-fuel';
 import { createLazyClient, getRpcBaseUrl, rpcFetch } from '@/services/rpc-client';
 
 import type { ListFuelPricesResponse } from '@/generated/client/worldmonitor/economic/v1/service_client';
@@ -10,12 +11,19 @@ import { EconomicServiceClient } from '@/services/generated-rpc-clients';
 const getEconomicClient = createLazyClient(() => new EconomicServiceClient(getRpcBaseUrl(), { fetch: rpcFetch }));
 
 export class FuelPricesPanel extends Panel {
+  private vnRows: VnFuelRow[] = [];
+
   constructor() {
     super({ id: 'fuel-prices', title: t('panels.fuelPrices'), infoTooltip: t('components.fuelPrices.infoTooltip') });
   }
 
   public async fetchData(): Promise<void> {
     try {
+      // The fork's Petrolimex board rides the same panel (PR-2d); a dead VN
+      // source must not blank the global table, so it hydrates best-effort.
+      ensureHydrated('vnFuelPrices')
+        .then(payload => { this.vnRows = toVnFuelRows(payload); })
+        .catch(() => undefined);
       const hydrated = getHydratedData('fuelPrices') as ListFuelPricesResponse | undefined;
       if (hydrated?.countries?.length) {
         if (!this.element?.isConnected) return;
@@ -94,9 +102,38 @@ export class FuelPricesPanel extends Panel {
           </table>
         </div>
         ${updatedAt ? `<div class="gb-updated">${t('components.status.updatedAt', { time: updatedAt })}${countLabel}</div>` : ''}
+        ${this.renderVnSection()}
       </div>
     `;
 
     this.setSafeContent(unsafeRawHtml(html, 'legacy Panel.setContent() migration'));
+  }
+
+  /** Petrolimex retail board — fork PR-2d; absent when the VN source is down. */
+  private renderVnSection(): string {
+    if (this.vnRows.length === 0) return '';
+    const rows = this.vnRows.map(r => `<tr>
+        <td class="gb-item-name">${escapeHtml(r.product)}</td>
+        <td class="gb-cell">${r.zone1VndPerLiter.toLocaleString()}</td>
+        <td class="gb-cell">${r.zone2VndPerLiter.toLocaleString()}</td>
+      </tr>`).join('');
+    const asOf = this.vnRows.find(r => r.lastModified !== null)?.lastModified ?? null;
+    const asOfText = asOf ? ` · ${new Date(asOf).toLocaleDateString()}` : '';
+    return `
+      <div class="gb-wrapper" style="margin-top:8px">
+        <div class="fx-section-title">${t('components.fuelPrices.vnTitle')}</div>
+        <div class="gb-scroll">
+          <table class="gb-table">
+            <thead><tr>
+              <th scope="col" class="gb-item-col">${t('components.fuelPrices.vnProduct')}</th>
+              <th scope="col" class="gb-cell">${t('components.fuelPrices.vnZone1')}</th>
+              <th scope="col" class="gb-cell">${t('components.fuelPrices.vnZone2')}</th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div class="gb-updated">${t('components.fuelPrices.vnSource')}${asOfText}</div>
+      </div>
+    `;
   }
 }

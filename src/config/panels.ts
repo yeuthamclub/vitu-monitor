@@ -1173,6 +1173,8 @@ const VIETNAM_PANELS: Record<string, PanelConfig> = {
   fx: { name: 'Tỷ giá', enabled: false, priority: 2 },
   // Opt-in market-data panel: SSI iBoard indices + VPS blue-chip board (PR-2c).
   'vn-stocks': { name: 'Chứng khoán VN', enabled: false, priority: 2 },
+  // Opt-in: global fuel table + the Petrolimex retail board section (PR-2d).
+  'fuel-prices': { name: 'Giá xăng dầu', enabled: false, priority: 2 },
   'supply-chain': { name: 'Chuỗi cung ứng & tuyến biển', enabled: true, priority: 2 },
   monitors: { name: 'Theo dõi của tôi', enabled: true, priority: 3 },
   'world-clock': { name: 'Giờ thế giới', enabled: true, priority: 3 },

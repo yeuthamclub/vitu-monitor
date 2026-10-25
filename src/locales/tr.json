@@ -501,7 +501,7 @@
     "marketBreadth": "Pazar Genişliği",
     "climateNews": "İklim Haberleri",
     "fx": "Döviz kurları",
-      "vn-stocks": "Vietnam hisseleri"
+    "vn-stocks": "Vietnam hisseleri"
   },
   "commands": {
     "prefixes": {
@@ -2504,7 +2504,12 @@
     },
     "fuelPrices": {
       "infoTooltip": "<strong>Yakıt Fiyatları</strong> 30+ ülkede benzin ve dizel perakende pompa fiyatları, karşılaştırma için USD/litre'ye normalize edilmiş. Fiyatlar resmi hükümet açık veri programlarından kaynaklanır ve haftalık güncellenir. En ucuz ve en pahalı ülkeler vurgulanır. Haftalık değişim, önceki hafta verisi mevcut olduğunda gösterilir.",
-      "countries": "ülke"
+      "countries": "ülke",
+      "vnTitle": "Vietnam — Petrolimex (VND/litre)",
+      "vnProduct": "Ürün",
+      "vnZone1": "Bölge 1",
+      "vnZone2": "Bölge 2",
+      "vnSource": "Kaynak: Petrolimex perakende fiyat listesi"
     },
     "faoFoodPriceIndex": {
       "infoTooltip": "<strong>FAO Gıda Fiyat Endeksi</strong> BM Gıda ve Tarım Örgütü'nün Gıda Fiyat Endeksi, gıda emtiası sepeti (Tahıllar, Süt Ürünleri, Et, Yağlar, Şeker) için uluslararası ihracat fiyatlarını izler; taban 2014-2016=100. Her ayın ilk Cuma günü aylık olarak güncellenir.",

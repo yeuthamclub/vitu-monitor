@@ -114,6 +114,7 @@ export const BOOTSTRAP_CACHE_KEYS = Object.freeze({
   vnGoldPrices: 'vn:gold-prices:v1',
   vnStockIndices: 'vn:stock-indices:v1',
   vnStockQuotes: 'vn:stock-quotes:v1',
+  vnFuelPrices: 'vn:fuel-prices:v1',
   euFsi: 'economic:fsi-eu:v1',
   shippingStress: 'supply_chain:shipping_stress:v1',
   socialVelocity: 'intelligence:social:reddit:v1',
@@ -220,7 +221,7 @@ const ON_DEMAND_KEY_NAMES = new Set([
   // NOTE: no apostrophes in this block. scripts/docs-stats.mjs scans these
   // Sets with a bare quote matcher, so one apostrophe in prose opens a phantom
   // string and gets registered as a duplicate key.
-  'fxYoy', 'sharedFxRates', 'vnFxRates', 'vnGoldPrices', 'vnStockIndices', 'vnStockQuotes',
+  'fxYoy', 'sharedFxRates', 'vnFxRates', 'vnGoldPrices', 'vnStockIndices', 'vnStockQuotes', 'vnFuelPrices',
   'marketCorrelationSeries',
   // Toronto's live road-restrictions snapshot is about 2 MB. Keep it off the
   // global FAST payload and fetch it only when the Canada-roads layer renders.

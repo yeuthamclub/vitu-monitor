@@ -116,7 +116,7 @@
     "marketBreadth": "Marknadsbredd",
     "climateNews": "Klimatnyheter",
     "fx": "Valutakurser",
-      "vn-stocks": "Vietnamesiska aktier"
+    "vn-stocks": "Vietnamesiska aktier"
   },
   "commands": {
     "prefixes": {
@@ -2119,7 +2119,12 @@
     },
     "fuelPrices": {
       "infoTooltip": "<strong>Fuel Prices</strong> Detaljhandelspriser för bensin och diesel i 30+ länder, normaliserat till USD/liter för jämförelse. Priser kommer från officiella statliga öppna datakällor och uppdateras veckovis. Billigaste och dyraste länder är markerade. Veckovis förändring visas när tidigare veckas data är tillgänglig.",
-      "countries": "länder"
+      "countries": "länder",
+      "vnTitle": "Vietnam — Petrolimex (VND/liter)",
+      "vnProduct": "Produkt",
+      "vnZone1": "Zon 1",
+      "vnZone2": "Zon 2",
+      "vnSource": "Källa: Petrolimex detaljhandelsprislista"
     },
     "faoFoodPriceIndex": {
       "infoTooltip": "<strong>FAO Food Price Index</strong> FN:s livsmedelsorgan FAO:s livsmedelsindex spårar internationella exportpriser för en korg med livsmedelsvaror (Spannmål, Mejeri, Kött, Oljor, Socker), basindex 2014–2016=100. Uppdateras månatligen första fredagen varje månad.",

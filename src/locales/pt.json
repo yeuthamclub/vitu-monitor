@@ -116,7 +116,7 @@
     "marketBreadth": "Amplitude de Mercado",
     "climateNews": "Notícias Climáticas",
     "fx": "Taxas de câmbio",
-      "vn-stocks": "Ações do Vietnã"
+    "vn-stocks": "Ações do Vietnã"
   },
   "commands": {
     "prefixes": {
@@ -2127,7 +2127,12 @@
     },
     "fuelPrices": {
       "infoTooltip": "<strong>Fuel Prices</strong> Preços de varejo na bomba para gasolina e diesel em mais de 30 países, normalizados para USD/litro para comparação. Os preços são provenientes de programas de dados abertos do governo oficial e atualizados semanalmente. Os países mais baratos e mais caros são destacados. A variação semana contra semana é mostrada quando dados da semana anterior estão disponíveis.",
-      "countries": "países"
+      "countries": "países",
+      "vnTitle": "Vietnã — Petrolimex (VND/litro)",
+      "vnProduct": "Produto",
+      "vnZone1": "Zona 1",
+      "vnZone2": "Zona 2",
+      "vnSource": "Fonte: tabela varejista da Petrolimex"
     },
     "faoFoodPriceIndex": {
       "infoTooltip": "<strong>FAO Food Price Index</strong> O Índice de Preços de Alimentos da Organização das Nações Unidas para Alimentação e Agricultura monitora os preços de exportação internacional de uma cesta de commodities alimentares (Cereais, Laticínios, Carnes, Óleos, Açúcar), base 2014-2016=100. Atualizado mensalmente na primeira sexta-feira de cada mês.",

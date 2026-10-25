@@ -217,6 +217,8 @@ const EXCLUDED_FROM_MCP = new Map([
     'deferred to a future VN market tool (fork PR-2c). SSI iBoard VNINDEX/VN30/HNXIndex quotes rendered by the VN Stocks panel; the panel is the only consumer, and a licensed feed remains the commercialization path (BUILD-PLAN §5.10).'],
   ['vn:stock-quotes:v1',
     'deferred to a future VN market tool (fork PR-2c). VPS board blue-chip quotes rendered by the VN Stocks panel; the panel is the only consumer, and a licensed feed remains the commercialization path (BUILD-PLAN §5.10).'],
+  ['vn:fuel-prices:v1',
+    'deferred to a future VN market tool (fork PR-2d). Petrolimex retail board rendered by the Fuel Prices panel VN section; the panel is the only consumer, and a licensed feed remains the commercialization path (BUILD-PLAN §5.10).'],
   ['patents:defense:latest',
     'deferred: strict health seed probe added by #5055; future military or defense-innovation MCP expansion can expose patent summaries.'],
   ['conflict:acled:v1:all:0:0',

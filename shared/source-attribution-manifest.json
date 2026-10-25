@@ -7956,6 +7956,20 @@
       ]
     },
     {
+      "host": "portals.petrolimex.com.vn",
+      "provider": "portals.petrolimex.com.vn",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit Petrolimex and link to the published retail price board; the CMS API behind the site's own price widget, with no published API terms.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-fuel-prices.mjs"
+        }
+      ]
+    },
+    {
       "host": "portfolio.hu",
       "provider": "portfolio.hu",
       "kind": "feed",
