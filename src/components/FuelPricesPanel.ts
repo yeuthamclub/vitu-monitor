@@ -18,12 +18,12 @@ export class FuelPricesPanel extends Panel {
   }
 
   public async fetchData(): Promise<void> {
+    // The fork's Petrolimex board rides the same panel (PR-2d). Either board
+    // alone is enough to render: a dead VN source must not blank the global
+    // table, and a missing global table (an unseeded self-hosted install) must
+    // not hide the VN board. Awaited so the first render already includes it.
+    this.vnRows = toVnFuelRows(await ensureHydrated('vnFuelPrices').catch(() => undefined));
     try {
-      // The fork's Petrolimex board rides the same panel (PR-2d); a dead VN
-      // source must not blank the global table, so it hydrates best-effort.
-      ensureHydrated('vnFuelPrices')
-        .then(payload => { this.vnRows = toVnFuelRows(payload); })
-        .catch(() => undefined);
       const hydrated = getHydratedData('fuelPrices') as ListFuelPricesResponse | undefined;
       if (hydrated?.countries?.length) {
         if (!this.element?.isConnected) return;
@@ -40,12 +40,24 @@ export class FuelPricesPanel extends Panel {
     } catch (err) {
       if (this.isAbortError(err)) return;
       if (!this.element?.isConnected) return;
+      if (this.vnRows.length > 0) {
+        this.renderVnOnly();
+        return;
+      }
       this.showError(t('common.failedMarketData'), () => void this.fetchData());
     }
   }
 
+  private renderVnOnly(): void {
+    this.setSafeContent(unsafeRawHtml(`<div class="gb-wrapper">${this.renderVnSection()}</div>`, 'legacy Panel.setContent() migration'));
+  }
+
   private renderIndex(data: ListFuelPricesResponse): void {
     if (!data.countries?.length) {
+      if (this.vnRows.length > 0) {
+        this.renderVnOnly();
+        return;
+      }
       this.showError(t('common.failedMarketData'), () => void this.fetchData());
       return;
     }

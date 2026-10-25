@@ -88,6 +88,9 @@ import type { GroceryBasketPanel } from '@/components/GroceryBasketPanel';
 import type { BigMacPanel } from '@/components/BigMacPanel';
 import type { FuelPricesPanel } from '@/components/FuelPricesPanel';
 import type { FxPanel } from '@/components/FxPanel';
+import type { VnStocksPanel } from '@/components/VnStocksPanel';
+import type { VnWeatherWarningsPanel } from '@/components/VnWeatherWarningsPanel';
+import type { VnEarthquakesPanel } from '@/components/VnEarthquakesPanel';
 import type { FaoFoodPriceIndexPanel } from '@/components/FaoFoodPriceIndexPanel';
 import type { OilInventoriesPanel } from '@/components/OilInventoriesPanel';
 import type { PipelineStatusPanel } from '@/components/PipelineStatusPanel';
@@ -819,6 +822,18 @@ export class App {
     if (shouldPrime('fx')) {
       const panel = this.state.panels['fx'] as FxPanel | undefined;
       if (panel) primeTask('fx', () => panel.fetchData());
+    }
+    if (shouldPrime('vn-stocks')) {
+      const panel = this.state.panels['vn-stocks'] as VnStocksPanel | undefined;
+      if (panel) primeTask('vn-stocks', () => panel.fetchData());
+    }
+    if (shouldPrime('vn-weather-warnings')) {
+      const panel = this.state.panels['vn-weather-warnings'] as VnWeatherWarningsPanel | undefined;
+      if (panel) primeTask('vn-weather-warnings', () => panel.fetchData());
+    }
+    if (shouldPrime('vn-earthquakes')) {
+      const panel = this.state.panels['vn-earthquakes'] as VnEarthquakesPanel | undefined;
+      if (panel) primeTask('vn-earthquakes', () => panel.fetchData());
     }
     if (shouldPrime('fao-food-price-index')) {
       const panel = this.state.panels['fao-food-price-index'] as FaoFoodPriceIndexPanel | undefined;
@@ -4142,6 +4157,27 @@ export class App {
       () => (this.state.panels['fx'] as FxPanel).fetchData(),
       REFRESH_INTERVALS.fx,
       () => this.isPanelNearViewport('fx')
+    );
+
+    this.refreshScheduler.scheduleRefresh(
+      'vn-stocks',
+      () => (this.state.panels['vn-stocks'] as VnStocksPanel).fetchData(),
+      REFRESH_INTERVALS.vnStocks,
+      () => this.isPanelNearViewport('vn-stocks')
+    );
+
+    this.refreshScheduler.scheduleRefresh(
+      'vn-weather-warnings',
+      () => (this.state.panels['vn-weather-warnings'] as VnWeatherWarningsPanel).fetchData(),
+      REFRESH_INTERVALS.vnWeatherWarnings,
+      () => this.isPanelNearViewport('vn-weather-warnings')
+    );
+
+    this.refreshScheduler.scheduleRefresh(
+      'vn-earthquakes',
+      () => (this.state.panels['vn-earthquakes'] as VnEarthquakesPanel).fetchData(),
+      REFRESH_INTERVALS.vnEarthquakes,
+      () => this.isPanelNearViewport('vn-earthquakes')
     );
 
     this.refreshScheduler.scheduleRefresh(

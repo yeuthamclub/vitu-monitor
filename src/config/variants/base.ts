@@ -57,6 +57,10 @@ export const REFRESH_INTERVALS = {
   groceryBasket: 6 * 60 * 60 * 1000,
   fuelPrices: 6 * 60 * 60 * 1000,
   fx: 6 * 60 * 60 * 1000, // all three FX keys are daily seeds; 6h picks up the new bar without polling a static payload
+  // Realtime Monitor fork: Vietnam variant panels (seeders run every 5–30 min)
+  vnStocks: 5 * 60 * 1000,
+  vnWeatherWarnings: 15 * 60 * 1000,
+  vnEarthquakes: 10 * 60 * 1000,
 
   faoFoodPriceIndex: 24 * 60 * 60 * 1000, // monthly data; refresh daily is sufficient
   oilInventories: 5 * 60 * 1000, // EIA weekly + EU gas daily; 5min refresh
