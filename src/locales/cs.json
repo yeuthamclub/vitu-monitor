@@ -504,7 +504,8 @@
     "fearGreed": "Strach a chamtivost",
     "marketBreadth": "Šíře trhu",
     "climateNews": "Zprávy o klimatu",
-    "fx": "Kurzy zahraniční měny"
+    "fx": "Kurzy zahraniční měny",
+      "vn-stocks": "Vietnamské akcie"
   },
   "commands": {
     "prefixes": {
@@ -2971,6 +2972,25 @@
       "goldBase": "PNJ — miliony VND za tael",
       "goldType": "Produkt",
       "sourcePnj": "Zdroj: PNJ (neoficiální ceník)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Indexy",
+        "tickers": "Blue chips"
+      },
+      "index": "Index",
+      "level": "Body",
+      "change": "Změna",
+      "breadth": "Růst/Pokles",
+      "symbol": "Ticker",
+      "last": "Poslední",
+      "ref": "Referenční",
+      "volume": "Objem",
+      "source": {
+        "indices": "Indexy SSI iBoard",
+        "tickers": "Burza blue chips VPS"
+      },
+      "degraded": "Právě nedostupné: {{sources}}. Brzy zopakujeme."
     },
     "passkeyOffer": {
       "title": "Uložit přístupový klíč?",

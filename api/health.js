@@ -462,6 +462,8 @@ const STANDALONE_KEYS = {
   sharedFxRates:          'shared:fx-rates:v1',
   vnFxRates:              'vn:fx-rates:v1',
   vnGoldPrices:           'vn:gold-prices:v1',
+  vnStockIndices:          'vn:stock-indices:v1',
+  vnStockQuotes:           'vn:stock-quotes:v1',
   // Operational batch written by seed-fred-rates. The UI and MCP surfaces
   // consume the individual FRED series keys, not this producer envelope.
   fredRatesSeeder:        'economic:fred:batch:v1',
@@ -1025,6 +1027,8 @@ const SEED_META = {
   sharedFxRates:    { key: 'seed-meta:shared:fx-rates',           maxStaleMin: 3600 }, // daily seed; 60h tolerance covers a missed 25h cache refresh
   vnFxRates:        { key: 'seed-meta:vn:fx-rates',               maxStaleMin: 30 }, // Vietcombank board; 10min cron, 3× cycle per BUILD-PLAN §5.8; the source file's own header caps requests at 1/5min
   vnGoldPrices:     { key: 'seed-meta:vn:gold-prices',            maxStaleMin: 30 }, // PNJ gold board; 10min cron, 3× cycle per BUILD-PLAN §5.8; unofficial frontend endpoint, SJC blocked by Cloudflare (PR-2b)
+  vnStockIndices:   { key: 'seed-meta:vn:stock-indices',          maxStaleMin: 15 }, // SSI iBoard VNINDEX/VN30/HNXIndex; 5min in-session cron per BUILD-PLAN, 3× cycle (PR-2c)
+  vnStockQuotes:    { key: 'seed-meta:vn:stock-quotes',           maxStaleMin: 15 }, // VPS board blue-chip quotes; 5min in-session cron per BUILD-PLAN, 3× cycle (PR-2c)
   gpsjam:           { key: 'seed-meta:intelligence:gpsjam',       maxStaleMin: 1440 }, // Wingbits API (scripts/fetch-gpsjam.mjs); 1440min = 24h tolerance gives operator headroom to handle upstream outages and monthly quota exhaustion (HTTP 402 observed 2026-04-29) without dashboard noise. Seeder catch-block extends TTL on fail without refreshing fetchedAt, so STALE_SEED via age is the only alarm path.
   positiveGeoEvents:{ key: 'seed-meta:positive-events:geo',       maxStaleMin: 60 },
   riskScores:       { key: 'seed-meta:intelligence:risk-scores',  maxStaleMin: 30, minRecordCount: 3 }, // CII warm-ping every 8min; recordCount is realtime signal-density coverage for score-relevant conflict (ACLED or UCDP), news, and cyber families, not raw feed availability; quiet-but-fresh feeds may warn COVERAGE_PARTIAL.

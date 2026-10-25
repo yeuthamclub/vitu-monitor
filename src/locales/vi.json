@@ -498,7 +498,8 @@
     "fearGreed": "Sợ hãi & Tham lam",
     "marketBreadth": "Độ rộng Thị trường",
     "climateNews": "Tin tức về Khí hậu",
-    "fx": "Tỷ giá ngoại hối"
+    "fx": "Tỷ giá ngoại hối",
+      "vn-stocks": "Chứng khoán VN"
   },
   "commands": {
     "prefixes": {
@@ -2914,6 +2915,25 @@
       "goldBase": "PNJ — triệu VNĐ trên 1 lượng",
       "goldType": "Loại vàng",
       "sourcePnj": "Nguồn: PNJ (bảng giá không chính thức)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Chỉ số",
+        "tickers": "Blue-chip"
+      },
+      "index": "Chỉ số",
+      "level": "Điểm",
+      "change": "Thay đổi",
+      "breadth": "Tăng/Giảm",
+      "symbol": "Mã",
+      "last": "Giá",
+      "ref": "Tham chiếu",
+      "volume": "Khối lượng",
+      "source": {
+        "indices": "Chỉ số SSI iBoard",
+        "tickers": "Bảng giá blue-chip VPS"
+      },
+      "degraded": "Hiện không khả dụng: {{sources}}. Sẽ thử lại trong giây lát."
     },
     "passkeyOffer": {
       "title": "Lưu khóa truy cập?",

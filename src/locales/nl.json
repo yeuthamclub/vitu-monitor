@@ -115,7 +115,8 @@
     "fearGreed": "Angst & Hebzucht",
     "marketBreadth": "Marktbreedte",
     "climateNews": "Klimaatnieuws",
-    "fx": "Wisselkoersen"
+    "fx": "Wisselkoersen",
+      "vn-stocks": "Vietnamese aandelen"
   },
   "commands": {
     "prefixes": {
@@ -2548,6 +2549,25 @@
       "goldBase": "PNJ — miljoen VND per tael",
       "goldType": "Product",
       "sourcePnj": "Bron: PNJ (officieuze prijslijst)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Indexen",
+        "tickers": "Blue chips"
+      },
+      "index": "Index",
+      "level": "Punten",
+      "change": "Wijziging",
+      "breadth": "Stijgers/Dalers",
+      "symbol": "Ticker",
+      "last": "Laatste",
+      "ref": "Referentie",
+      "volume": "Volume",
+      "source": {
+        "indices": "SSI iBoard-indexen",
+        "tickers": "VPS blue-chip board"
+      },
+      "degraded": "Nu niet beschikbaar: {{sources}}. Probeert zo opnieuw."
     },
     "passkeyOffer": {
       "title": "Wachtsleutel opslaan?",

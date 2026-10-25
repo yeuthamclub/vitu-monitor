@@ -115,7 +115,8 @@
     "fearGreed": "Rädsla & Girighet",
     "marketBreadth": "Marknadsbredd",
     "climateNews": "Klimatnyheter",
-    "fx": "Valutakurser"
+    "fx": "Valutakurser",
+      "vn-stocks": "Vietnamesiska aktier"
   },
   "commands": {
     "prefixes": {
@@ -2548,6 +2549,25 @@
       "goldBase": "PNJ — miljoner VND per tael",
       "goldType": "Produkt",
       "sourcePnj": "Källa: PNJ (inofficiell kurslista)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Index",
+        "tickers": "Blue chips"
+      },
+      "index": "Index",
+      "level": "Punkter",
+      "change": "Ändring",
+      "breadth": "Upp./Ned.",
+      "symbol": "Ticker",
+      "last": "Senast",
+      "ref": "Referens",
+      "volume": "Volym",
+      "source": {
+        "indices": "SSI iBoard-index",
+        "tickers": "VPS blue chip-tavla"
+      },
+      "degraded": "Otillgängligt just nu: {{sources}}. Försöker igen strax."
     },
     "passkeyOffer": {
       "title": "Spara en passkey?",

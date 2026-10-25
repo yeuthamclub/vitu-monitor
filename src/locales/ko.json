@@ -498,7 +498,8 @@
     "fearGreed": "공포 & 탐욕",
     "marketBreadth": "시장 폭",
     "climateNews": "기후 뉴스",
-    "fx": "외환 환율"
+    "fx": "외환 환율",
+      "vn-stocks": "베트남 주식"
   },
   "commands": {
     "prefixes": {
@@ -2914,6 +2915,25 @@
       "goldBase": "PNJ — 테일당 백만 VND",
       "goldType": "상품",
       "sourcePnj": "출처: PNJ (비공식 시세)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "지수",
+        "tickers": "대형주"
+      },
+      "index": "지수",
+      "level": "포인트",
+      "change": "변동",
+      "breadth": "상승/하락",
+      "symbol": "종목",
+      "last": "현재가",
+      "ref": "기준가",
+      "volume": "거래량",
+      "source": {
+        "indices": "SSI iBoard 지수",
+        "tickers": "VPS 대형주 시세"
+      },
+      "degraded": "현재 이용할 수 없습니다: {{sources}}. 곧 다시 시도합니다."
     },
     "passkeyOffer": {
       "title": "패스키를 저장하시겠어요?",

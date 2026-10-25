@@ -508,7 +508,8 @@
     "consumerPrices": "أسعار المستهلك",
     "marketBreadth": "اتساع السوق",
     "climateNews": "أخبار المناخ",
-    "fx": "أسعار الصرف الأجنبي"
+    "fx": "أسعار الصرف الأجنبي",
+      "vn-stocks": "أسهم فيتنام"
   },
   "commands": {
     "prefixes": {
@@ -3009,6 +3010,25 @@
       "goldBase": "PNJ — مليون VND لكل تايل",
       "goldType": "المنتج",
       "sourcePnj": "المصدر: PNJ (لوحة أسعار غير رسمية)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "المؤشرات",
+        "tickers": "الأسهم القيادية"
+      },
+      "index": "المؤشر",
+      "level": "نقطة",
+      "change": "التغير",
+      "breadth": "صاعد/هابط",
+      "symbol": "الرمز",
+      "last": "الأخير",
+      "ref": "المرجعي",
+      "volume": "الحجم",
+      "source": {
+        "indices": "مؤشرات SSI iBoard",
+        "tickers": "لوحة الأسهم القيادية VPS"
+      },
+      "degraded": "غير متاح حالياً: {{sources}}. ستتم إعادة المحاولة قريباً."
     },
     "passkeyOffer": {
       "title": "حفظ مفتاح المرور؟",

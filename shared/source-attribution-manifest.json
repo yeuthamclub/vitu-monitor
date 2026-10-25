@@ -2044,6 +2044,20 @@
       ]
     },
     {
+      "host": "bgapidatafeed.vps.com.vn",
+      "provider": "bgapidatafeed.vps.com.vn",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit VPS and link to the published board; unofficial frontend endpoint with no published API terms.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-stock-quotes.mjs"
+        }
+      ]
+    },
+    {
       "host": "bihus.info",
       "provider": "bihus.info",
       "kind": "feed",
@@ -5471,6 +5485,20 @@
       "references": [
         {
           "path": "src/config/live-video-sources.ts"
+        }
+      ]
+    },
+    {
+      "host": "iboard-query.ssi.com.vn",
+      "provider": "iboard-query.ssi.com.vn",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit SSI and link to the published board; unofficial frontend endpoint with no published API terms.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-stock-indices.mjs"
         }
       ]
     },

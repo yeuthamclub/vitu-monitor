@@ -500,7 +500,8 @@
     "fearGreed": "Страв & Алчност",
     "marketBreadth": "Пазарна Ширина",
     "climateNews": "Климатски Вести",
-    "fx": "Валутни курсове"
+    "fx": "Валутни курсове",
+      "vn-stocks": "Виетнамски акции"
   },
   "commands": {
     "prefixes": {
@@ -2933,6 +2934,25 @@
       "goldBase": "PNJ — милиони VND за таел",
       "goldType": "Продукт",
       "sourcePnj": "Източник: PNJ (неофициална листа)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Индекси",
+        "tickers": "Синя фишове"
+      },
+      "index": "Индекс",
+      "level": "Точки",
+      "change": "Промяна",
+      "breadth": "Раст./Пад.",
+      "symbol": "Код",
+      "last": "Последна",
+      "ref": "Референтна",
+      "volume": "Обем",
+      "source": {
+        "indices": "Индекси SSI iBoard",
+        "tickers": "Дъска синя фишове VPS"
+      },
+      "degraded": "В момента не е налично: {{sources}}. Ще опитаме отново скоро."
     },
     "passkeyOffer": {
       "title": "Да запазите ключ за достъп?",

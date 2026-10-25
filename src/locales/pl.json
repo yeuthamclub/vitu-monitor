@@ -504,7 +504,8 @@
     "fearGreed": "Strach i Chciwość",
     "marketBreadth": "Szerokość Rynku",
     "climateNews": "Wiadomości Klimatyczne",
-    "fx": "Kursy walutowe"
+    "fx": "Kursy walutowe",
+      "vn-stocks": "Wietnamskie akcje"
   },
   "commands": {
     "prefixes": {
@@ -2971,6 +2972,25 @@
       "goldBase": "PNJ — miliony VND za tael",
       "goldType": "Produkt",
       "sourcePnj": "Źródło: PNJ (nieoficjalny cennik)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Indeksy",
+        "tickers": "Blue chips"
+      },
+      "index": "Indeks",
+      "level": "Punkty",
+      "change": "Zmiana",
+      "breadth": "Wzrost/Spadek",
+      "symbol": "Ticker",
+      "last": "Ostatni",
+      "ref": "Odniesienia",
+      "volume": "Wolumen",
+      "source": {
+        "indices": "Indeksy SSI iBoard",
+        "tickers": "Tablica blue chips VPS"
+      },
+      "degraded": "Obecnie niedostępne: {{sources}}. Wkrótce ponowna próba."
     },
     "passkeyOffer": {
       "title": "Zapisać klucz dostępu?",

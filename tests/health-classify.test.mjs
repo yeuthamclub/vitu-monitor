@@ -1844,6 +1844,8 @@ const ISSUE_5055_HEALTH_REGISTRATIONS = [
   ['sharedFxRates', 'shared:fx-rates:v1', 'seed-meta:shared:fx-rates', 3600],
   ['vnFxRates', 'vn:fx-rates:v1', 'seed-meta:vn:fx-rates', 30],
   ['vnGoldPrices', 'vn:gold-prices:v1', 'seed-meta:vn:gold-prices', 30],
+  ['vnStockIndices', 'vn:stock-indices:v1', 'seed-meta:vn:stock-indices', 15],
+  ['vnStockQuotes', 'vn:stock-quotes:v1', 'seed-meta:vn:stock-quotes', 15],
   ['submarineCables', 'infrastructure:submarine-cables:v1', 'seed-meta:infrastructure:submarine-cables', 25200],
 ];
 

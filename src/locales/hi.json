@@ -569,7 +569,8 @@
     "fearGreed": "डर और लालच",
     "marketBreadth": "बाजार की पहुंच",
     "climateNews": "जलवायु समाचार",
-    "fx": "विदेशी मुद्रा दरें"
+    "fx": "विदेशी मुद्रा दरें",
+      "vn-stocks": "वियतनाम शेयर"
   },
   "commands": {
     "prefixes": {
@@ -3002,6 +3003,25 @@
       "goldBase": "PNJ — प्रति तैल मिलियन VND",
       "goldType": "उत्पाद",
       "sourcePnj": "स्रोत: PNJ (अनौपचारिक मूल्य सूची)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "सूचकांक",
+        "tickers": "ब्लू चिप्स"
+      },
+      "index": "सूचकांक",
+      "level": "अंक",
+      "change": "बदलाव",
+      "breadth": "बढ़/गिर",
+      "symbol": "कोड",
+      "last": "अंतिम",
+      "ref": "संदर्भ",
+      "volume": "वॉल्यूम",
+      "source": {
+        "indices": "SSI iBoard सूचकांक",
+        "tickers": "VPS ब्लू चिप बोर्ड"
+      },
+      "degraded": "अभी अनुपलब्ध: {{sources}}। शीघ्र पुनः प्रयास।"
     },
     "passkeyOffer": {
       "title": "एक पासकी सेव करें?",

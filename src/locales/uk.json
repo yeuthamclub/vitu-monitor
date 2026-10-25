@@ -573,7 +573,8 @@
     "fearGreed": "Fear & Greed",
     "marketBreadth": "Market Breadth",
     "climateNews": "Climate News",
-    "fx": "Курси іноземних валют"
+    "fx": "Курси іноземних валют",
+      "vn-stocks": "Вʼєтнамські акції"
   },
   "commands": {
     "prefixes": {
@@ -3040,6 +3041,25 @@
       "goldBase": "PNJ — млн VND за таел",
       "goldType": "Продукт",
       "sourcePnj": "Джерело: PNJ (неофіційний прайс)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Індекси",
+        "tickers": "Сині чіпи"
+      },
+      "index": "Індекс",
+      "level": "Пункти",
+      "change": "Зміна",
+      "breadth": "Зрост./Пад.",
+      "symbol": "Тікер",
+      "last": "Остання",
+      "ref": "Розрахункова",
+      "volume": "Обсяг",
+      "source": {
+        "indices": "Індекси SSI iBoard",
+        "tickers": "Дошка синіх чіпів VPS"
+      },
+      "degraded": "Зараз недоступно: {{sources}}. Скоро повторимо спробу."
     },
     "passkeyOffer": {
       "title": "Зберегти пропуск?",

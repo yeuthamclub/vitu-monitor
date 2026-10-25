@@ -498,7 +498,8 @@
     "fearGreed": "恐怖と貪欲",
     "marketBreadth": "市場の広がり",
     "climateNews": "気候ニュース",
-    "fx": "外国為替レート"
+    "fx": "外国為替レート",
+      "vn-stocks": "ベトナム株"
   },
   "commands": {
     "prefixes": {
@@ -2914,6 +2915,25 @@
       "goldBase": "PNJ — 1テールあたり百万VND",
       "goldType": "商品",
       "sourcePnj": "出典：PNJ（非公式相場）"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "指数",
+        "tickers": "ブルーチップ"
+      },
+      "index": "指数",
+      "level": "ポイント",
+      "change": "変化",
+      "breadth": "騰落",
+      "symbol": "銘柄",
+      "last": "最終",
+      "ref": "基準",
+      "volume": "出来高",
+      "source": {
+        "indices": "SSI iBoard指数",
+        "tickers": "VPSブルーチップ板"
+      },
+      "degraded": "現在利用できません: {{sources}}。まもなく再試行します。"
     },
     "passkeyOffer": {
       "title": "パスキーを保存しますか?",

@@ -502,7 +502,8 @@
     "fearGreed": "Frică și lacómie",
     "marketBreadth": "Amploarea pieței",
     "climateNews": "Știri despre climă",
-    "fx": "Cursuri de schimb valutar"
+    "fx": "Cursuri de schimb valutar",
+      "vn-stocks": "Acțiuni vietnameze"
   },
   "commands": {
     "prefixes": {
@@ -2952,6 +2953,25 @@
       "goldBase": "PNJ — milioane de VND per tael",
       "goldType": "Produs",
       "sourcePnj": "Sursă: PNJ (cotație neoficială)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Indici",
+        "tickers": "Blue chips"
+      },
+      "index": "Indice",
+      "level": "Puncte",
+      "change": "Schimbare",
+      "breadth": "Creșt./Scăd.",
+      "symbol": "Simbol",
+      "last": "Ultim",
+      "ref": "Referință",
+      "volume": "Volum",
+      "source": {
+        "indices": "Indici SSI iBoard",
+        "tickers": "Panou blue chips VPS"
+      },
+      "degraded": "Indisponibil momentan: {{sources}}. Reîncercăm în curând."
     },
     "passkeyOffer": {
       "title": "Salvezi o cheie de acces?",

@@ -500,7 +500,8 @@
     "fearGreed": "Fear & Greed",
     "marketBreadth": "Market Breadth",
     "climateNews": "Ειδήσεις για το Κλίμα",
-    "fx": "Ισοτιμίες συναλλάγματος"
+    "fx": "Ισοτιμίες συναλλάγματος",
+      "vn-stocks": "Μετοχές Βιετνάμ"
   },
   "commands": {
     "prefixes": {
@@ -2933,6 +2934,25 @@
       "goldBase": "PNJ — εκατομμύρια VND ανά tael",
       "goldType": "Προϊόν",
       "sourcePnj": "Πηγή: PNJ (ανεπίσημος πίνακας)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Δείκτες",
+        "tickers": "Blue chips"
+      },
+      "index": "Δείκτης",
+      "level": "Μονάδες",
+      "change": "Μεταβολή",
+      "breadth": "Κέρδ./Ζήμ.",
+      "symbol": "Κωδ.",
+      "last": "Τελευταία",
+      "ref": "Αναφορά",
+      "volume": "Όγκος",
+      "source": {
+        "indices": "Δείκτες SSI iBoard",
+        "tickers": "Πίνακας blue chips VPS"
+      },
+      "degraded": "Μη διαθέσιμο αυτό το στιγμή: {{sources}}. Θα ξαναπροσπαθήσουμε σύντομα."
     },
     "passkeyOffer": {
       "title": "Να αποθηκευθεί ένα κλειδί πρόσβασης;",

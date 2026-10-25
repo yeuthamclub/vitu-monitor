@@ -115,7 +115,8 @@
     "fearGreed": "Medo e Ganância",
     "marketBreadth": "Amplitude de Mercado",
     "climateNews": "Notícias Climáticas",
-    "fx": "Taxas de câmbio"
+    "fx": "Taxas de câmbio",
+      "vn-stocks": "Ações do Vietnã"
   },
   "commands": {
     "prefixes": {
@@ -2565,6 +2566,25 @@
       "goldBase": "PNJ — milhões de VND por tael",
       "goldType": "Produto",
       "sourcePnj": "Fonte: PNJ (cotação não oficial)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Índices",
+        "tickers": "Blue chips"
+      },
+      "index": "Índice",
+      "level": "Pontos",
+      "change": "Variação",
+      "breadth": "Alta/Baixa",
+      "symbol": "Código",
+      "last": "Último",
+      "ref": "Referência",
+      "volume": "Volume",
+      "source": {
+        "indices": "Índices SSI iBoard",
+        "tickers": "Painel blue chips VPS"
+      },
+      "degraded": "Indisponível agora: {{sources}}. Nova tentativa em breve."
     },
     "passkeyOffer": {
       "title": "Salvar uma chave de acesso?",

@@ -572,7 +572,8 @@
     "fearGreed": "Strah & Pohlepa",
     "marketBreadth": "Širina Tržišta",
     "climateNews": "Klimatske Vijesti",
-    "fx": "Tečajevi deviza"
+    "fx": "Tečajevi deviza",
+      "vn-stocks": "Vijetnamske dionice"
   },
   "commands": {
     "prefixes": {
@@ -3028,6 +3029,25 @@
       "goldBase": "PNJ — milijuni VND po taelu",
       "goldType": "Proizvod",
       "sourcePnj": "Izvor: PNJ (neslužbeni cjenik)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Indeksi",
+        "tickers": "Blue chips"
+      },
+      "index": "Indeks",
+      "level": "Bodovi",
+      "change": "Promjena",
+      "breadth": "Rast/Pad",
+      "symbol": "Oznaka",
+      "last": "Zadnja",
+      "ref": "Referentna",
+      "volume": "Volumen",
+      "source": {
+        "indices": "Indeksi SSI iBoard",
+        "tickers": "Ploča blue chips VPS"
+      },
+      "degraded": "Trenutno nedostupno: {{sources}}. Uskoro pokušavamo ponovo."
     },
     "passkeyOffer": {
       "title": "Spremi ključ pristupa?",

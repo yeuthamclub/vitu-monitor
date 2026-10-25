@@ -591,7 +591,8 @@
     "fearGreed": "Fear & Greed",
     "marketBreadth": "Market Breadth",
     "climateNews": "Climate News",
-    "fx": "Foreign exchange rates"
+    "fx": "Foreign exchange rates",
+      "vn-stocks": "VN Stocks"
   },
   "commands": {
     "prefixes": {
@@ -3054,6 +3055,25 @@
       "goldBase": "PNJ — million VNĐ per tael",
       "goldType": "Product",
       "sourcePnj": "Source: PNJ (unofficial board)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Indices",
+        "tickers": "Blue chips"
+      },
+      "index": "Index",
+      "level": "Points",
+      "change": "Change",
+      "breadth": "Adv/Dec",
+      "symbol": "Ticker",
+      "last": "Last",
+      "ref": "Reference",
+      "volume": "Volume",
+      "source": {
+        "indices": "SSI iBoard indices",
+        "tickers": "VPS blue-chip board"
+      },
+      "degraded": "Unavailable right now: {{sources}}. Retrying shortly."
     },
     "passkeyOffer": {
       "title": "Save a passkey?",

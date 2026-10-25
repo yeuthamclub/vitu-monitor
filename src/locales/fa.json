@@ -569,7 +569,8 @@
     "fearGreed": "Fear & Greed",
     "marketBreadth": "Market Breadth",
     "climateNews": "Climate News",
-    "fx": "نرخ تبادل ارز"
+    "fx": "نرخ تبادل ارز",
+      "vn-stocks": "سهام ویتنام"
   },
   "commands": {
     "prefixes": {
@@ -3002,6 +3003,25 @@
       "goldBase": "PNJ — میلیون VND به ازای هر تیل",
       "goldType": "محصول",
       "sourcePnj": "منبع: PNJ (جدول قیمت غیررسمی)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "شاخص‌ها",
+        "tickers": "آبی‌ها"
+      },
+      "index": "شاخص",
+      "level": "امتیاز",
+      "change": "تغییر",
+      "breadth": "مثبت/منفی",
+      "symbol": "نماد",
+      "last": "آخرین",
+      "ref": "مرجع",
+      "volume": "حجم",
+      "source": {
+        "indices": "شاخص‌های SSI iBoard",
+        "tickers": "تابلوی آبی‌های VPS"
+      },
+      "degraded": "اکنون در دسترس نیست: {{sources}}. به‌زودی دوباره تلاش می‌شود."
     },
     "passkeyOffer": {
       "title": "ذخیره کلید دسترسی؟",

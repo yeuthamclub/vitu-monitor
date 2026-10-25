@@ -569,7 +569,8 @@
     "fearGreed": "Hofu & Uchoyo",
     "marketBreadth": "Upana wa Soko",
     "climateNews": "Habari za Hali ya Hewa",
-    "fx": "Kiwango cha ubadilishaji wa fedha za kigeni"
+    "fx": "Kiwango cha ubadilishaji wa fedha za kigeni",
+      "vn-stocks": "Hisa za Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -3002,6 +3003,25 @@
       "goldBase": "PNJ — milioni ya VND kwa kila tael",
       "goldType": "Bidhaa",
       "sourcePnj": "Chanzo: PNJ (orodha isiyo rasmi)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Viashiria",
+        "tickers": "Blue chips"
+      },
+      "index": "Kipimo",
+      "level": "Pointi",
+      "change": "Mabadiliko",
+      "breadth": "Kupanda/Kushuka",
+      "symbol": "Alama",
+      "last": "Ya mwisho",
+      "ref": "Rejea",
+      "volume": "Kiasi",
+      "source": {
+        "indices": "Viashiria vya SSI iBoard",
+        "tickers": "Bodi ya blue chips VPS"
+      },
+      "degraded": "Haipatikani kwa sasa: {{sources}}. Tutarudia hivi karibuni."
     },
     "passkeyOffer": {
       "title": "Hifadhi passkey?",

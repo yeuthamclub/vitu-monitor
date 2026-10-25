@@ -72,6 +72,16 @@ const ON_DEMAND_CACHE_PROFILES = {
     browser: 'max-age=60, stale-while-revalidate=60, stale-if-error=600',
     cdn: 'public, s-maxage=600, stale-while-revalidate=120, stale-if-error=600',
   },
+  // SSI/VPS boards, seeded every 5 minutes in session against a 15-minute
+  // health budget (fork PR-2c). The complete CDN window is 14m.
+  vnStockIndices: {
+    browser: 'max-age=60, stale-while-revalidate=60, stale-if-error=300',
+    cdn: 'public, s-maxage=300, stale-while-revalidate=120, stale-if-error=420',
+  },
+  vnStockQuotes: {
+    browser: 'max-age=60, stale-while-revalidate=60, stale-if-error=300',
+    cdn: 'public, s-maxage=300, stale-while-revalidate=120, stale-if-error=420',
+  },
   forecasts: {
     browser: 'max-age=300, stale-while-revalidate=300, stale-if-error=1800',
     cdn: 'public, s-maxage=3600, stale-while-revalidate=300, stale-if-error=900',

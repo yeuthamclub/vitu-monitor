@@ -498,7 +498,8 @@
     "consumerPrices": "消費者價格",
     "marketBreadth": "市場廣度",
     "climateNews": "氣候新聞",
-    "fx": "外匯匯率"
+    "fx": "外匯匯率",
+    "vn-stocks": "越南股票"
   },
   "commands": {
     "prefixes": {
@@ -2914,6 +2915,25 @@
       "goldBase": "PNJ — 每兩百萬 VND",
       "goldType": "品名",
       "sourcePnj": "來源：PNJ（非官方牌價）"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "指數",
+        "tickers": "藍籌股"
+      },
+      "index": "指數",
+      "level": "點",
+      "change": "變動",
+      "breadth": "漲/跌",
+      "symbol": "程式碼",
+      "last": "最新",
+      "ref": "參考",
+      "volume": "成交量",
+      "source": {
+        "indices": "SSI iBoard 指數",
+        "tickers": "VPS 藍籌行情"
+      },
+      "degraded": "當前不可用：{{sources}}。即將重試。"
     },
     "passkeyOffer": {
       "title": "儲存通行金鑰？",

@@ -500,7 +500,8 @@
     "fearGreed": "Korku & Açgözlülük",
     "marketBreadth": "Pazar Genişliği",
     "climateNews": "İklim Haberleri",
-    "fx": "Döviz kurları"
+    "fx": "Döviz kurları",
+      "vn-stocks": "Vietnam hisseleri"
   },
   "commands": {
     "prefixes": {
@@ -2933,6 +2934,25 @@
       "goldBase": "PNJ — tael başına milyon VND",
       "goldType": "Ürün",
       "sourcePnj": "Kaynak: PNJ (resmî olmayan fiyat listesi)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Endeksler",
+        "tickers": "Blue chip"
+      },
+      "index": "Endeks",
+      "level": "Puan",
+      "change": "Değişim",
+      "breadth": "Yüksel./Düş.",
+      "symbol": "Kod",
+      "last": "Son",
+      "ref": "Referans",
+      "volume": "Hacim",
+      "source": {
+        "indices": "SSI iBoard endeksleri",
+        "tickers": "VPS blue chip panosu"
+      },
+      "degraded": "Şu anda kullanılamıyor: {{sources}}. Kısa süre sonra tekrar denenecek."
     },
     "passkeyOffer": {
       "title": "Passkey kaydedilsin mi?",

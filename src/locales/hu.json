@@ -569,7 +569,8 @@
     "fearGreed": "Félelem és mohóság",
     "marketBreadth": "Piaci szélesség",
     "climateNews": "Klíma hírek",
-    "fx": "Devizaárfolyamok"
+    "fx": "Devizaárfolyamok",
+      "vn-stocks": "Vietnami részvények"
   },
   "commands": {
     "prefixes": {
@@ -3002,6 +3003,25 @@
       "goldBase": "PNJ — millió VND per tael",
       "goldType": "Termék",
       "sourcePnj": "Forrás: PNJ (nem hivatalos árjegyzék)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Indexek",
+        "tickers": "Blue chipek"
+      },
+      "index": "Index",
+      "level": "Pont",
+      "change": "Változás",
+      "breadth": "Emel./Esem.",
+      "symbol": "Kód",
+      "last": "Utolsó",
+      "ref": "Referencia",
+      "volume": "Forgalom",
+      "source": {
+        "indices": "SSI iBoard indexek",
+        "tickers": "VPS blue chip tábla"
+      },
+      "degraded": "Jelenleg nem elérhető: {{sources}}. Hamarosan újrapróbáljuk."
     },
     "passkeyOffer": {
       "title": "Passkey mentése?",

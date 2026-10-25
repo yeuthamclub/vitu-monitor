@@ -502,7 +502,8 @@
     "consumerPrices": "Precios al Consumidor",
     "marketBreadth": "Amplitud de Mercado",
     "climateNews": "Noticias de Clima",
-    "fx": "Tipos de cambio"
+    "fx": "Tipos de cambio",
+      "vn-stocks": "Acciones de Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -2952,6 +2953,25 @@
       "goldBase": "PNJ — millones de VND por tael",
       "goldType": "Producto",
       "sourcePnj": "Fuente: PNJ (cotización no oficial)"
+    },
+    "vnStocks": {
+      "tabs": {
+        "indices": "Índices",
+        "tickers": "Blue chips"
+      },
+      "index": "Índice",
+      "level": "Puntos",
+      "change": "Cambio",
+      "breadth": "Sub./Baj.",
+      "symbol": "Código",
+      "last": "Último",
+      "ref": "Referencia",
+      "volume": "Volumen",
+      "source": {
+        "indices": "Índices SSI iBoard",
+        "tickers": "Panel blue chips VPS"
+      },
+      "degraded": "No disponible ahora: {{sources}}. Reintentando en breve."
     },
     "passkeyOffer": {
       "title": "¿Guardar una llave de acceso?",
