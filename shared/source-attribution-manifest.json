@@ -5074,6 +5074,9 @@
           "path": "src/app/desktop-updater.ts"
         },
         {
+          "path": "src/app/panel-layout.ts"
+        },
+        {
           "path": "src/services/analytics.ts"
         },
         {
