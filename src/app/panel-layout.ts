@@ -468,6 +468,8 @@ export class PanelLayoutManager implements AppModule {
   private criticalBannerEl: HTMLElement | null = null;
   private mobilePanelNav: MobilePanelNav | null = null;
   private mobileMapCollapseBtn: HTMLButtonElement | null = null;
+  /** Fork-only: vietnam mobile frame waits for the first expand (see init). */
+  private vnMobileFramePending = false;
   private panelTabBar: PanelTabBar | null = null;
   private tabsState: TabsState | null = null;
   private unregisterExportFlush: (() => void) | null = null;
@@ -2183,8 +2185,19 @@ export class PanelLayoutManager implements AppModule {
       const isCollapsed = mapSection.classList.toggle('collapsed');
       this.updateMobileMapCollapseBtn(isCollapsed);
       saveToStorage('mobile-map-collapsed', isCollapsed);
-      if (!isCollapsed) window.dispatchEvent(new Event('resize'));
+      if (!isCollapsed) {
+        window.dispatchEvent(new Event('resize'));
+        this.applyVnMobileFrame();
+      }
     });
+  }
+
+  /** Centre the vietnam mobile map once it has a size; the SVG renderer
+   *  projects from the container, which is 0x0 while collapsed. */
+  private applyVnMobileFrame(): void {
+    if (!this.vnMobileFramePending) return;
+    this.vnMobileFramePending = false;
+    requestAnimationFrame(() => this.ctx.map?.setCenter(13.5, 110.5, 4));
   }
 
   /** Expand the mobile map (no-op if already expanded) so a banner's
@@ -2196,6 +2209,8 @@ export class PanelLayoutManager implements AppModule {
     // empty top would read as the tap doing nothing.
     if (mapSection.classList.contains('hidden')) return;
     if (mapSection.classList.contains('collapsed')) {
+      // The caller flies to its own region; the default frame must not override it.
+      this.vnMobileFramePending = false;
       mapSection.classList.remove('collapsed');
       saveToStorage('mobile-map-collapsed', false);
       this.updateMobileMapCollapseBtn(false);
@@ -3523,7 +3538,8 @@ export class PanelLayoutManager implements AppModule {
     this.ctx.map = new MapContainer(mapContainer, {
       zoom: this.ctx.isMobile ? 2.5 : 1.0,
       pan: { x: 0, y: 0 },
-      view: this.ctx.isMobile ? this.ctx.resolvedLocation : 'global',
+      // Fork: the vietnam variant's region is Asia whatever the cached region.
+      view: SITE_VARIANT === 'vietnam' ? 'asia' : this.ctx.isMobile ? this.ctx.resolvedLocation : 'global',
       layers: this.ctx.mapLayers,
       timeRange: '7d',
     }, preferGlobe, {
@@ -3551,6 +3567,25 @@ export class PanelLayoutManager implements AppModule {
 
     this.applyPanelSettings();
     this.applyInitialUrlState();
+    // Fork-only: the vietnam variant opens on Vietnam and the East Sea (mainland,
+    // Hoàng Sa and Trường Sa) instead of the world view. A URL centre or another
+    // region still wins. `view=asia` (this variant's own view) or `global`
+    // without lat/lon is what the URL records before the renderer can report a
+    // centre, so those get the frame too; otherwise a plain reload would land
+    // on the preset instead.
+    // On mobile the map usually starts collapsed, and the SVG renderer projects a
+    // centre from the container size, which is 0x0 until the map is shown, so a
+    // centre set now lands at 0°E: defer it to the first expand.
+    const urlState = this.ctx.initialUrlState;
+    if (SITE_VARIANT === 'vietnam' && urlState?.lat === undefined
+      && (!urlState?.view || urlState.view === 'asia' || urlState.view === 'global')) {
+      if (!this.ctx.isMobile) {
+        this.ctx.map.setCenter(13.5, 110.5, 4.6);
+      } else {
+        this.vnMobileFramePending = true;
+        if (!PanelLayoutManager.isMobileMapCollapsedPreferred()) this.applyVnMobileFrame();
+      }
+    }
 
     // Observe each panel for viewport entry. As soon as a panel scrolls
     // within ~200px of the viewport it fires loadAllData() once
