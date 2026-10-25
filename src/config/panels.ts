@@ -1179,6 +1179,8 @@ const VIETNAM_PANELS: Record<string, PanelConfig> = {
   'vn-weather-warnings': { name: 'Cảnh báo thời tiết', enabled: true, priority: 1 },
   // Hazard panel: USGS FDSN VN-region quakes until IGP is reachable (PR-3b).
   'vn-earthquakes': { name: 'Động đất', enabled: true, priority: 2 },
+  // Open-Meteo current, 5-day forecast and AQI for five VN cities (PR-3d).
+  'vn-weather': { name: 'Thời tiết & chất lượng không khí', enabled: true, priority: 2 },
   'supply-chain': { name: 'Chuỗi cung ứng & tuyến biển', enabled: true, priority: 2 },
   monitors: { name: 'Theo dõi của tôi', enabled: true, priority: 3 },
   'world-clock': { name: 'Giờ thế giới', enabled: true, priority: 3 },
@@ -1713,7 +1715,7 @@ export const PANEL_CATEGORY_MAP: Record<string, { labelKey: string; panelKeys: s
   },
   vietnamHazards: {
     labelKey: 'header.panelCatDataTracking',
-    panelKeys: ['vn-weather-warnings', 'vn-earthquakes'],
+    panelKeys: ['vn-weather-warnings', 'vn-earthquakes', 'vn-weather'],
     variants: ['vietnam'],
   },
 };

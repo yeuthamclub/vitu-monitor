@@ -501,7 +501,8 @@
     "fx": "外国為替レート",
     "vn-stocks": "ベトナム株",
     "vn-weather-warnings": "気象警報",
-    "vn-earthquakes": "地震（ベトナム地域）"
+    "vn-earthquakes": "地震（ベトナム地域）",
+    "vn-weather": "ベトナムの天気と大気質"
   },
   "commands": {
     "prefixes": {
@@ -3015,6 +3016,14 @@
       "depth": "深さ (km)",
       "time": "時刻",
       "place": "場所"
+    },
+    "vnWeatherCities": {
+      "now": "現在",
+      "humidity": "湿度",
+      "wind": "風",
+      "aqi": "AQI",
+      "forecast": "5日間予報",
+      "source": "出典: Open-Meteo — 現在の天気、5日間予報、大気質"
     }
   },
   "popups": {

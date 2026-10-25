@@ -91,6 +91,7 @@ import type { FxPanel } from '@/components/FxPanel';
 import type { VnStocksPanel } from '@/components/VnStocksPanel';
 import type { VnWeatherWarningsPanel } from '@/components/VnWeatherWarningsPanel';
 import type { VnEarthquakesPanel } from '@/components/VnEarthquakesPanel';
+import type { VnWeatherPanel } from '@/components/VnWeatherPanel';
 import type { FaoFoodPriceIndexPanel } from '@/components/FaoFoodPriceIndexPanel';
 import type { OilInventoriesPanel } from '@/components/OilInventoriesPanel';
 import type { PipelineStatusPanel } from '@/components/PipelineStatusPanel';
@@ -834,6 +835,10 @@ export class App {
     if (shouldPrime('vn-earthquakes')) {
       const panel = this.state.panels['vn-earthquakes'] as VnEarthquakesPanel | undefined;
       if (panel) primeTask('vn-earthquakes', () => panel.fetchData());
+    }
+    if (shouldPrime('vn-weather')) {
+      const panel = this.state.panels['vn-weather'] as VnWeatherPanel | undefined;
+      if (panel) primeTask('vn-weather', () => panel.fetchData());
     }
     if (shouldPrime('fao-food-price-index')) {
       const panel = this.state.panels['fao-food-price-index'] as FaoFoodPriceIndexPanel | undefined;
@@ -4178,6 +4183,13 @@ export class App {
       () => (this.state.panels['vn-earthquakes'] as VnEarthquakesPanel).fetchData(),
       REFRESH_INTERVALS.vnEarthquakes,
       () => this.isPanelNearViewport('vn-earthquakes')
+    );
+
+    this.refreshScheduler.scheduleRefresh(
+      'vn-weather',
+      () => (this.state.panels['vn-weather'] as VnWeatherPanel).fetchData(),
+      REFRESH_INTERVALS.vnWeather,
+      () => this.isPanelNearViewport('vn-weather')
     );
 
     this.refreshScheduler.scheduleRefresh(

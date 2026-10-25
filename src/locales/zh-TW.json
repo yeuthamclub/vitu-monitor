@@ -501,7 +501,8 @@
     "fx": "外匯匯率",
     "vn-stocks": "越南股票",
     "vn-weather-warnings": "氣象預警",
-    "vn-earthquakes": "地震（越南地區）"
+    "vn-earthquakes": "地震（越南地區）",
+    "vn-weather": "越南天氣與空氣品質"
   },
   "commands": {
     "prefixes": {
@@ -3015,6 +3016,14 @@
       "depth": "深度 (公里)",
       "time": "時間",
       "place": "位置"
+    },
+    "vnWeatherCities": {
+      "now": "目前",
+      "humidity": "濕度",
+      "wind": "風",
+      "aqi": "AQI",
+      "forecast": "5天預報",
+      "source": "來源：Open-Meteo — 目前天氣、5天預報和空氣品質"
     }
   },
   "popups": {

@@ -1009,6 +1009,7 @@ describe('planned Railway service lifecycle', () => {
       'seed-vn-gold-prices',
       'seed-vn-stock-indices',
       'seed-vn-stock-quotes',
+      'seed-vn-weather',
       'seed-vn-weather-warnings',
       // shipping-webhook-worker (#9217) is deliberately ABSENT now: #9236
       // landed it planned until the Railway service existed, and service

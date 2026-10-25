@@ -118,7 +118,8 @@
     "fx": "Taxas de câmbio",
     "vn-stocks": "Ações do Vietnã",
     "vn-weather-warnings": "Avisos meteorológicos",
-    "vn-earthquakes": "Terremotos (região do Vietnã)"
+    "vn-earthquakes": "Terremotos (região do Vietnã)",
+    "vn-weather": "Tempo e qualidade do ar no Vietnã"
   },
   "commands": {
     "prefixes": {
@@ -2668,6 +2669,14 @@
       "depth": "Prof. (km)",
       "time": "Hora",
       "place": "Local"
+    },
+    "vnWeatherCities": {
+      "now": "Agora",
+      "humidity": "Umidade",
+      "wind": "Vento",
+      "aqi": "IQA",
+      "forecast": "Previsão de 5 dias",
+      "source": "Fonte: Open-Meteo — condições atuais, previsão de 5 dias e qualidade do ar"
     }
   },
   "popups": {

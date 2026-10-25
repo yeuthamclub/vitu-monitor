@@ -572,7 +572,8 @@
     "fx": "Kiwango cha ubadilishaji wa fedha za kigeni",
     "vn-stocks": "Hisa za Vietnam",
     "vn-weather-warnings": "Tahadhari za hali ya hewa",
-    "vn-earthquakes": "Mitetemeko ya ardhi (eneo la Vietnam)"
+    "vn-earthquakes": "Mitetemeko ya ardhi (eneo la Vietnam)",
+    "vn-weather": "Hali ya hewa na ubora wa hewa Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -3104,6 +3105,14 @@
       "depth": "Kina (km)",
       "time": "Waktu",
       "place": "Mahali"
+    },
+    "vnWeatherCities": {
+      "now": "Sasa",
+      "humidity": "Unyevu",
+      "wind": "Upepo",
+      "aqi": "AQI",
+      "forecast": "Utabiri wa siku 5",
+      "source": "Chanzo: Open-Meteo — hali ya sasa, utabiri wa siku 5 na ubora wa hewa"
     }
   },
   "popups": {

@@ -302,6 +302,7 @@ export const DEFERRED_PANEL_NATURAL_FOOTPRINTS: Readonly<Record<string, Deferred
   'ucdp-events': { rowSpan: 2 },
   'vn-earthquakes': { rowSpan: 2 },
   'vn-stocks': { rowSpan: 2 },
+  'vn-weather': { rowSpan: 2 },
   'vn-weather-warnings': { rowSpan: 2 },
   'windy-webcams': { className: 'panel-wide' },
 };
@@ -3129,6 +3130,9 @@ export class PanelLayoutManager implements AppModule {
     );
     this.lazyPanel('vn-weather-warnings', () =>
       this.importPanel('vn-weather-warnings', () => import('@/components/VnWeatherWarningsPanel'), 'VnWeatherWarningsPanel', (VnWeatherWarningsPanel) => new VnWeatherWarningsPanel()),
+    );
+    this.lazyPanel('vn-weather', () =>
+      this.importPanel('vn-weather', () => import('@/components/VnWeatherPanel'), 'VnWeatherPanel', (VnWeatherPanel) => new VnWeatherPanel()),
     );
     this.lazyPanel('vn-stocks', () =>
       this.importPanel('vn-stocks', () => import('@/components/VnStocksPanel'), 'VnStocksPanel', (VnStocksPanel) => new VnStocksPanel()),

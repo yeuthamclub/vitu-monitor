@@ -1802,20 +1802,8 @@
   {
     "entry": "scripts/seed-vn-weather.mjs",
     "deployMode": "nixpacks-root-scripts",
+    "lifecycle": "planned",
     "service": "seed-vn-weather",
-    "watchPatterns": [
-      "scripts/_content-age-helpers.mjs",
-      "scripts/_proxy-utils.cjs",
-      "scripts/_seed-contract.mjs",
-      "scripts/_seed-envelope-source.mjs",
-      "scripts/_seed-utils.mjs",
-      "scripts/lib/llm-telemetry.cjs",
-      "scripts/nixpacks.toml",
-      "scripts/package-lock.json",
-      "scripts/package.json",
-      "scripts/seed-vn-weather.mjs",
-      "scripts/shared/compare-and-delete-script.cjs"
-    ],
     "documentedAt": "docs/railway-seed-consolidation-runbook.md#standalone-seed-crons-added-after-this-snapshot"
   },
   {

@@ -118,7 +118,8 @@
     "fx": "Valutakurser",
     "vn-stocks": "Vietnamesiska aktier",
     "vn-weather-warnings": "Vädervarningar",
-    "vn-earthquakes": "Jordbävningar (Vietnam-regionen)"
+    "vn-earthquakes": "Jordbävningar (Vietnam-regionen)",
+    "vn-weather": "Väder och luftkvalitet i Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -2650,6 +2651,14 @@
       "depth": "Djup (km)",
       "time": "Tid",
       "place": "Plats"
+    },
+    "vnWeatherCities": {
+      "now": "Nu",
+      "humidity": "Luftfuktighet",
+      "wind": "Vind",
+      "aqi": "AQI",
+      "forecast": "5-dygnsprognos",
+      "source": "Källa: Open-Meteo — aktuellt väder, 5-dygnsprognos och luftkvalitet"
     }
   },
   "popups": {

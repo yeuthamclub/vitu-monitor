@@ -503,7 +503,8 @@
     "fx": "Devisenkurse",
     "vn-stocks": "Vietnam-Aktien",
     "vn-weather-warnings": "Wetterwarnungen",
-    "vn-earthquakes": "Erdbeben (Region Vietnam)"
+    "vn-earthquakes": "Erdbeben (Region Vietnam)",
+    "vn-weather": "Wetter & Luftqualität Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -3035,6 +3036,14 @@
       "depth": "Tiefe (km)",
       "time": "Zeit",
       "place": "Ort"
+    },
+    "vnWeatherCities": {
+      "now": "Jetzt",
+      "humidity": "Luftfeuchte",
+      "wind": "Wind",
+      "aqi": "AQI",
+      "forecast": "5-Tage-Vorhersage",
+      "source": "Quelle: Open-Meteo — aktuelles Wetter, 5-Tage-Vorhersage und Luftqualität"
     }
   },
   "popups": {

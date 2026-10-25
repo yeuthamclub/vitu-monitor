@@ -507,7 +507,8 @@
     "fx": "Kursy walutowe",
     "vn-stocks": "Wietnamskie akcje",
     "vn-weather-warnings": "Ostrzeżenia pogodowe",
-    "vn-earthquakes": "Trzęsienia ziemi (region Wietnamu)"
+    "vn-earthquakes": "Trzęsienia ziemi (region Wietnamu)",
+    "vn-weather": "Pogoda i jakość powietrza w Wietnamie"
   },
   "commands": {
     "prefixes": {
@@ -3075,6 +3076,14 @@
       "depth": "Głębokość (km)",
       "time": "Czas",
       "place": "Miejsce"
+    },
+    "vnWeatherCities": {
+      "now": "Teraz",
+      "humidity": "Wilgotność",
+      "wind": "Wiatr",
+      "aqi": "AQI",
+      "forecast": "Prognoza na 5 dni",
+      "source": "Źródło: Open-Meteo — bieżąca pogoda, prognoza na 5 dni i jakość powietrza"
     }
   },
   "popups": {

@@ -572,7 +572,8 @@
     "fx": "Devizaárfolyamok",
     "vn-stocks": "Vietnami részvények",
     "vn-weather-warnings": "Időjárási figyelmeztetések",
-    "vn-earthquakes": "Földrengések (Vietnám-régió)"
+    "vn-earthquakes": "Földrengések (Vietnám-régió)",
+    "vn-weather": "Vietnámi időjárás és levegőminőség"
   },
   "commands": {
     "prefixes": {
@@ -3104,6 +3105,14 @@
       "depth": "Mélység (km)",
       "time": "Idő",
       "place": "Helyszín"
+    },
+    "vnWeatherCities": {
+      "now": "Most",
+      "humidity": "Páratartalom",
+      "wind": "Szél",
+      "aqi": "AQI",
+      "forecast": "5 napos előrejelzés",
+      "source": "Forrás: Open-Meteo — aktuális időjárás, 5 napos előrejelzés és levegőminőség"
     }
   },
   "popups": {

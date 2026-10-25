@@ -45,7 +45,7 @@ const EXPECTED_VARIANT_PANEL_SNAPSHOTS: Record<DashboardVariant, {
   commodity: { enabledCount: 33, enabledSha256: 'b534510a2e814392e3966beb211e300e75a2b33f05c283613dd4f6cee50ddfe0' },
   happy: { enabledCount: 10, enabledSha256: 'f62bbf19c2f7ca75fefeb12a7ba32da991a72f494f91e6d310910d5b7a0468ad' },
   energy: { enabledCount: 26, enabledSha256: '4566c4b42ec77521cddce83cccabe91069ffb211ade9441ef0cf115f11a3cd67' },
-  vietnam: { enabledCount: 18, enabledSha256: '3b7dbd3af6cf5fefb8da16b21dfc0bfdf5e10c51b70c410a6616a5bdde842b49' },
+  vietnam: { enabledCount: 19, enabledSha256: '1990c1a84f02d7c5dca81a5a6f851f8cb2688f902b851fcd5d252777a5688eed' },
 };
 
 const EXPECTED_VARIANT_DEFAULT_SNAPSHOTS: Record<DashboardVariant, {
@@ -59,7 +59,7 @@ const EXPECTED_VARIANT_DEFAULT_SNAPSHOTS: Record<DashboardVariant, {
   commodity: { total: 36, enabled: 33, sha256: 'cc9e0b178dec33dff354a1eea95b5b215302fc7ce685b3d92b82a356df6d6bee' },
   happy: { total: 10, enabled: 10, sha256: '197a73a578d8734d49e844e0a83b89204d5a6fc6b973b1ed698272d846a2c308' },
   energy: { total: 28, enabled: 26, sha256: 'c29563083968049da7c1c7c0b6a856143c3797c010b9c21d2424bbbbb3febbc1' },
-  vietnam: { total: 21, enabled: 18, sha256: '23bae7f48be003778936659d1dcef23af719ba55b5519a28bb27e2250efb4577' },
+  vietnam: { total: 22, enabled: 19, sha256: '792ae366590007d2fa5356b1e14b2e56647f9abb4da7d5edf88ffa7d8f65c200' },
 };
 
 function makeContext(

@@ -503,7 +503,8 @@
     "fx": "Döviz kurları",
     "vn-stocks": "Vietnam hisseleri",
     "vn-weather-warnings": "Hava uyarıları",
-    "vn-earthquakes": "Depremler (Vietnam bölgesi)"
+    "vn-earthquakes": "Depremler (Vietnam bölgesi)",
+    "vn-weather": "Vietnam hava durumu ve hava kalitesi"
   },
   "commands": {
     "prefixes": {
@@ -3035,6 +3036,14 @@
       "depth": "Derinlik (km)",
       "time": "Zaman",
       "place": "Yer"
+    },
+    "vnWeatherCities": {
+      "now": "Şimdi",
+      "humidity": "Nem",
+      "wind": "Rüzgâr",
+      "aqi": "AQI",
+      "forecast": "5 günlük tahmin",
+      "source": "Kaynak: Open-Meteo — güncel hava, 5 günlük tahmin ve hava kalitesi"
     }
   },
   "popups": {

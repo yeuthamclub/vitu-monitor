@@ -501,7 +501,8 @@
     "fx": "Tỷ giá ngoại hối",
     "vn-stocks": "Chứng khoán VN",
     "vn-weather-warnings": "Cảnh báo thời tiết",
-    "vn-earthquakes": "Động đất (vùng VN)"
+    "vn-earthquakes": "Động đất (vùng VN)",
+    "vn-weather": "Thời tiết & chất lượng không khí"
   },
   "commands": {
     "prefixes": {
@@ -3015,6 +3016,14 @@
       "depth": "Sâu (km)",
       "time": "Thời gian",
       "place": "Vị trí"
+    },
+    "vnWeatherCities": {
+      "now": "Hiện tại",
+      "humidity": "Độ ẩm",
+      "wind": "Gió",
+      "aqi": "AQI",
+      "forecast": "Dự báo 5 ngày",
+      "source": "Nguồn: Open-Meteo — thời tiết hiện tại, dự báo 5 ngày và chất lượng không khí"
     }
   },
   "popups": {

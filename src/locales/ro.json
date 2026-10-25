@@ -505,7 +505,8 @@
     "fx": "Cursuri de schimb valutar",
     "vn-stocks": "Acțiuni vietnameze",
     "vn-weather-warnings": "Avertizări meteo",
-    "vn-earthquakes": "Cutremure (regiunea Vietnam)"
+    "vn-earthquakes": "Cutremure (regiunea Vietnam)",
+    "vn-weather": "Vremea și calitatea aerului în Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -3055,6 +3056,14 @@
       "depth": "Adâncime (km)",
       "time": "Ora",
       "place": "Loc"
+    },
+    "vnWeatherCities": {
+      "now": "Acum",
+      "humidity": "Umiditate",
+      "wind": "Vânt",
+      "aqi": "AQI",
+      "forecast": "Prognoză pe 5 zile",
+      "source": "Sursă: Open-Meteo — vremea curentă, prognoză pe 5 zile și calitatea aerului"
     }
   },
   "popups": {

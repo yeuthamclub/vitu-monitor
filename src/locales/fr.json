@@ -505,7 +505,8 @@
     "fx": "Taux de change",
     "vn-stocks": "Actions vietnamiennes",
     "vn-weather-warnings": "Alertes météo",
-    "vn-earthquakes": "Séismes (région du Vietnam)"
+    "vn-earthquakes": "Séismes (région du Vietnam)",
+    "vn-weather": "Météo et qualité de l’air au Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -3055,6 +3056,14 @@
       "depth": "Prof. (km)",
       "time": "Heure",
       "place": "Lieu"
+    },
+    "vnWeatherCities": {
+      "now": "Maintenant",
+      "humidity": "Humidité",
+      "wind": "Vent",
+      "aqi": "IQA",
+      "forecast": "Prévisions à 5 jours",
+      "source": "Source : Open-Meteo — conditions actuelles, prévisions à 5 jours et qualité de l’air"
     }
   },
   "popups": {

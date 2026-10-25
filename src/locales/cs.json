@@ -507,7 +507,8 @@
     "fx": "Kurzy zahraniční měny",
     "vn-stocks": "Vietnamské akcie",
     "vn-weather-warnings": "Varování počasí",
-    "vn-earthquakes": "Zemětřesení (region Vietnam)"
+    "vn-earthquakes": "Zemětřesení (region Vietnam)",
+    "vn-weather": "Počasí a ovzduší ve Vietnamu"
   },
   "commands": {
     "prefixes": {
@@ -3075,6 +3076,14 @@
       "depth": "Hloubka (km)",
       "time": "Čas",
       "place": "Místo"
+    },
+    "vnWeatherCities": {
+      "now": "Nyní",
+      "humidity": "Vlhkost",
+      "wind": "Vítr",
+      "aqi": "AQI",
+      "forecast": "Předpověď na 5 dní",
+      "source": "Zdroj: Open-Meteo — aktuální počasí, předpověď na 5 dní a kvalita ovzduší"
     }
   },
   "popups": {

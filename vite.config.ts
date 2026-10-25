@@ -179,7 +179,7 @@ const PANEL_CLUSTER: Record<string, PanelChunkName> = {
   WorldClock: 'panels-risk',
   // Realtime Monitor fork: Vietnam variant panels
   VnStocks: 'panels-markets',
-  VnWeatherWarnings: 'panels-risk', VnEarthquakes: 'panels-risk',
+  VnWeatherWarnings: 'panels-risk', VnEarthquakes: 'panels-risk', VnWeather: 'panels-risk',
 };
 
 const PANEL_SUPPORT_CLUSTER: Record<string, PanelSupportChunkName> = {

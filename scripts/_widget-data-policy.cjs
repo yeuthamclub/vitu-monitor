@@ -224,6 +224,7 @@ const EXCLUDED_BOOTSTRAP_KEYS = {
   vnFuelPrices: "Vietnam variant panel feed; source redistribution terms unconfirmed",
   vnWeatherWarnings: "Vietnam variant panel feed; source redistribution terms unconfirmed",
   vnEarthquakes: "Vietnam variant panel feed; source redistribution terms unconfirmed",
+  vnWeather: "Vietnam variant panel feed; source redistribution terms unconfirmed",
 };
 
 const EXCLUDED_RPC_ROUTES = {

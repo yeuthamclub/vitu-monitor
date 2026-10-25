@@ -575,7 +575,8 @@
     "fx": "Tečajevi deviza",
     "vn-stocks": "Vijetnamske dionice",
     "vn-weather-warnings": "Upozorenja za vrijeme",
-    "vn-earthquakes": "Potresi (regija Vijetnama)"
+    "vn-earthquakes": "Potresi (regija Vijetnama)",
+    "vn-weather": "Vrijeme i kvaliteta zraka u Vijetnamu"
   },
   "commands": {
     "prefixes": {
@@ -3131,6 +3132,14 @@
       "depth": "Dubina (km)",
       "time": "Vrijeme",
       "place": "Lokacija"
+    },
+    "vnWeatherCities": {
+      "now": "Sada",
+      "humidity": "Vlažnost",
+      "wind": "Vjetar",
+      "aqi": "AQI",
+      "forecast": "Prognoza za 5 dana",
+      "source": "Izvor: Open-Meteo — trenutačno vrijeme, prognoza za 5 dana i kvaliteta zraka"
     }
   },
   "popups": {

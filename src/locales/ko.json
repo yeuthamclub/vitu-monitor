@@ -501,7 +501,8 @@
     "fx": "외환 환율",
     "vn-stocks": "베트남 주식",
     "vn-weather-warnings": "기상 경보",
-    "vn-earthquakes": "지진(베트남 지역)"
+    "vn-earthquakes": "지진(베트남 지역)",
+    "vn-weather": "베트남 날씨 및 대기질"
   },
   "commands": {
     "prefixes": {
@@ -3015,6 +3016,14 @@
       "depth": "깊이 (km)",
       "time": "시간",
       "place": "위치"
+    },
+    "vnWeatherCities": {
+      "now": "현재",
+      "humidity": "습도",
+      "wind": "바람",
+      "aqi": "AQI",
+      "forecast": "5일 예보",
+      "source": "출처: Open-Meteo — 현재 날씨, 5일 예보 및 대기질"
     }
   },
   "popups": {

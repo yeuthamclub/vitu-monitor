@@ -256,6 +256,7 @@ export const COMMANDS: Command[] = [
   { id: 'panel:vn-stocks', keywords: ['vn stocks', 'chứng khoán', 'vn-index', 'vn30', 'hose', 'hnx'], label: 'VN Stocks', icon: '\u{1F4CA}', category: 'panels' },
   { id: 'panel:vn-weather-warnings', keywords: ['vietnam weather warnings', 'cảnh báo thời tiết', 'bão', 'áp thấp nhiệt đới', 'nchmf'], label: 'Vietnam Weather Warnings', icon: '\u{1F300}', category: 'panels' },
   { id: 'panel:vn-earthquakes', keywords: ['vietnam earthquakes', 'động đất', 'địa chấn', 'usgs vietnam'], label: 'Earthquakes (VN region)', icon: '\u{1F30B}', category: 'panels' },
+  { id: 'panel:vn-weather', keywords: ['vietnam weather', 'thời tiết', 'chất lượng không khí', 'aqi', 'open-meteo'], label: 'VN Weather & Air Quality', icon: '\u{1F324}\u{FE0F}', category: 'panels' },
 
   // Finance variant panels
   { id: 'panel:analysis', keywords: ['market analysis', 'equity analysis', 'technical analysis'], label: 'Market Analysis', icon: '\u{1F4CA}', category: 'panels' },

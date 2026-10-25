@@ -118,7 +118,8 @@
     "fx": "Wisselkoersen",
     "vn-stocks": "Vietnamese aandelen",
     "vn-weather-warnings": "Weerwaarschuwingen",
-    "vn-earthquakes": "Aardbevingen (regio Vietnam)"
+    "vn-earthquakes": "Aardbevingen (regio Vietnam)",
+    "vn-weather": "Weer en luchtkwaliteit Vietnam"
   },
   "commands": {
     "prefixes": {
@@ -2650,6 +2651,14 @@
       "depth": "Diepte (km)",
       "time": "Tijd",
       "place": "Locatie"
+    },
+    "vnWeatherCities": {
+      "now": "Nu",
+      "humidity": "Luchtvochtigheid",
+      "wind": "Wind",
+      "aqi": "AQI",
+      "forecast": "5-daagse verwachting",
+      "source": "Bron: Open-Meteo — actueel weer, 5-daagse verwachting en luchtkwaliteit"
     }
   },
   "popups": {
