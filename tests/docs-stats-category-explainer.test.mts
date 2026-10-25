@@ -102,10 +102,11 @@ describe('dashboard variants', () => {
   it('fires when the enumeration loses a variant', () => {
     const failures = validateCategoryExplainerCopy(
       REAL_STATS,
-      withCopy((s) => s.replace(', and `energy`', '')),
+      // Realtime Monitor fork: `vietnam` is now the last enumerated variant.
+      withCopy((s) => s.replace(', and `vietnam`', '')),
     );
     assert.equal(failures.length, 1, failures.join('\n'));
-    assert.match(failures[0], /missing: energy/);
+    assert.match(failures[0], /missing: vietnam/);
   });
 
   it('fires when the enumeration is dropped entirely', () => {
@@ -120,7 +121,7 @@ describe('dashboard variants', () => {
   it('fires when prose invents a variant that is not in the registry', () => {
     const failures = validateCategoryExplainerCopy(
       REAL_STATS,
-      withCopy((s) => s.replace('and `energy`', '`energy`, and `legacy`')),
+      withCopy((s) => s.replace('and `vietnam`', '`vietnam`, and `legacy`')),
     );
     assert.equal(failures.length, 1, failures.join('\n'));
     assert.match(failures[0], /extra: legacy/);

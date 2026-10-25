@@ -1001,6 +1001,15 @@ describe('planned Railway service lifecycle', () => {
       'seed-market-quotes',
       'seed-service-statuses',
       'seed-weather-alerts',
+      // Realtime Monitor fork: the Vietnam seeders run on the self-hosted
+      // host (scripts/run-seeders.sh), not on upstream's Railway fleet.
+      'seed-vn-earthquakes',
+      'seed-vn-fuel-prices',
+      'seed-vn-fx-rates',
+      'seed-vn-gold-prices',
+      'seed-vn-stock-indices',
+      'seed-vn-stock-quotes',
+      'seed-vn-weather-warnings',
       // shipping-webhook-worker (#9217) is deliberately ABSENT now: #9236
       // landed it planned until the Railway service existed, and service
       // a97fa619-a8f4-4244-9748-6c0f6c3eade3 now runs
