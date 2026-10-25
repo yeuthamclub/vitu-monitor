@@ -3024,6 +3024,9 @@
       "aqi": "AQI",
       "forecast": "5天预报",
       "source": "来源：Open-Meteo — 当前天气、5天预报和空气质量"
+    },
+    "vnData": {
+      "licenseNote": "仅供参考 — 尚未确认此来源的转载许可。"
     }
   },
   "popups": {

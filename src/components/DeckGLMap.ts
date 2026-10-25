@@ -11,6 +11,7 @@ import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&ur
 import type { StyleSpecification } from 'maplibre-gl';
 import { FALLBACK_DARK_STYLE, FALLBACK_LIGHT_STYLE, getMapProvider, getMapTheme, isLightMapTheme } from '@/config/basemap';
 import { getStyleForProvider } from '@/config/basemap-styles';
+import { VN_SOVEREIGNTY_LABELS, type VnSovereigntyLabel } from '@/config/vn-sovereignty-labels';
 import Supercluster from 'supercluster';
 import type {
   MapLayers,
@@ -2440,6 +2441,26 @@ export class DeckGLMap {
     // News geo-locations (always shown if data exists)
     if (this.newsLocations.length > 0) {
       layers.push(...this.createNewsLocationsLayer());
+    }
+
+    // Fork-only: sovereignty labels for the vietnam variant, always on top.
+    if (SITE_VARIANT === 'vietnam') {
+      layers.push(new TextLayer<VnSovereigntyLabel>({
+        id: 'vn-sovereignty-labels',
+        data: VN_SOVEREIGNTY_LABELS,
+        getText: (d) => d.text,
+        getPosition: (d) => [d.lon, d.lat],
+        getSize: (d) => (d.kind === 'sea' ? 16 : 13),
+        getColor: (d) => (d.kind === 'sea' ? [190, 220, 255, 220] : [255, 236, 160, 255]),
+        // Default characterSet is ASCII; Vietnamese diacritics need 'auto'.
+        characterSet: 'auto',
+        fontFamily: 'system-ui, sans-serif',
+        fontWeight: 700,
+        fontSettings: { sdf: true },
+        outlineWidth: 3,
+        outlineColor: [0, 0, 0, 200],
+        pickable: false,
+      }));
     }
 
     const result = layers.filter(Boolean) as LayersList;

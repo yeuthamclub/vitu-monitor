@@ -3024,6 +3024,9 @@
       "aqi": "AQI",
       "forecast": "5일 예보",
       "source": "출처: Open-Meteo — 현재 날씨, 5일 예보 및 대기질"
+    },
+    "vnData": {
+      "licenseNote": "참고용입니다. 이 출처의 재게시 허가는 확인되지 않았습니다."
     }
   },
   "popups": {

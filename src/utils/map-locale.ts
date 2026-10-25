@@ -43,8 +43,9 @@ const LANG_TO_TILE_FIELDS: Record<string, readonly string[]> = {
   tr: ['name:tr'],
   th: ['name:th'],
   hi: ['name:hi'],
-  // vi — absent from CARTO. Protomaps and OpenFreeMap both carry name:vi, so
-  // this row is addable; left alone here as it is not part of the zh-TW fix.
+  // vi — absent from CARTO (falls through to name:en there). Protomaps and
+  // OpenFreeMap carry name:vi, which names Hoàng Sa, Trường Sa and Biển Đông.
+  vi: ['name:vi'],
 };
 
 type Expression = ['coalesce', ...Array<['get', string]>];

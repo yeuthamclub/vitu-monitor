@@ -2659,6 +2659,9 @@
       "aqi": "AQI",
       "forecast": "5-daagse verwachting",
       "source": "Bron: Open-Meteo — actueel weer, 5-daagse verwachting en luchtkwaliteit"
+    },
+    "vnData": {
+      "licenseNote": "Alleen ter referentie — toestemming om deze bron opnieuw te publiceren is niet bevestigd."
     }
   },
   "popups": {

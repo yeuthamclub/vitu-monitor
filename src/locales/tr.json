@@ -3044,6 +3044,9 @@
       "aqi": "AQI",
       "forecast": "5 günlük tahmin",
       "source": "Kaynak: Open-Meteo — güncel hava, 5 günlük tahmin ve hava kalitesi"
+    },
+    "vnData": {
+      "licenseNote": "Yalnızca bilgi amaçlıdır — bu kaynağın yeniden yayımlanma izni doğrulanmadı."
     }
   },
   "popups": {

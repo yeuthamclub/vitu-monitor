@@ -3064,6 +3064,9 @@
       "aqi": "AQI",
       "forecast": "Prognoză pe 5 zile",
       "source": "Sursă: Open-Meteo — vremea curentă, prognoză pe 5 zile și calitatea aerului"
+    },
+    "vnData": {
+      "licenseNote": "Doar cu titlu de referință — permisiunea de republicare a acestei surse nu a fost confirmată."
     }
   },
   "popups": {

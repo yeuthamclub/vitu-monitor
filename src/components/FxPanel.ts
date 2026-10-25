@@ -502,7 +502,8 @@ export class FxPanel extends Panel {
           <tbody>${rows}</tbody>
         </table>
       </div>
-      <div class="fx-footer">${t('components.fx.sourceVcb')}${asOf ? ` · ${asOf}` : ''}</div>`;
+      <div class="fx-footer">${t('components.fx.sourceVcb')}${asOf ? ` · ${asOf}` : ''}</div>
+      <div class="fx-footer">${t('components.vnData.licenseNote')}</div>`;
   }
 
   /**
@@ -545,6 +546,7 @@ export class FxPanel extends Panel {
           <tbody>${rows}</tbody>
         </table>
       </div>
-      <div class="fx-footer">${t('components.fx.sourcePnj')}${asOf ? ` · ${asOf}` : ''}</div>`;
+      <div class="fx-footer">${t('components.fx.sourcePnj')}${asOf ? ` · ${asOf}` : ''}</div>
+      <div class="fx-footer">${t('components.vnData.licenseNote')}</div>`;
   }
 }

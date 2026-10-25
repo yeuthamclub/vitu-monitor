@@ -3064,6 +3064,9 @@
       "aqi": "ICA",
       "forecast": "Pronóstico de 5 días",
       "source": "Fuente: Open-Meteo — condiciones actuales, pronóstico de 5 días y calidad del aire"
+    },
+    "vnData": {
+      "licenseNote": "Solo como referencia: no se ha confirmado el permiso para republicar esta fuente."
     }
   },
   "popups": {

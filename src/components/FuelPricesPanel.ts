@@ -145,6 +145,7 @@ export class FuelPricesPanel extends Panel {
           </table>
         </div>
         <div class="gb-updated">${t('components.fuelPrices.vnSource')}${asOfText}</div>
+        <div class="gb-updated">${t('components.vnData.licenseNote')}</div>
       </div>
     `;
   }

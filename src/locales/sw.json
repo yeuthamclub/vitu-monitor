@@ -3113,6 +3113,9 @@
       "aqi": "AQI",
       "forecast": "Utabiri wa siku 5",
       "source": "Chanzo: Open-Meteo — hali ya sasa, utabiri wa siku 5 na ubora wa hewa"
+    },
+    "vnData": {
+      "licenseNote": "Kwa marejeleo tu — ruhusa ya kuchapisha tena chanzo hiki haijathibitishwa."
     }
   },
   "popups": {

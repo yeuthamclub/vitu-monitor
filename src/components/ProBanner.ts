@@ -17,6 +17,7 @@ import {
 } from '@/services/pro-banner-policy';
 import { t } from '@/services/i18n';
 import { setTrustedHtml, trustedHtml } from '@/utils/dom-utils';
+import { SELF_HOSTED_BUILD } from '@/config/self-hosted';
 
 
 let bannerEl: HTMLElement | null = null;
@@ -213,6 +214,13 @@ export function showProBanner(container: HTMLElement): void {
   // regardless of premium state, so caching here covers both "initially
   // free" and "initially premium then downgrade" trajectories.
   bannerContainer = container;
+
+  // Self-hosted builds have no World Monitor subscription to sell; drop the
+  // strip the pre-paint script reserved instead of mounting the upsell.
+  if (SELF_HOSTED_BUILD) {
+    setReservation(false);
+    return;
+  }
 
   if (bannerEl && !bannerEl.isConnected) {
     bannerEl = null;

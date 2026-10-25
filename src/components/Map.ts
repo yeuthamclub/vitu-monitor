@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import { escapeHtml } from '@/utils/sanitize';
 import { getCSSColor } from '@/utils';
+import { VN_SOVEREIGNTY_LABELS } from '@/config/vn-sovereignty-labels';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry } from 'geojson';
 import type { MapLayers, Hotspot, NewsItem, NewsLocationMarker, InternetOutage, RelatedAsset, AssetType, AisDisruptionEvent, AisDensityZone, CableAdvisory, RepairShip, SocialUnrestEvent, MilitaryFlight, MilitaryVessel, MilitaryFlightCluster, MilitaryVesselCluster, NaturalEvent, CyberThreat, CableHealthRecord, MilitaryBase } from '@/types';
@@ -1301,6 +1302,22 @@ export class MapComponent {
     (this.overlayAppendTarget ?? this.overlays).appendChild(node);
   }
 
+  /** Fork-only: always-on sovereignty labels for the vietnam variant (see vn-sovereignty-labels). */
+  private renderVnSovereigntyLabels(projection: d3.GeoProjection): void {
+    for (const label of VN_SOVEREIGNTY_LABELS) {
+      const pos = projection([label.lon, label.lat]);
+      if (!pos) continue;
+      const el = document.createElement('div');
+      el.className = 'vn-sovereignty-label';
+      el.textContent = label.text;
+      const sea = label.kind === 'sea';
+      el.style.cssText = `position:absolute;left:${pos[0]}px;top:${pos[1]}px;transform:translate(-50%,-50%);`
+        + `pointer-events:none;white-space:nowrap;z-index:52;font:700 ${sea ? 13 : 11}px system-ui,sans-serif;`
+        + `color:${sea ? 'rgba(190,220,255,0.9)' : '#ffeca0'};text-shadow:0 0 3px #000,0 0 3px #000`;
+      this.appendOverlay(el);
+    }
+  }
+
   public render(): void {
     if (this.destroyed) return;
     const now = performance.now();
@@ -2196,6 +2213,7 @@ export class MapComponent {
     this.overlayAppendTarget = fragment;
 
     try {
+    if (SITE_VARIANT === 'vietnam') this.renderVnSovereigntyLabels(projection);
     if (this.state.layers.displacement) {
       const offsets = crossBorderMarkerOffsets(this.crossBorderPoints);
       for (const point of this.crossBorderPoints) {

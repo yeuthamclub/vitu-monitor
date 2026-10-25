@@ -2677,6 +2677,9 @@
       "aqi": "IQA",
       "forecast": "Previsão de 5 dias",
       "source": "Fonte: Open-Meteo — condições atuais, previsão de 5 dias e qualidade do ar"
+    },
+    "vnData": {
+      "licenseNote": "Apenas para referência — a permissão para republicar esta fonte não foi confirmada."
     }
   },
   "popups": {

@@ -3044,6 +3044,9 @@
       "aqi": "AQI",
       "forecast": "5-Tage-Vorhersage",
       "source": "Quelle: Open-Meteo — aktuelles Wetter, 5-Tage-Vorhersage und Luftqualität"
+    },
+    "vnData": {
+      "licenseNote": "Nur zur Orientierung — die Erlaubnis zur Weiterveröffentlichung dieser Quelle ist nicht bestätigt."
     }
   },
   "popups": {

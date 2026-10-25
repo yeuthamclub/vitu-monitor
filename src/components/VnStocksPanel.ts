@@ -183,7 +183,8 @@ export class VnStocksPanel extends Panel {
           <tbody>${rows}</tbody>
         </table>
       </div>
-      <div class="fx-footer">${t('components.vnStocks.source.indices')}${asOf ? ` · ${asOf}` : ''}</div>`;
+      <div class="fx-footer">${t('components.vnStocks.source.indices')}${asOf ? ` · ${asOf}` : ''}</div>
+      <div class="fx-footer">${t('components.vnData.licenseNote')}</div>`;
   }
 
   private renderTickers(): SafeHtml {
@@ -216,6 +217,7 @@ export class VnStocksPanel extends Panel {
           <tbody>${rows}</tbody>
         </table>
       </div>
-      <div class="fx-footer">${t('components.vnStocks.source.tickers')}</div>`;
+      <div class="fx-footer">${t('components.vnStocks.source.tickers')}</div>
+      <div class="fx-footer">${t('components.vnData.licenseNote')}</div>`;
   }
 }

@@ -1784,6 +1784,7 @@
   "components.verification.verdicts.uncertain": "UNCERTAIN",
   "components.verification.verdicts.unreliable": "UNRELIABLE",
   "components.verification.verdicts.verified": "VERIFIED",
+  "components.vnData.licenseNote": "For reference only — permission to republish this source has not been confirmed.",
   "components.vnEarthquakes.depth": "Depth (km)",
   "components.vnEarthquakes.empty": "No M≥3 earthquakes in the last 30 days.",
   "components.vnEarthquakes.magnitude": "Mag",

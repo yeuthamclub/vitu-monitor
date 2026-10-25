@@ -3084,6 +3084,9 @@
       "aqi": "AQI",
       "forecast": "Předpověď na 5 dní",
       "source": "Zdroj: Open-Meteo — aktuální počasí, předpověď na 5 dní a kvalita ovzduší"
+    },
+    "vnData": {
+      "licenseNote": "Pouze pro informaci — svolení ke zveřejnění tohoto zdroje nebylo potvrzeno."
     }
   },
   "popups": {

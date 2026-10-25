@@ -3024,6 +3024,9 @@
       "aqi": "AQI",
       "forecast": "Dự báo 5 ngày",
       "source": "Nguồn: Open-Meteo — thời tiết hiện tại, dự báo 5 ngày và chất lượng không khí"
+    },
+    "vnData": {
+      "licenseNote": "Dữ liệu tham khảo — chưa xác nhận giấy phép hiển thị lại từ nguồn."
     }
   },
   "popups": {

@@ -3113,6 +3113,9 @@
       "aqi": "AQI",
       "forecast": "5 napos előrejelzés",
       "source": "Forrás: Open-Meteo — aktuális időjárás, 5 napos előrejelzés és levegőminőség"
+    },
+    "vnData": {
+      "licenseNote": "Csak tájékoztató jellegű — a forrás újraközlésének engedélye nincs megerősítve."
     }
   },
   "popups": {

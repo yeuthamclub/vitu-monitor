@@ -3140,6 +3140,9 @@
       "aqi": "AQI",
       "forecast": "Prognoza za 5 dana",
       "source": "Izvor: Open-Meteo — trenutačno vrijeme, prognoza za 5 dana i kvaliteta zraka"
+    },
+    "vnData": {
+      "licenseNote": "Samo za informaciju — dopuštenje za ponovnu objavu ovog izvora nije potvrđeno."
     }
   },
   "popups": {

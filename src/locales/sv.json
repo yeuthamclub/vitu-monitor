@@ -2659,6 +2659,9 @@
       "aqi": "AQI",
       "forecast": "5-dygnsprognos",
       "source": "Källa: Open-Meteo — aktuellt väder, 5-dygnsprognos och luftkvalitet"
+    },
+    "vnData": {
+      "licenseNote": "Endast som referens — tillstånd att återpublicera källan har inte bekräftats."
     }
   },
   "popups": {

@@ -48,8 +48,10 @@ describe('getLocalizedNameFields', () => {
     assert.deepEqual(getLocalizedNameFields('xx'), ['name:en']);
   });
 
-  it('falls back to name:en for Vietnamese (no CARTO tile field)', () => {
-    assert.deepEqual(getLocalizedNameFields('vi'), ['name:en']);
+  // Realtime Monitor fork: Protomaps and OpenFreeMap carry name:vi (Hoàng Sa,
+  // Trường Sa, Biển Đông); CARTO lacks it and falls through to name:en.
+  it('uses name:vi for Vietnamese', () => {
+    assert.deepEqual(getLocalizedNameFields('vi'), ['name:vi']);
   });
 
   it('returns correct field for every mapped language', () => {
@@ -155,10 +157,10 @@ describe('getLocalizedNameExpression', () => {
     assert.deepEqual(expr, ['coalesce', ['get', 'name:ar'], ['get', 'name:en'], ['get', 'name']]);
   });
 
-  it('Vietnamese falls back to English expression (no tile field)', () => {
+  it('Vietnamese prefers name:vi, then English', () => {
     assert.deepEqual(
       getLocalizedNameExpression('vi'),
-      ['coalesce', ['get', 'name:en'], ['get', 'name']],
+      ['coalesce', ['get', 'name:vi'], ['get', 'name:en'], ['get', 'name']],
     );
   });
 
