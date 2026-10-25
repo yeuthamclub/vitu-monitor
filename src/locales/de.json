@@ -501,7 +501,8 @@
     "marketBreadth": "Marktbreite",
     "climateNews": "Klimanachrichten",
     "fx": "Devisenkurse",
-    "vn-stocks": "Vietnam-Aktien"
+    "vn-stocks": "Vietnam-Aktien",
+    "vn-weather-warnings": "Wetterwarnungen"
   },
   "commands": {
     "prefixes": {
@@ -3021,6 +3022,10 @@
       "rosterSummaryTier1": "Berichtet von {{publishers}}, darunter {{tier1}} Tier-1",
       "rosterPublishers_one": "{{count}} Verleger",
       "rosterPublishers_other": "{{count}} Verlegern"
+    },
+    "vnWeather": {
+      "source": "Quelle: Nationales hydrometeorologisches Vorhersagezentrum (NCHMF)",
+      "empty": "Derzeit keine aktiven Bulletins."
     }
   },
   "popups": {

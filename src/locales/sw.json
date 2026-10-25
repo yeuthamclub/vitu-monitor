@@ -570,7 +570,8 @@
     "marketBreadth": "Upana wa Soko",
     "climateNews": "Habari za Hali ya Hewa",
     "fx": "Kiwango cha ubadilishaji wa fedha za kigeni",
-    "vn-stocks": "Hisa za Vietnam"
+    "vn-stocks": "Hisa za Vietnam",
+    "vn-weather-warnings": "Tahadhari za hali ya hewa"
   },
   "commands": {
     "prefixes": {
@@ -3090,6 +3091,10 @@
       "rosterSummaryTier1": "Imeripotiwa na {{publishers}}, wakiwemo {{tier1}} wa kiwango cha 1",
       "rosterPublishers_one": "mchapishaji {{count}}",
       "rosterPublishers_other": "wachapishaji {{count}}"
+    },
+    "vnWeather": {
+      "source": "Chanzo: Kituo cha Kitaifa cha Utabiri wa Hidrometeorolojia (NCHMF)",
+      "empty": "Hakuna taarifa hai kwa sasa."
     }
   },
   "popups": {

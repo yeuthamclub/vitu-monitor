@@ -573,7 +573,8 @@
     "marketBreadth": "Širina Tržišta",
     "climateNews": "Klimatske Vijesti",
     "fx": "Tečajevi deviza",
-    "vn-stocks": "Vijetnamske dionice"
+    "vn-stocks": "Vijetnamske dionice",
+    "vn-weather-warnings": "Upozorenja za vrijeme"
   },
   "commands": {
     "prefixes": {
@@ -3117,6 +3118,10 @@
       "rosterPublishers_one": "{{count}} izdavač",
       "rosterPublishers_few": "{{count}} izdavača",
       "rosterPublishers_other": "{{count}} izdavača"
+    },
+    "vnWeather": {
+      "source": "Izvor: Nacionalni hidrometeorološki prognostički centar (NCHMF)",
+      "empty": "Trenutno nema aktivnih biltena."
     }
   },
   "popups": {

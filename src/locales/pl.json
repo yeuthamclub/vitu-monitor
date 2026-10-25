@@ -505,7 +505,8 @@
     "marketBreadth": "Szerokość Rynku",
     "climateNews": "Wiadomości Klimatyczne",
     "fx": "Kursy walutowe",
-    "vn-stocks": "Wietnamskie akcje"
+    "vn-stocks": "Wietnamskie akcje",
+    "vn-weather-warnings": "Ostrzeżenia pogodowe"
   },
   "commands": {
     "prefixes": {
@@ -3061,6 +3062,10 @@
       "rosterPublishers_few": "{{count}} wydawcy",
       "rosterPublishers_many": "{{count}} wydawców",
       "rosterPublishers_other": "{{count}} wydawców"
+    },
+    "vnWeather": {
+      "source": "Źródło: Narodowe Centrum Prognoz Hydrometeorologicznych (NCHMF)",
+      "empty": "Obecnie brak aktywnych komunikatów."
     }
   },
   "popups": {

@@ -116,7 +116,8 @@
     "marketBreadth": "Marknadsbredd",
     "climateNews": "Klimatnyheter",
     "fx": "Valutakurser",
-    "vn-stocks": "Vietnamesiska aktier"
+    "vn-stocks": "Vietnamesiska aktier",
+    "vn-weather-warnings": "Vädervarningar"
   },
   "commands": {
     "prefixes": {
@@ -2636,6 +2637,10 @@
       "rosterSummaryTier1": "Rapporterat av {{publishers}}, varav {{tier1}} på nivå 1",
       "rosterPublishers_one": "{{count}} utgivare",
       "rosterPublishers_other": "{{count}} utgivare"
+    },
+    "vnWeather": {
+      "source": "Källa: Nationella hydrometeorologiska prognoscentret (NCHMF)",
+      "empty": "Inga aktiva bulletiner just nu."
     }
   },
   "popups": {

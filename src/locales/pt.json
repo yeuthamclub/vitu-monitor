@@ -116,7 +116,8 @@
     "marketBreadth": "Amplitude de Mercado",
     "climateNews": "Notícias Climáticas",
     "fx": "Taxas de câmbio",
-    "vn-stocks": "Ações do Vietnã"
+    "vn-stocks": "Ações do Vietnã",
+    "vn-weather-warnings": "Avisos meteorológicos"
   },
   "commands": {
     "prefixes": {
@@ -2654,6 +2655,10 @@
       "rosterPublishers_one": "{{count}} veículo",
       "rosterPublishers_many": "{{count}} veículos",
       "rosterPublishers_other": "{{count}} veículos"
+    },
+    "vnWeather": {
+      "source": "Fonte: Centro Nacional de Previsão Hidrometeorológica (NCHMF)",
+      "empty": "Nenhum boletim ativo no momento."
     }
   },
   "popups": {

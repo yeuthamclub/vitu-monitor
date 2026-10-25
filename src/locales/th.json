@@ -499,7 +499,8 @@
     "marketBreadth": "ความกว้างของตลาด",
     "climateNews": "ข่าวสภาพอากาศ",
     "fx": "อัตราแลกเปลี่ยนเงินตราต่างประเทศ",
-    "vn-stocks": "หุ้นเวียดนาม"
+    "vn-stocks": "หุ้นเวียดนาม",
+    "vn-weather-warnings": "คำเตือนสภาพอากาศ"
   },
   "commands": {
     "prefixes": {
@@ -3001,6 +3002,10 @@
       "rosterSummary": "รายงานโดย {{publishers}}",
       "rosterSummaryTier1": "รายงานโดย {{publishers}} รวมถึงระดับ 1 จำนวน {{tier1}} แห่ง",
       "rosterPublishers_other": "{{count}} สำนักข่าว"
+    },
+    "vnWeather": {
+      "source": "ที่มา: ศูนย์พยากรณ์อุตุนิยมวิทยาแห่งชาติ (NCHMF)",
+      "empty": "ไม่มีประกาศที่กำลังมีผลตอนนี้"
     }
   },
   "popups": {

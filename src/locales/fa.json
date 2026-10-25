@@ -570,7 +570,8 @@
     "marketBreadth": "Market Breadth",
     "climateNews": "Climate News",
     "fx": "نرخ تبادل ارز",
-    "vn-stocks": "سهام ویتنام"
+    "vn-stocks": "سهام ویتنام",
+    "vn-weather-warnings": "هشدارهای هواشناسی"
   },
   "commands": {
     "prefixes": {
@@ -3090,6 +3091,10 @@
       "rosterSummaryTier1": "گزارش‌شده توسط {{publishers}}، شامل {{tier1}} ناشر درجه ۱",
       "rosterPublishers_one": "{{count}} ناشر",
       "rosterPublishers_other": "{{count}} ناشر"
+    },
+    "vnWeather": {
+      "source": "منبع: مرکز ملی پیش‌بینی هیدرومتئورولوژیک (NCHMF)",
+      "empty": "در حال حاضر خبری فعال نیست."
     }
   },
   "popups": {

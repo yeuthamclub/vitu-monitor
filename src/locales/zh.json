@@ -499,7 +499,8 @@
     "marketBreadth": "市场广度",
     "climateNews": "气候新闻",
     "fx": "外汇汇率",
-    "vn-stocks": "越南股票"
+    "vn-stocks": "越南股票",
+    "vn-weather-warnings": "气象预警"
   },
   "commands": {
     "prefixes": {
@@ -3001,6 +3002,10 @@
       "rosterSummary": "由{{publishers}}报道",
       "rosterSummaryTier1": "由{{publishers}}报道，其中{{tier1}}家为一级来源",
       "rosterPublishers_other": "{{count}}家媒体"
+    },
+    "vnWeather": {
+      "source": "来源：国家水文气象预报中心（NCHMF）",
+      "empty": "当前没有生效的公告。"
     }
   },
   "popups": {

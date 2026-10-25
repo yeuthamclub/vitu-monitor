@@ -465,6 +465,7 @@ const STANDALONE_KEYS = {
   vnStockIndices:          'vn:stock-indices:v1',
   vnStockQuotes:           'vn:stock-quotes:v1',
   vnFuelPrices:            'vn:fuel-prices:v1',
+  vnWeatherWarnings:       'vn:weather-warnings:v1',
   // Operational batch written by seed-fred-rates. The UI and MCP surfaces
   // consume the individual FRED series keys, not this producer envelope.
   fredRatesSeeder:        'economic:fred:batch:v1',
@@ -1031,6 +1032,7 @@ const SEED_META = {
   vnStockIndices:   { key: 'seed-meta:vn:stock-indices',          maxStaleMin: 15 }, // SSI iBoard VNINDEX/VN30/HNXIndex; 5min in-session cron per BUILD-PLAN, 3× cycle (PR-2c)
   vnStockQuotes:    { key: 'seed-meta:vn:stock-quotes',           maxStaleMin: 15 }, // VPS board blue-chip quotes; 5min in-session cron per BUILD-PLAN, 3× cycle (PR-2c)
   vnFuelPrices:     { key: 'seed-meta:vn:fuel-prices',            maxStaleMin: 11520 }, // Petrolimex CMS board; hourly cron, prices move only at adjustment cycles so the BUILD-PLAN §4 staleness budget is 8 days (PR-2d)
+  vnWeatherWarnings: { key: 'seed-meta:vn:weather-warnings',       maxStaleMin: 60 }, // NCHMF warning board; 30min cron, 2× cycle per BUILD-PLAN §4 (PR-3a)
   gpsjam:           { key: 'seed-meta:intelligence:gpsjam',       maxStaleMin: 1440 }, // Wingbits API (scripts/fetch-gpsjam.mjs); 1440min = 24h tolerance gives operator headroom to handle upstream outages and monthly quota exhaustion (HTTP 402 observed 2026-04-29) without dashboard noise. Seeder catch-block extends TTL on fail without refreshing fetchedAt, so STALE_SEED via age is the only alarm path.
   positiveGeoEvents:{ key: 'seed-meta:positive-events:geo',       maxStaleMin: 60 },
   riskScores:       { key: 'seed-meta:intelligence:risk-scores',  maxStaleMin: 30, minRecordCount: 3 }, // CII warm-ping every 8min; recordCount is realtime signal-density coverage for score-relevant conflict (ACLED or UCDP), news, and cyber families, not raw feed availability; quiet-but-fresh feeds may warn COVERAGE_PARTIAL.

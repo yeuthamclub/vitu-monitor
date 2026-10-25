@@ -13849,6 +13849,20 @@
       ]
     },
     {
+      "host": "www.nchmf.gov.vn",
+      "provider": "www.nchmf.gov.vn",
+      "kind": "structured",
+      "observed": true,
+      "license": "Government weather bulletins; verify redistribution terms before republication",
+      "attribution": "Credit Trung tâm Dự báo Khí tượng Thủy văn Quốc gia (NCHMF) and link to the original bulletin.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-weather-warnings.mjs"
+        }
+      ]
+    },
+    {
       "host": "www.netlifystatus.com",
       "provider": "www.netlifystatus.com",
       "kind": "operational-status",

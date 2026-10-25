@@ -499,7 +499,8 @@
     "marketBreadth": "Độ rộng Thị trường",
     "climateNews": "Tin tức về Khí hậu",
     "fx": "Tỷ giá ngoại hối",
-    "vn-stocks": "Chứng khoán VN"
+    "vn-stocks": "Chứng khoán VN",
+    "vn-weather-warnings": "Cảnh báo thời tiết"
   },
   "commands": {
     "prefixes": {
@@ -3001,6 +3002,10 @@
       "rosterSummary": "Được đưa tin bởi {{publishers}}",
       "rosterSummaryTier1": "Được đưa tin bởi {{publishers}}, trong đó {{tier1}} thuộc cấp 1",
       "rosterPublishers_other": "{{count}} nhà xuất bản"
+    },
+    "vnWeather": {
+      "source": "Nguồn: Trung tâm Dự báo Khí tượng Thủy văn Quốc gia (NCHMF)",
+      "empty": "Hiện không có tin nào."
     }
   },
   "popups": {

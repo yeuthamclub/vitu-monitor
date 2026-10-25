@@ -116,7 +116,8 @@
     "marketBreadth": "Marktbreedte",
     "climateNews": "Klimaatnieuws",
     "fx": "Wisselkoersen",
-    "vn-stocks": "Vietnamese aandelen"
+    "vn-stocks": "Vietnamese aandelen",
+    "vn-weather-warnings": "Weerwaarschuwingen"
   },
   "commands": {
     "prefixes": {
@@ -2636,6 +2637,10 @@
       "rosterSummaryTier1": "Gemeld door {{publishers}}, waaronder {{tier1}} tier-1",
       "rosterPublishers_one": "{{count}} uitgever",
       "rosterPublishers_other": "{{count}} uitgevers"
+    },
+    "vnWeather": {
+      "source": "Bron: Nationaal hydrometeorologisch voorspellingscentrum (NCHMF)",
+      "empty": "Momenteel geen actieve bulletins."
     }
   },
   "popups": {

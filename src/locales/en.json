@@ -592,7 +592,8 @@
     "marketBreadth": "Market Breadth",
     "climateNews": "Climate News",
     "fx": "Foreign exchange rates",
-    "vn-stocks": "VN Stocks"
+    "vn-stocks": "VN Stocks",
+    "vn-weather-warnings": "Weather warnings"
   },
   "commands": {
     "prefixes": {
@@ -3112,6 +3113,10 @@
       "captured": "Captured. Review observation dates and constraints before downloading.",
       "failed": "Could not capture the scenarios. Check your access and retry. No result is available to export.",
       "locked": "Decision brief is available on Pro."
+    },
+    "vnWeather": {
+      "source": "Source: NCHMF — National Hydrometeorological Forecast Center",
+      "empty": "No active bulletins right now."
     }
   },
   "popups": {

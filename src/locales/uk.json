@@ -574,7 +574,8 @@
     "marketBreadth": "Market Breadth",
     "climateNews": "Climate News",
     "fx": "Курси іноземних валют",
-    "vn-stocks": "Вʼєтнамські акції"
+    "vn-stocks": "Вʼєтнамські акції",
+    "vn-weather-warnings": "Попередження про погоду"
   },
   "commands": {
     "prefixes": {
@@ -3130,6 +3131,10 @@
       "rosterPublishers_few": "{{count}} видавці",
       "rosterPublishers_many": "{{count}} видавців",
       "rosterPublishers_other": "{{count}} видавців"
+    },
+    "vnWeather": {
+      "source": "Джерело: Національний гідрометеорологічний прогностичний центр (NCHMF)",
+      "empty": "Зараз немає активних бюлетенів."
     }
   },
   "popups": {

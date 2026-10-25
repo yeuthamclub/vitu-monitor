@@ -503,7 +503,8 @@
     "marketBreadth": "Ampiezza di Mercato",
     "climateNews": "Notizie Clima",
     "fx": "Tassi di cambio",
-    "vn-stocks": "Azioni vietnamite"
+    "vn-stocks": "Azioni vietnamite",
+    "vn-weather-warnings": "Allerte meteo"
   },
   "commands": {
     "prefixes": {
@@ -3041,6 +3042,10 @@
       "rosterPublishers_one": "{{count}} editore",
       "rosterPublishers_many": "{{count}} editori",
       "rosterPublishers_other": "{{count}} editori"
+    },
+    "vnWeather": {
+      "source": "Fonte: Centro nazionale di previsione idrometeorologica (NCHMF)",
+      "empty": "Nessun bollettino attivo al momento."
     }
   },
   "popups": {

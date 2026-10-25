@@ -509,7 +509,8 @@
     "marketBreadth": "اتساع السوق",
     "climateNews": "أخبار المناخ",
     "fx": "أسعار الصرف الأجنبي",
-    "vn-stocks": "أسهم فيتنام"
+    "vn-stocks": "أسهم فيتنام",
+    "vn-weather-warnings": "تحذيرات الطقس"
   },
   "commands": {
     "prefixes": {
@@ -3101,6 +3102,10 @@
       "rosterPublishers_few": "{{count}} ناشرين",
       "rosterPublishers_many": "{{count}} ناشراً",
       "rosterPublishers_other": "{{count}} ناشر"
+    },
+    "vnWeather": {
+      "source": "المصدر: المركز الوطني للأرصاد المائية (NCHMF)",
+      "empty": "لا توجد نشرات نشطة حالياً."
     }
   },
   "popups": {

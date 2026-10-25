@@ -505,7 +505,8 @@
     "marketBreadth": "Šíře trhu",
     "climateNews": "Zprávy o klimatu",
     "fx": "Kurzy zahraniční měny",
-    "vn-stocks": "Vietnamské akcie"
+    "vn-stocks": "Vietnamské akcie",
+    "vn-weather-warnings": "Varování počasí"
   },
   "commands": {
     "prefixes": {
@@ -3061,6 +3062,10 @@
       "rosterPublishers_few": "{{count}} vydavatelé",
       "rosterPublishers_many": "{{count}} vydavatelů",
       "rosterPublishers_other": "{{count}} vydavatelů"
+    },
+    "vnWeather": {
+      "source": "Zdroj: Národní hydrometeorologické předpovědní centrum (NCHMF)",
+      "empty": "Momentálně žádná aktivní zpravodajství."
     }
   },
   "popups": {

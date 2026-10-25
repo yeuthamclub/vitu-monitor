@@ -89,6 +89,12 @@ const ON_DEMAND_CACHE_PROFILES = {
     browser: 'max-age=300, stale-while-revalidate=300, stale-if-error=1800',
     cdn: 'public, s-maxage=1800, stale-while-revalidate=300, stale-if-error=900',
   },
+  // NCHMF warning board, seeded every 30 minutes against a 60-minute health
+  // budget (fork PR-3a). The complete CDN window is 27m.
+  vnWeatherWarnings: {
+    browser: 'max-age=120, stale-while-revalidate=60, stale-if-error=600',
+    cdn: 'public, s-maxage=900, stale-while-revalidate=120, stale-if-error=600',
+  },
   forecasts: {
     browser: 'max-age=300, stale-while-revalidate=300, stale-if-error=1800',
     cdn: 'public, s-maxage=3600, stale-while-revalidate=300, stale-if-error=900',

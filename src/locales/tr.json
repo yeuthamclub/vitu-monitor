@@ -501,7 +501,8 @@
     "marketBreadth": "Pazar Genişliği",
     "climateNews": "İklim Haberleri",
     "fx": "Döviz kurları",
-    "vn-stocks": "Vietnam hisseleri"
+    "vn-stocks": "Vietnam hisseleri",
+    "vn-weather-warnings": "Hava uyarıları"
   },
   "commands": {
     "prefixes": {
@@ -3021,6 +3022,10 @@
       "rosterSummaryTier1": "{{publishers}} tarafından bildirildi; bunların {{tier1}} tanesi seviye 1",
       "rosterPublishers_one": "{{count}} yayıncı",
       "rosterPublishers_other": "{{count}} yayıncı"
+    },
+    "vnWeather": {
+      "source": "Kaynak: Ulusal Hidrometeorolojik Öngörü Merkezi (NCHMF)",
+      "empty": "Şu anda aktif bülten yok."
     }
   },
   "popups": {

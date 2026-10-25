@@ -501,7 +501,8 @@
     "marketBreadth": "Пазарна Ширина",
     "climateNews": "Климатски Вести",
     "fx": "Валутни курсове",
-    "vn-stocks": "Виетнамски акции"
+    "vn-stocks": "Виетнамски акции",
+    "vn-weather-warnings": "Предупреждения за времето"
   },
   "commands": {
     "prefixes": {
@@ -3021,6 +3022,10 @@
       "rosterSummaryTier1": "Съобщено от {{publishers}}, включително {{tier1}} от ниво 1",
       "rosterPublishers_one": "{{count}} издател",
       "rosterPublishers_other": "{{count}} издатели"
+    },
+    "vnWeather": {
+      "source": "Източник: Национален хидрометеорологичен прогнозен център (NCHMF)",
+      "empty": "Понастоящем няма активни бюлетини."
     }
   },
   "popups": {

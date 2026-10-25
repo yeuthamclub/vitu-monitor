@@ -503,7 +503,8 @@
     "marketBreadth": "Amploarea pieței",
     "climateNews": "Știri despre climă",
     "fx": "Cursuri de schimb valutar",
-    "vn-stocks": "Acțiuni vietnameze"
+    "vn-stocks": "Acțiuni vietnameze",
+    "vn-weather-warnings": "Avertizări meteo"
   },
   "commands": {
     "prefixes": {
@@ -3041,6 +3042,10 @@
       "rosterPublishers_one": "{{count}} editor",
       "rosterPublishers_few": "{{count}} editori",
       "rosterPublishers_other": "{{count}} de editori"
+    },
+    "vnWeather": {
+      "source": "Sursă: Centrul Național de Prognoză Hidrometeorologică (NCHMF)",
+      "empty": "Niciun buletin activ momentan."
     }
   },
   "popups": {

@@ -499,7 +499,8 @@
     "marketBreadth": "시장 폭",
     "climateNews": "기후 뉴스",
     "fx": "외환 환율",
-    "vn-stocks": "베트남 주식"
+    "vn-stocks": "베트남 주식",
+    "vn-weather-warnings": "기상 경보"
   },
   "commands": {
     "prefixes": {
@@ -3001,6 +3002,10 @@
       "rosterSummary": "{{publishers}}에서 보도됨",
       "rosterSummaryTier1": "{{publishers}}에서 보도됨({{tier1}}곳은 1등급)",
       "rosterPublishers_other": "{{count}}개 언론사"
+    },
+    "vnWeather": {
+      "source": "출처: 국립수문기상예보센터(NCHMF)",
+      "empty": "현재 활성된 보고가 없습니다."
     }
   },
   "popups": {

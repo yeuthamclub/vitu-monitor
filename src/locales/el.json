@@ -501,7 +501,8 @@
     "marketBreadth": "Market Breadth",
     "climateNews": "Ειδήσεις για το Κλίμα",
     "fx": "Ισοτιμίες συναλλάγματος",
-    "vn-stocks": "Μετοχές Βιετνάμ"
+    "vn-stocks": "Μετοχές Βιετνάμ",
+    "vn-weather-warnings": "Προειδοποιήσεις καιρού"
   },
   "commands": {
     "prefixes": {
@@ -3021,6 +3022,10 @@
       "rosterSummaryTier1": "Αναφέρθηκε από {{publishers}}, συμπεριλαμβανομένων {{tier1}} επιπέδου 1",
       "rosterPublishers_one": "{{count}} εκδότης",
       "rosterPublishers_other": "{{count}} εκδότες"
+    },
+    "vnWeather": {
+      "source": "Πηγή: Εθνικό Υδρομετεωρολογικό Κέντρο Πρόγνωσης (NCHMF)",
+      "empty": "Δεν υπάρχουν ενεργά δελτία αυτή τη στιγμή."
     }
   },
   "popups": {

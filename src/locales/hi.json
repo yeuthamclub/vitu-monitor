@@ -570,7 +570,8 @@
     "marketBreadth": "बाजार की पहुंच",
     "climateNews": "जलवायु समाचार",
     "fx": "विदेशी मुद्रा दरें",
-    "vn-stocks": "वियतनाम शेयर"
+    "vn-stocks": "वियतनाम शेयर",
+    "vn-weather-warnings": "मौसम चेतावनियाँ"
   },
   "commands": {
     "prefixes": {
@@ -3090,6 +3091,10 @@
       "rosterSummaryTier1": "{{publishers}} द्वारा रिपोर्ट किया गया, जिनमें {{tier1}} स्तर-1 शामिल हैं",
       "rosterPublishers_one": "{{count}} प्रकाशक",
       "rosterPublishers_other": "{{count}} प्रकाशक"
+    },
+    "vnWeather": {
+      "source": "स्रोत: राष्ट्रीय जलमौसम पूर्वानुमान केंद्र (NCHMF)",
+      "empty": "इस समय कोई सक्रिय बुलेटिन नहीं।"
     }
   },
   "popups": {

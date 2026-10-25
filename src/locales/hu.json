@@ -570,7 +570,8 @@
     "marketBreadth": "Piaci szélesség",
     "climateNews": "Klíma hírek",
     "fx": "Devizaárfolyamok",
-    "vn-stocks": "Vietnami részvények"
+    "vn-stocks": "Vietnami részvények",
+    "vn-weather-warnings": "Időjárási figyelmeztetések"
   },
   "commands": {
     "prefixes": {
@@ -3090,6 +3091,10 @@
       "rosterSummaryTier1": "{{publishers}} által közölve, köztük {{tier1}} 1. szintű",
       "rosterPublishers_one": "{{count}} kiadó",
       "rosterPublishers_other": "{{count}} kiadó"
+    },
+    "vnWeather": {
+      "source": "Forrás: Nemzeti Hydrometeorológiai Előrejelző Központ (NCHMF)",
+      "empty": "Jelenleg nincs aktív közlemény."
     }
   },
   "popups": {

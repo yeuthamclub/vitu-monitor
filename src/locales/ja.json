@@ -499,7 +499,8 @@
     "marketBreadth": "市場の広がり",
     "climateNews": "気候ニュース",
     "fx": "外国為替レート",
-    "vn-stocks": "ベトナム株"
+    "vn-stocks": "ベトナム株",
+    "vn-weather-warnings": "気象警報"
   },
   "commands": {
     "prefixes": {
@@ -3001,6 +3002,10 @@
       "rosterSummary": "{{publishers}}が報道",
       "rosterSummaryTier1": "{{publishers}}が報道（うちティア1は{{tier1}}社）",
       "rosterPublishers_other": "{{count}}社の報道機関"
+    },
+    "vnWeather": {
+      "source": "出典：国家水文気象予報センター（NCHMF）",
+      "empty": "現在発表中の報はありません。"
     }
   },
   "popups": {
