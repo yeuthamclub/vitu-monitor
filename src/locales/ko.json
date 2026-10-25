@@ -2877,7 +2877,8 @@
         "stress": "통화 스트레스",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ 골드"
       },
       "currency": "통화",
       "pair": "통화쌍",
@@ -2899,7 +2900,8 @@
         "usd": "미국 달러 환율",
         "eur": "유럽중앙은행 유로 환율",
         "rub": "러시아 중앙은행 환율",
-        "vn": "Vietcombank 환율"
+        "vn": "Vietcombank 환율",
+        "gold": "PNJ 금 시세"
       },
       "rubBase": "러시아 중앙은행 — 단위당 루블",
       "rubPerUnit": "단위당 루블",
@@ -2908,7 +2910,10 @@
       "vnBuy": "매입",
       "vnTransfer": "이체",
       "vnSell": "매도",
-      "sourceVcb": "출처: Vietcombank (참고용)"
+      "sourceVcb": "출처: Vietcombank (참고용)",
+      "goldBase": "PNJ — 테일당 백만 VND",
+      "goldType": "상품",
+      "sourcePnj": "출처: PNJ (비공식 시세)"
     },
     "passkeyOffer": {
       "title": "패스키를 저장하시겠어요?",

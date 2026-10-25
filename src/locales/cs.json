@@ -2934,7 +2934,8 @@
         "stress": "Měnová zátěž",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "Zlato PNJ"
       },
       "currency": "Měna",
       "pair": "Pár",
@@ -2956,7 +2957,8 @@
         "usd": "Kurzy amerického dolaru",
         "eur": "Sazby eura Evropské centrální banky",
         "rub": "Kurzy ruské centrální banky",
-        "vn": "Kurzy Vietcombank"
+        "vn": "Kurzy Vietcombank",
+        "gold": "Ceny zlata PNJ"
       },
       "rubBase": "Ruská centrální banka — rubly za 1 jednotku",
       "rubPerUnit": "Rublů za jednotku",
@@ -2965,7 +2967,10 @@
       "vnBuy": "Nákup",
       "vnTransfer": "Převod",
       "vnSell": "Prodej",
-      "sourceVcb": "Zdroj: Vietcombank (pouze pro informaci)"
+      "sourceVcb": "Zdroj: Vietcombank (pouze pro informaci)",
+      "goldBase": "PNJ — miliony VND za tael",
+      "goldType": "Produkt",
+      "sourcePnj": "Zdroj: PNJ (neoficiální ceník)"
     },
     "passkeyOffer": {
       "title": "Uložit přístupový klíč?",

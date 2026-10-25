@@ -2965,7 +2965,8 @@
         "stress": "मुद्रा तनाव",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ सोना"
       },
       "currency": "मुद्रा",
       "pair": "जोड़ी",
@@ -2987,7 +2988,8 @@
         "usd": "US डॉलर दरें",
         "eur": "यूरोपीय केंद्रीय बैंक की यूरो दरें",
         "rub": "बैंक ऑफ रूस दरें",
-        "vn": "Vietcombank दरें"
+        "vn": "Vietcombank दरें",
+        "gold": "PNJ सोने के दाम"
       },
       "rubBase": "बैंक ऑफ रूस — प्रति 1 इकाई रूबल",
       "rubPerUnit": "प्रति इकाई रूबल",
@@ -2996,7 +2998,10 @@
       "vnBuy": "खरीद",
       "vnTransfer": "ट्रांसफर",
       "vnSell": "बिक्री",
-      "sourceVcb": "स्रोत: Vietcombank (केवल संदर्भ हेतु)"
+      "sourceVcb": "स्रोत: Vietcombank (केवल संदर्भ हेतु)",
+      "goldBase": "PNJ — प्रति तैल मिलियन VND",
+      "goldType": "उत्पाद",
+      "sourcePnj": "स्रोत: PNJ (अनौपचारिक मूल्य सूची)"
     },
     "passkeyOffer": {
       "title": "एक पासकी सेव करें?",

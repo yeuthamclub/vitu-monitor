@@ -2877,7 +2877,8 @@
         "stress": "Căng thẳng tiền tệ",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VNĐ)"
+        "vn": "Vietcombank (VNĐ)",
+        "gold": "Vàng PNJ"
       },
       "currency": "Đồng Tiền",
       "pair": "Cặp Ngoại Tệ",
@@ -2899,7 +2900,8 @@
         "usd": "Tỷ giá đô la Mỹ",
         "eur": "Tỷ giá euro của Ngân hàng Trung ương Châu Âu",
         "rub": "Tỷ giá của Ngân hàng Trung ương Nga",
-        "vn": "Tỷ giá Vietcombank"
+        "vn": "Tỷ giá Vietcombank",
+        "gold": "Giá vàng PNJ"
       },
       "rubBase": "Ngân hàng Trung ương Nga — rúp cho 1 đơn vị",
       "rubPerUnit": "Rúp trên mỗi đơn vị",
@@ -2908,7 +2910,10 @@
       "vnBuy": "Mua",
       "vnTransfer": "Chuyển khoản",
       "vnSell": "Bán",
-      "sourceVcb": "Nguồn: Vietcombank (chỉ để tham khảo)"
+      "sourceVcb": "Nguồn: Vietcombank (chỉ để tham khảo)",
+      "goldBase": "PNJ — triệu VNĐ trên 1 lượng",
+      "goldType": "Loại vàng",
+      "sourcePnj": "Nguồn: PNJ (bảng giá không chính thức)"
     },
     "passkeyOffer": {
       "title": "Lưu khóa truy cập?",

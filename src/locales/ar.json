@@ -2972,7 +2972,8 @@
         "stress": "إجهاد العملات",
         "spot": "الفورية",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "ذهب PNJ"
       },
       "currency": "العملة",
       "pair": "الزوج",
@@ -2994,7 +2995,8 @@
         "usd": "أسعار الدولار الأمريكي",
         "eur": "أسعار اليورو للبنك المركزي الأوروبي",
         "rub": "أسعار بنك روسيا",
-        "vn": "أسعار Vietcombank"
+        "vn": "أسعار Vietcombank",
+        "gold": "أسعار ذهب PNJ"
       },
       "rubBase": "بنك روسيا — روبل لكل وحدة واحدة",
       "rubPerUnit": "روبل لكل وحدة",
@@ -3003,7 +3005,10 @@
       "vnBuy": "شراء",
       "vnTransfer": "تحويل",
       "vnSell": "بيع",
-      "sourceVcb": "المصدر: Vietcombank (للمراجعة فقط)"
+      "sourceVcb": "المصدر: Vietcombank (للمراجعة فقط)",
+      "goldBase": "PNJ — مليون VND لكل تايل",
+      "goldType": "المنتج",
+      "sourcePnj": "المصدر: PNJ (لوحة أسعار غير رسمية)"
     },
     "passkeyOffer": {
       "title": "حفظ مفتاح المرور؟",

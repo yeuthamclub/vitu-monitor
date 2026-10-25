@@ -2915,7 +2915,8 @@
         "stress": "Stress des devises",
         "spot": "Comptant",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "Or PNJ"
       },
       "currency": "Devise",
       "pair": "Paire",
@@ -2937,7 +2938,8 @@
         "usd": "Taux du dollar américain",
         "eur": "Taux euro de la Banque centrale européenne",
         "rub": "Taux de la Banque de Russie",
-        "vn": "Taux de Vietcombank"
+        "vn": "Taux de Vietcombank",
+        "gold": "Prix de l’or PNJ"
       },
       "rubBase": "Banque de Russie — roubles pour 1 unité",
       "rubPerUnit": "Roubles par unité",
@@ -2946,7 +2948,10 @@
       "vnBuy": "Achat",
       "vnTransfer": "Virement",
       "vnSell": "Vente",
-      "sourceVcb": "Source : Vietcombank (à titre de référence)"
+      "sourceVcb": "Source : Vietcombank (à titre de référence)",
+      "goldBase": "PNJ — millions de VND par tael",
+      "goldType": "Produit",
+      "sourcePnj": "Source : PNJ (cours non officiel)"
     },
     "passkeyOffer": {
       "title": "Enregistrer une clé d'accès ?",

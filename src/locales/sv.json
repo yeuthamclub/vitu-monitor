@@ -2511,7 +2511,8 @@
         "stress": "Valutastress",
         "spot": "Avista",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ-guld"
       },
       "currency": "Valuta",
       "pair": "Valutapar",
@@ -2533,7 +2534,8 @@
         "usd": "USD-kurser",
         "eur": "Europeiska centralbankens eurokurser",
         "rub": "Kurser från Rysslands centralbank",
-        "vn": "Vietcombank-kurser"
+        "vn": "Vietcombank-kurser",
+        "gold": "PNJ-guldpriser"
       },
       "rubBase": "Rysslands centralbank — rubel per 1 enhet",
       "rubPerUnit": "Rubel per enhet",
@@ -2542,7 +2544,10 @@
       "vnBuy": "Köp",
       "vnTransfer": "Överföring",
       "vnSell": "Sälj",
-      "sourceVcb": "Källa: Vietcombank (endast som referens)"
+      "sourceVcb": "Källa: Vietcombank (endast som referens)",
+      "goldBase": "PNJ — miljoner VND per tael",
+      "goldType": "Produkt",
+      "sourcePnj": "Källa: PNJ (inofficiell kurslista)"
     },
     "passkeyOffer": {
       "title": "Spara en passkey?",

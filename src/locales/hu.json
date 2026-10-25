@@ -2965,7 +2965,8 @@
         "stress": "Valuta stressz",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ-arany"
       },
       "currency": "Deviza",
       "pair": "Pár",
@@ -2987,7 +2988,8 @@
         "usd": "USD árfolyamok",
         "eur": "Európai Központi Bank euro árfolyamok",
         "rub": "Orosz jegybanki árfolyamok",
-        "vn": "Vietcombank árfolyamok"
+        "vn": "Vietcombank árfolyamok",
+        "gold": "PNJ aranyárak"
       },
       "rubBase": "Orosz jegybank — rubel 1 egységenként",
       "rubPerUnit": "Rubel egységenként",
@@ -2996,7 +2998,10 @@
       "vnBuy": "Vétel",
       "vnTransfer": "Átutalás",
       "vnSell": "Eladás",
-      "sourceVcb": "Forrás: Vietcombank (csak tájékoztató jelleggel)"
+      "sourceVcb": "Forrás: Vietcombank (csak tájékoztató jelleggel)",
+      "goldBase": "PNJ — millió VND per tael",
+      "goldType": "Termék",
+      "sourcePnj": "Forrás: PNJ (nem hivatalos árjegyzék)"
     },
     "passkeyOffer": {
       "title": "Passkey mentése?",

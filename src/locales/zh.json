@@ -2877,7 +2877,8 @@
         "stress": "货币压力",
         "spot": "即期",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ 黄金"
       },
       "currency": "货币",
       "pair": "货币对",
@@ -2899,7 +2900,8 @@
         "usd": "美元汇率",
         "eur": "欧洲央行欧元汇率",
         "rub": "俄罗斯央行汇率",
-        "vn": "Vietcombank 汇率"
+        "vn": "Vietcombank 汇率",
+        "gold": "PNJ 黄金价格"
       },
       "rubBase": "俄罗斯央行 — 每 1 单位卢布",
       "rubPerUnit": "每单位卢布",
@@ -2908,7 +2910,10 @@
       "vnBuy": "买入",
       "vnTransfer": "转账",
       "vnSell": "卖出",
-      "sourceVcb": "来源：Vietcombank（仅供参考）"
+      "sourceVcb": "来源：Vietcombank（仅供参考）",
+      "goldBase": "PNJ — 每两百万 VND",
+      "goldType": "品名",
+      "sourcePnj": "来源：PNJ（非官方牌价）"
     },
     "passkeyOffer": {
       "title": "保存通行密钥？",

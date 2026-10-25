@@ -211,6 +211,8 @@ const EXCLUDED_FROM_MCP = new Map([
     'deferred to a future FX tool. Shared infrastructure consumed server-side by seeders for currency conversion, and since #6199 also rendered client-side by the FX panel Spot tab — but still exposed by no MCP tool.'],
   ['vn:fx-rates:v1',
     'deferred to a future FX tool (fork PR-2a). Vietcombank VNĐ buy/transfer/sell board rendered by the FX panel VN tab; the panel is the only consumer, and an MCP slice would duplicate what a future multi-source FX tool should expose.'],
+  ['vn:gold-prices:v1',
+    'deferred to a future FX/market tool (fork PR-2b). PNJ gold board (SJC bar + PNJ lines) rendered by the FX panel gold tab; the panel is the only consumer, and a licensed feed remains the commercialization path (BUILD-PLAN §5.10).'],
   ['patents:defense:latest',
     'deferred: strict health seed probe added by #5055; future military or defense-innovation MCP expansion can expose patent summaries.'],
   ['conflict:acled:v1:all:0:0',

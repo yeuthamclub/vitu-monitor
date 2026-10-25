@@ -2965,7 +2965,8 @@
         "stress": "تنش ارز",
         "spot": "نرخ پایه",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "طلای PNJ"
       },
       "currency": "ارز",
       "pair": "جفت ارزی",
@@ -2987,7 +2988,8 @@
         "usd": "نرخ دلار آمریکا",
         "eur": "نرخ‌های یورو بانک مرکزی اروپا",
         "rub": "نرخ‌های بانک مرکزی روسیه",
-        "vn": "نرخ‌های Vietcombank"
+        "vn": "نرخ‌های Vietcombank",
+        "gold": "قیمت‌های طلای PNJ"
       },
       "rubBase": "بانک مرکزی روسیه — روبل به ازای هر ۱ واحد",
       "rubPerUnit": "روبل به ازای هر واحد",
@@ -2996,7 +2998,10 @@
       "vnBuy": "خرید",
       "vnTransfer": "انتقال",
       "vnSell": "فروش",
-      "sourceVcb": "منبع: Vietcombank (فقط برای استناد)"
+      "sourceVcb": "منبع: Vietcombank (فقط برای استناد)",
+      "goldBase": "PNJ — میلیون VND به ازای هر تیل",
+      "goldType": "محصول",
+      "sourcePnj": "منبع: PNJ (جدول قیمت غیررسمی)"
     },
     "passkeyOffer": {
       "title": "ذخیره کلید دسترسی؟",

@@ -2934,7 +2934,8 @@
         "stress": "Стресс валют",
         "spot": "Спот",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "Золото PNJ"
       },
       "currency": "Валюта",
       "pair": "Пара",
@@ -2956,7 +2957,8 @@
         "usd": "Курсы доллара США",
         "eur": "Курсы евро Европейского центрального банка",
         "rub": "Курсы Банка России",
-        "vn": "Курсы Vietcombank"
+        "vn": "Курсы Vietcombank",
+        "gold": "Цены на золото PNJ"
       },
       "rubBase": "Банк России — рублей за 1 единицу",
       "rubPerUnit": "Рублей за единицу",
@@ -2965,7 +2967,10 @@
       "vnBuy": "Покупка",
       "vnTransfer": "Перевод",
       "vnSell": "Продажа",
-      "sourceVcb": "Источник: Vietcombank (только для справки)"
+      "sourceVcb": "Источник: Vietcombank (только для справки)",
+      "goldBase": "PNJ — млн VND за таел",
+      "goldType": "Продукт",
+      "sourcePnj": "Источник: PNJ (неофициальный прайс)"
     },
     "passkeyOffer": {
       "title": "Сохранить пароль?",

@@ -16,7 +16,7 @@ import { isFeatureAvailable } from '../runtime-config';
 import { dataFreshness } from '../data-freshness';
 import { ensureHydrated, getHydratedData } from '@/services/bootstrap';
 import { mergeCbrPolicyRate } from './cbr-policy-rate';
-import { degradedSources, toEurSpotRows, toFxStressRows, toRubQuoteRows, toUsdSpotRows, toVnBankRateRows, type FxPanelRows } from './fx-rates';
+import { degradedSources, toEurSpotRows, toFxStressRows, toRubQuoteRows, toUsdSpotRows, toVnBankRateRows, toVnGoldRows, type FxPanelRows } from './fx-rates';
 import { toApiUrl } from '@/services/runtime';
 import { hasPremiumAccess } from '@/services/panel-gating';
 import { EconomicServiceClient } from '@/services/generated-rpc-clients';
@@ -874,18 +874,19 @@ export async function getEcbFxRatesData(): Promise<GetEcbFxRatesResponse> {
 // FX panel (#6199)
 // ========================================================================
 
-export type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow, FxUsdSpotRow, FxVnBankRateRow } from './fx-rates';
+export type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow, FxUsdSpotRow, FxVnBankRateRow, FxVnGoldRow } from './fx-rates';
 // Re-exported as a value: the CommoditiesPanel FX tab uses it too, so both
 // surfaces order the same ECB pairs from one definition (#6199).
-export { EUR_FX_ORDER, toEurSpotRows, toRubQuoteRows, toVnBankRateRows } from './fx-rates';
+export { EUR_FX_ORDER, toEurSpotRows, toRubQuoteRows, toVnBankRateRows, toVnGoldRows } from './fx-rates';
 
 /**
- * Assemble the five payloads the FX panel renders.
+ * Assemble the six payloads the FX panel renders.
  *
- * `fxYoy`, `sharedFxRates`, `cbrRates` and `vnFxRates` are on-demand tier
- * keys, so they arrive via `ensureHydrated` (the credential-less per-key
- * bootstrap URL) rather than riding a tier every visitor downloads — the
- * panel is opt-in, so most sessions never ask for any of them.
+ * `fxYoy`, `sharedFxRates`, `cbrRates`, `vnFxRates` and `vnGoldPrices` are
+ * on-demand tier keys, so they arrive via `ensureHydrated` (the
+ * credential-less per-key bootstrap URL) rather than riding a tier every
+ * visitor downloads — the panel is opt-in, so most sessions never ask for
+ * any of them.
  *
  * A dead source must not blank its siblings, but the `.catch()` clauses below
  * are NOT what delivers that — both readers already swallow their own errors
@@ -900,21 +901,22 @@ export { EUR_FX_ORDER, toEurSpotRows, toRubQuoteRows, toVnBankRateRows } from '.
  * KNOWN LIMIT — read `degraded` as "returned nothing", not "was unreachable".
  * Only the ECB path carries a real failure signal (`unavailable`), and it
  * folds in naturally because an unavailable response yields zero rows. The
- * four `ensureHydrated` keys have no such signal: undefined means transport
+ * five `ensureHydrated` keys have no such signal: undefined means transport
  * failure and cache miss alike, so for them an empty result is *inferred* to
- * be an outage. That inference is sound here only because none of the five has
+ * be an outage. That inference is sound here only because none of the six has
  * a plausible genuine empty — 45 currencies, 47 USD rates, 7 ECB pairs, 54 CBR
- * pairs, ~19 Vietcombank board currencies. Do not copy this shape to a source
- * whose empty state is legitimate; fixing it
+ * pairs, ~19 Vietcombank board currencies, ~20 PNJ gold lines. Do not copy
+ * this shape to a source whose empty state is legitimate; fixing it
  * properly means teaching `ensureHydrated` to distinguish miss from failure.
  */
 export async function getFxPanelData(): Promise<FxPanelRows> {
-  const [stressPayload, usdPayload, ecb, rubPayload, vnPayload] = await Promise.all([
+  const [stressPayload, usdPayload, ecb, rubPayload, vnPayload, goldPayload] = await Promise.all([
     ensureHydrated('fxYoy').catch(() => undefined),
     ensureHydrated('sharedFxRates').catch(() => undefined),
     getEcbFxRatesData().catch(() => null),
     ensureHydrated('cbrRates').catch(() => undefined),
     ensureHydrated('vnFxRates').catch(() => undefined),
+    ensureHydrated('vnGoldPrices').catch(() => undefined),
   ]);
 
   const stress = toFxStressRows(stressPayload);
@@ -922,13 +924,14 @@ export async function getFxPanelData(): Promise<FxPanelRows> {
   const eur = ecb && !ecb.unavailable ? toEurSpotRows(ecb.rates) : [];
   const rub = toRubQuoteRows(rubPayload);
   const vn = toVnBankRateRows(vnPayload);
+  const gold = toVnGoldRows(goldPayload);
 
   // An empty source is reported, not silently dropped. `ensureHydrated` returns
   // undefined for a transport failure and for a miss alike, so we cannot say
-  // which — but none of these five has a plausible genuine empty, so an empty
+  // which — but none of these six has a plausible genuine empty, so an empty
   // one is a source that is down. The panel needs to know so it can say the
   // table is missing and retry, instead of rendering as though it never existed.
-  return { stress, usd, eur, rub, vn, degraded: degradedSources({ stress, usd, eur, rub, vn }) };
+  return { stress, usd, eur, rub, vn, gold, degraded: degradedSources({ stress, usd, eur, rub, vn, gold }) };
 }
 
 // ========================================================================

@@ -2934,7 +2934,8 @@
         "stress": "Stress walutowy",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "Złoto PNJ"
       },
       "currency": "Waluta",
       "pair": "Para",
@@ -2956,7 +2957,8 @@
         "usd": "Kursy dolara USD",
         "eur": "Kursy euro Europejskiego Banku Centralnego",
         "rub": "Kursy Banku Rosji",
-        "vn": "Kursy Vietcombank"
+        "vn": "Kursy Vietcombank",
+        "gold": "Ceny złota PNJ"
       },
       "rubBase": "Bank Rosji — ruble za 1 jednostkę",
       "rubPerUnit": "Rubli za jednostkę",
@@ -2965,7 +2967,10 @@
       "vnBuy": "Kupno",
       "vnTransfer": "Przelew",
       "vnSell": "Sprzedaż",
-      "sourceVcb": "Źródło: Vietcombank (wyłącznie informacyjnie)"
+      "sourceVcb": "Źródło: Vietcombank (wyłącznie informacyjnie)",
+      "goldBase": "PNJ — miliony VND za tael",
+      "goldType": "Produkt",
+      "sourcePnj": "Źródło: PNJ (nieoficjalny cennik)"
     },
     "passkeyOffer": {
       "title": "Zapisać klucz dostępu?",

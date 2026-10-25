@@ -2896,7 +2896,8 @@
         "stress": "Döviz stresi",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ altını"
       },
       "currency": "Para Birimi",
       "pair": "Çift",
@@ -2918,7 +2919,8 @@
         "usd": "ABD doları kurları",
         "eur": "Avrupa Merkez Bankası euro oranları",
         "rub": "Rusya Merkez Bankası kurları",
-        "vn": "Vietcombank kurları"
+        "vn": "Vietcombank kurları",
+        "gold": "PNJ altın fiyatları"
       },
       "rubBase": "Rusya Merkez Bankası — 1 birim için ruble",
       "rubPerUnit": "Birim başına ruble",
@@ -2927,7 +2929,10 @@
       "vnBuy": "Alış",
       "vnTransfer": "Havale/EFT",
       "vnSell": "Satış",
-      "sourceVcb": "Kaynak: Vietcombank (yalnızca bilgilendirme amaçlıdır)"
+      "sourceVcb": "Kaynak: Vietcombank (yalnızca bilgilendirme amaçlıdır)",
+      "goldBase": "PNJ — tael başına milyon VND",
+      "goldType": "Ürün",
+      "sourcePnj": "Kaynak: PNJ (resmî olmayan fiyat listesi)"
     },
     "passkeyOffer": {
       "title": "Passkey kaydedilsin mi?",

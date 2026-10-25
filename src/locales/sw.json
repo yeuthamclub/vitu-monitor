@@ -2965,7 +2965,8 @@
         "stress": "Mkazo wa fedha",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "Dhahabu ya PNJ"
       },
       "currency": "Currency",
       "pair": "Pair",
@@ -2985,7 +2986,8 @@
         "usd": "US dollar rates",
         "eur": "Bei za euro za European Central Bank",
         "rub": "Bank of Russia rates",
-        "vn": "Viwango vya Vietcombank"
+        "vn": "Viwango vya Vietcombank",
+        "gold": "Bei za dhahabu PNJ"
       },
       "sourceYahoo": "Source: Yahoo Finance",
       "sourceEcb": "Chanzo: European Central Bank",
@@ -2996,7 +2998,10 @@
       "vnBuy": "Nunua",
       "vnTransfer": "Hamisha",
       "vnSell": "Uza",
-      "sourceVcb": "Chanzo: Vietcombank (kwa marejeleo tu)"
+      "sourceVcb": "Chanzo: Vietcombank (kwa marejeleo tu)",
+      "goldBase": "PNJ — milioni ya VND kwa kila tael",
+      "goldType": "Bidhaa",
+      "sourcePnj": "Chanzo: PNJ (orodha isiyo rasmi)"
     },
     "passkeyOffer": {
       "title": "Hifadhi passkey?",

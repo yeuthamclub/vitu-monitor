@@ -2877,7 +2877,8 @@
         "stress": "ความเครียดสกุลเงิน",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "ทอง PNJ"
       },
       "currency": "สกุลเงิน",
       "pair": "คู่สกุลเงิน",
@@ -2899,7 +2900,8 @@
         "usd": "อัตราดอลลาร์สหรัฐ",
         "eur": "อัตรา euro European Central Bank",
         "rub": "อัตราของธนาคารกลางรัสเซีย",
-        "vn": "อัตราแลกเปลี่ยน Vietcombank"
+        "vn": "อัตราแลกเปลี่ยน Vietcombank",
+        "gold": "ราคาทอง PNJ"
       },
       "rubBase": "ธนาคารกลางรัสเซีย — รูเบิลต่อ 1 หน่วย",
       "rubPerUnit": "รูเบิลต่อหน่วย",
@@ -2908,7 +2910,10 @@
       "vnBuy": "ซื้อ",
       "vnTransfer": "โอน",
       "vnSell": "ขาย",
-      "sourceVcb": "ที่มา: Vietcombank (สำหรับอ้างอิงเท่านั้น)"
+      "sourceVcb": "ที่มา: Vietcombank (สำหรับอ้างอิงเท่านั้น)",
+      "goldBase": "PNJ — ล้าน VND ต่อ 1 ตำลึง",
+      "goldType": "สินค้า",
+      "sourcePnj": "ที่มา: PNJ (ราคาไม่เป็นทางการ)"
     },
     "passkeyOffer": {
       "title": "บันทึกพาสคีย์ใช่ไหม?",

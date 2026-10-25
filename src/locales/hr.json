@@ -2991,7 +2991,8 @@
         "stress": "Devizni stress",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "Zlato PNJ"
       },
       "currency": "Valuta",
       "pair": "Par",
@@ -3013,7 +3014,8 @@
         "usd": "Tečajevi američkog dolara",
         "eur": "Kamatne stope eura Europske centralne banke",
         "rub": "Tečajevi Središnje banke Rusije",
-        "vn": "Vietcombank tečajevi"
+        "vn": "Vietcombank tečajevi",
+        "gold": "Cijene zlata PNJ"
       },
       "rubBase": "Središnja banka Rusije — rubalja po 1 jedinici",
       "rubPerUnit": "Rubalja po jedinici",
@@ -3022,7 +3024,10 @@
       "vnBuy": "Kupovina",
       "vnTransfer": "Prijenos",
       "vnSell": "Prodaja",
-      "sourceVcb": "Izvor: Vietcombank (samo za referencu)"
+      "sourceVcb": "Izvor: Vietcombank (samo za referencu)",
+      "goldBase": "PNJ — milijuni VND po taelu",
+      "goldType": "Proizvod",
+      "sourcePnj": "Izvor: PNJ (neslužbeni cjenik)"
     },
     "passkeyOffer": {
       "title": "Spremi ključ pristupa?",

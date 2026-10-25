@@ -124,11 +124,35 @@ export type FxVnBankRateRow = {
 };
 
 /**
+ * One PNJ gold-board row — the fork's `vn:gold-prices:v1` (PR-2b).
+ *
+ * PNJ quotes gold per CHỈ in thousand-VND integers; the seeder derives the
+ * conventional per-tael VND (1 tael = 10 chỉ, `scripts/seed-vn-gold-prices.mjs`)
+ * so this row carries what the reader expects: SJC bar ~141.7 million VNĐ per
+ * tael, ring/jewelry lines below it. Gold is not an FX pair — it renders as
+ * its own tab, never inside the Spot tables.
+ */
+export type FxVnGoldRow = {
+  /** PNJ product code, e.g. 'SJC', 'N24K'. */
+  code: string;
+  /** Vietnamese product display name from the board, e.g. 'Vàng miếng SJC 999.9'. */
+  name: string;
+  /** VNĐ the store pays per 1 tael; null when the board dashes/empties the leg. */
+  buyVndPerTael: number | null;
+  /** VNĐ the store charges per 1 tael; null when the board dashes/empties the leg. */
+  sellVndPerTael: number | null;
+  /** Board publisher, e.g. 'PNJ'. */
+  store: string;
+  /** The board's own updateDate, normalized to +07:00 ISO. */
+  asOf: string | null;
+};
+
+/**
  * Everything the FX panel renders. Declared here rather than in the component
  * so the service layer that assembles it does not have to import from
  * `src/components/` — a direction `npm run lint:boundaries` rejects.
  */
-export type FxSourceId = 'stress' | 'usd' | 'eur' | 'rub' | 'vn';
+export type FxSourceId = 'stress' | 'usd' | 'eur' | 'rub' | 'vn' | 'gold';
 
 export type FxPanelRows = {
   stress: FxStressRow[];
@@ -136,6 +160,7 @@ export type FxPanelRows = {
   eur: FxEurSpotRow[];
   rub: FxRubQuoteRow[];
   vn: FxVnBankRateRow[];
+  gold: FxVnGoldRow[];
   /**
    * Sources that yielded no usable rows this load.
    *
@@ -179,6 +204,7 @@ export function degradedSources(rows: Omit<FxPanelRows, 'degraded'>): FxSourceId
   if (rows.eur.length === 0) degraded.push('eur');
   if (rows.rub.length === 0) degraded.push('rub');
   if (rows.vn.length === 0) degraded.push('vn');
+  if (rows.gold.length === 0) degraded.push('gold');
   return degraded;
 }
 
@@ -254,6 +280,46 @@ export function toVnBankRateRows(payload: unknown): FxVnBankRateRow[] {
   }
 
   return rows.sort((a, b) => a.currency.localeCompare(b.currency));
+}
+
+/**
+ * Project `vn:gold-prices:v1` onto PNJ gold rows, SJC bar first.
+ *
+ * A row is dropped when either per-tael amount is not a positive finite
+ * number — the board's whole content is the buy/sell pair. The ~20-line
+ * board has no plausible genuine empty, so an all-empty result is treated
+ * as a dead source by `degradedSources`.
+ *
+ * @param payload the `vn:gold-prices:v1` value, enveloped or not
+ */
+export function toVnGoldRows(payload: unknown): FxVnGoldRow[] {
+  const unwrapped = unwrapEnvelope(payload, 'products');
+  if (!isRecord(unwrapped)) return [];
+  const products = unwrapped.products;
+  if (!isRecord(products)) return [];
+  const store = nonEmptyString(unwrapped.store) ?? 'PNJ';
+  const asOf = nonEmptyString(unwrapped.asOf);
+
+  // An emptied/dashed leg (not currently quoted) stays null like the VCB
+  // dashed legs; a row with no usable quote at all is dropped.
+  const leg = (value: unknown): number | null => {
+    const n = finiteNumber(value);
+    return n !== null && n > 0 ? n : null;
+  };
+
+  const rows: FxVnGoldRow[] = [];
+  for (const [code, value] of Object.entries(products)) {
+    if (!isRecord(value)) continue;
+    const name = nonEmptyString(value.name);
+    if (name === null) continue;
+    const buyVndPerTael = leg(value.buyVndPerTael);
+    const sellVndPerTael = leg(value.sellVndPerTael);
+    if (buyVndPerTael === null && sellVndPerTael === null) continue;
+    rows.push({ code, name, buyVndPerTael, sellVndPerTael, store, asOf });
+  }
+
+  // The SJC bar is the headline price; the rest keep board order.
+  return rows.sort((a, b) => (a.code === 'SJC' ? -1 : b.code === 'SJC' ? 1 : 0));
 }
 
 /**

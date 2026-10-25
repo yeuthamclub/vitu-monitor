@@ -99,6 +99,9 @@ const HOST_ORIGINS = Object.freeze({
   'dhakatribune.com': 'BD',
   'dlnews.com': 'GB',
   'dw.com': 'DE',
+  // Fork (PR-2b): PNJ's edge API sits on a .io host, so the ccTLD heuristic
+  // cannot see it — the board it serves is a Vietnamese gold-price catalogue.
+  'edge-api.pnj.io': 'VN',
   'eff.org': 'US',
   'english.alarabiya.net': 'SA',
   'english.enabbaladi.net': 'SY',

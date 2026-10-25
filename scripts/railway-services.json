@@ -1770,6 +1770,25 @@
     "documentedAt": "docs/railway-seed-consolidation-runbook.md#standalone-seed-crons-added-after-this-snapshot"
   },
   {
+    "entry": "scripts/seed-vn-gold-prices.mjs",
+    "deployMode": "nixpacks-root-scripts",
+    "service": "seed-vn-gold-prices",
+    "watchPatterns": [
+      "scripts/_content-age-helpers.mjs",
+      "scripts/_proxy-utils.cjs",
+      "scripts/_seed-contract.mjs",
+      "scripts/_seed-envelope-source.mjs",
+      "scripts/_seed-utils.mjs",
+      "scripts/lib/llm-telemetry.cjs",
+      "scripts/nixpacks.toml",
+      "scripts/package-lock.json",
+      "scripts/package.json",
+      "scripts/seed-vn-gold-prices.mjs",
+      "scripts/shared/compare-and-delete-script.cjs"
+    ],
+    "documentedAt": "docs/railway-seed-consolidation-runbook.md#standalone-seed-crons-added-after-this-snapshot"
+  },
+  {
     "entry": "scripts/seed-gdelt-bulk-materializer.mjs",
     "deployMode": "nixpacks-root-scripts",
     "service": "seed-gdelt-intel",

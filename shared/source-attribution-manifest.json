@@ -3728,6 +3728,20 @@
       ]
     },
     {
+      "host": "edge-api.pnj.io",
+      "provider": "edge-api.pnj.io",
+      "kind": "structured",
+      "observed": true,
+      "license": "Provider terms for this upstream API/dataset; verify before redistribution",
+      "attribution": "Credit PNJ and link to the published gold-price board; unofficial frontend endpoint with no published API terms.",
+      "status": "terms-review",
+      "references": [
+        {
+          "path": "scripts/seed-vn-gold-prices.mjs"
+        }
+      ]
+    },
+    {
       "host": "edmontonjournal.com",
       "provider": "edmontonjournal.com",
       "kind": "feed",

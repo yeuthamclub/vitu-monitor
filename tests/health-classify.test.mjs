@@ -1843,6 +1843,7 @@ const ISSUE_5055_HEALTH_REGISTRATIONS = [
   ['comtradeBilateralHs4', 'seed-meta:comtrade:bilateral-hs4', 'seed-meta:comtrade:bilateral-hs4', 50400],
   ['sharedFxRates', 'shared:fx-rates:v1', 'seed-meta:shared:fx-rates', 3600],
   ['vnFxRates', 'vn:fx-rates:v1', 'seed-meta:vn:fx-rates', 30],
+  ['vnGoldPrices', 'vn:gold-prices:v1', 'seed-meta:vn:gold-prices', 30],
   ['submarineCables', 'infrastructure:submarine-cables:v1', 'seed-meta:infrastructure:submarine-cables', 25200],
 ];
 

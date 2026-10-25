@@ -2915,7 +2915,8 @@
         "stress": "Stres valutar",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "Aur PNJ"
       },
       "currency": "Monedă",
       "pair": "Pereche",
@@ -2937,7 +2938,8 @@
         "usd": "Ratele dolarului american",
         "eur": "Rate euro ale Băncii Centrale Europene",
         "rub": "Ratele Băncii Rusiei",
-        "vn": "Cursuri Vietcombank"
+        "vn": "Cursuri Vietcombank",
+        "gold": "Prețurile aurului PNJ"
       },
       "rubBase": "Banca Rusiei — ruble per 1 unitate",
       "rubPerUnit": "Ruble per unitate",
@@ -2946,7 +2948,10 @@
       "vnBuy": "Cumpără",
       "vnTransfer": "Transfer",
       "vnSell": "Vinde",
-      "sourceVcb": "Sursă: Vietcombank (doar cu titlu de referință)"
+      "sourceVcb": "Sursă: Vietcombank (doar cu titlu de referință)",
+      "goldBase": "PNJ — milioane de VND per tael",
+      "goldType": "Produs",
+      "sourcePnj": "Sursă: PNJ (cotație neoficială)"
     },
     "passkeyOffer": {
       "title": "Salvezi o cheie de acces?",

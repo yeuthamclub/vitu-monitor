@@ -2511,7 +2511,8 @@
         "stress": "Valutastress",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ-goud"
       },
       "currency": "Valuta",
       "pair": "Paar",
@@ -2533,7 +2534,8 @@
         "usd": "Koersen Amerikaanse dollar",
         "eur": "Europese Centrale Bank euro-koersen",
         "rub": "Koersen van de Centrale Bank van Rusland",
-        "vn": "Vietcombank-koersen"
+        "vn": "Vietcombank-koersen",
+        "gold": "PNJ-goudprijzen"
       },
       "rubBase": "Centrale Bank van Rusland — roebel per 1 eenheid",
       "rubPerUnit": "Roebel per eenheid",
@@ -2542,7 +2544,10 @@
       "vnBuy": "Koop",
       "vnTransfer": "Overboeking",
       "vnSell": "Verkoop",
-      "sourceVcb": "Bron: Vietcombank (alleen ter referentie)"
+      "sourceVcb": "Bron: Vietcombank (alleen ter referentie)",
+      "goldBase": "PNJ — miljoen VND per tael",
+      "goldType": "Product",
+      "sourcePnj": "Bron: PNJ (officieuze prijslijst)"
     },
     "passkeyOffer": {
       "title": "Wachtsleutel opslaan?",

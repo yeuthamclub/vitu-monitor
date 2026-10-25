@@ -3017,7 +3017,8 @@
         "stress": "Currency stress",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VNĐ)"
+        "vn": "Vietcombank (VNĐ)",
+        "gold": "PNJ Gold"
       },
       "currency": "Currency",
       "pair": "Pair",
@@ -3037,7 +3038,8 @@
         "usd": "US dollar rates",
         "eur": "European Central Bank euro rates",
         "rub": "Bank of Russia rates",
-        "vn": "Vietcombank rates"
+        "vn": "Vietcombank rates",
+        "gold": "PNJ gold prices"
       },
       "sourceYahoo": "Source: Yahoo Finance",
       "sourceEcb": "Source: European Central Bank",
@@ -3048,7 +3050,10 @@
       "vnBuy": "Buy",
       "vnTransfer": "Transfer",
       "vnSell": "Sell",
-      "sourceVcb": "Source: Vietcombank (reference only)"
+      "sourceVcb": "Source: Vietcombank (reference only)",
+      "goldBase": "PNJ — million VNĐ per tael",
+      "goldType": "Product",
+      "sourcePnj": "Source: PNJ (unofficial board)"
     },
     "passkeyOffer": {
       "title": "Save a passkey?",

@@ -1,6 +1,6 @@
 // FX panel row mappers — issue #6199 (#6231).
 //
-// Five seeded payloads feed one panel, and they do NOT agree on quote
+// Six seeded payloads feed one panel, and they do NOT agree on quote
 // direction, envelope shape, or nullability. That disagreement is the whole
 // reason these mappers exist rather than object literals at the call site:
 //
@@ -9,6 +9,7 @@
 //   economic:ecb-fx-rates:v1 (via RPC)           rate        = CCY per 1 EUR
 //   economic:cbr-rates:v1 { rates: {...} }       rate        = RUB per 1 CCY
 //   vn:fx-rates:v1       { rates: {...} }        buy/transfer/sell = VNĐ per 1 CCY
+//   vn:gold-prices:v1    { products: {...} }     buy/sell = VNĐ per 1 tael (gold)
 //
 // Rendering any of these under the wrong base quotes the rate upside down —
 // the exact failure the issue calls out for the RUB table. These tests pin the
@@ -25,6 +26,7 @@ import {
   toUsdSpotRows,
   toEurSpotRows,
   toVnBankRateRows,
+  toVnGoldRows,
 } from '../src/services/economic/fx-rates.ts';
 
 // ─── economic:fx:yoy:v1 ────────────────────────────────────────────────────────
@@ -245,34 +247,36 @@ test('tolerates a raw envelope and rejects unusable USD payloads', () => {
 //
 // The client loaders return the same value for a transport failure and a cache
 // miss, so "this source is empty" is the only signal available. None of the
-// five has a plausible genuine empty — 45 currencies, 47 USD rates, 7 ECB
-// pairs, 54 CBR pairs, ~19 Vietcombank board currencies — so an empty one is a
+// six has a plausible genuine empty — 45 currencies, 47 USD rates, 7 ECB
+// pairs, 54 CBR pairs, ~19 Vietcombank board currencies, ~20 PNJ gold lines —
+// so an empty one is a
 // dead one, and that inference is what drives the panel's degraded notice and
 // its retry.
 
 test('names exactly the sources that came back empty', () => {
-  const full = { stress: [{}], usd: [{}], eur: [{}], rub: [{}], vn: [{}] };
+  const full = { stress: [{}], usd: [{}], eur: [{}], rub: [{}], vn: [{}], gold: [{}] };
   assert.deepEqual(degradedSources(full), []);
   assert.deepEqual(degradedSources({ ...full, stress: [] }), ['stress']);
   assert.deepEqual(degradedSources({ ...full, usd: [] }), ['usd']);
   assert.deepEqual(degradedSources({ ...full, eur: [] }), ['eur']);
   assert.deepEqual(degradedSources({ ...full, rub: [] }), ['rub']);
   assert.deepEqual(degradedSources({ ...full, vn: [] }), ['vn']);
+  assert.deepEqual(degradedSources({ ...full, gold: [] }), ['gold']);
 });
 
 test('reports every empty source, not just the first', () => {
   // A one-source-only report would leave the panel silently omitting a table
   // it never named.
   assert.deepEqual(
-    degradedSources({ stress: [], usd: [], eur: [], rub: [], vn: [] }),
-    ['stress', 'usd', 'eur', 'rub', 'vn'],
+    degradedSources({ stress: [], usd: [], eur: [], rub: [], vn: [], gold: [] }),
+    ['stress', 'usd', 'eur', 'rub', 'vn', 'gold'],
   );
   assert.deepEqual(
-    degradedSources({ stress: [], usd: [{}], eur: [], rub: [], vn: [] }),
-    ['stress', 'eur', 'rub', 'vn'],
+    degradedSources({ stress: [], usd: [{}], eur: [], rub: [], vn: [], gold: [] }),
+    ['stress', 'eur', 'rub', 'vn', 'gold'],
   );
   assert.deepEqual(
-    degradedSources({ stress: [], usd: [{}], eur: [], rub: [{}], vn: [{}] }),
+    degradedSources({ stress: [], usd: [{}], eur: [], rub: [{}], vn: [{}], gold: [{}] }),
     ['stress', 'eur'],
   );
 });
@@ -523,6 +527,58 @@ test('tolerates a raw envelope and rejects unusable VN payloads', () => {
 });
 
 test('an empty VN board degrades the panel: named, not silently missing', () => {
-  assert.deepEqual(degradedSources({ stress: [1], usd: [1], eur: [1], rub: [1], vn: [1] }), []);
-  assert.deepEqual(degradedSources({ stress: [1], usd: [1], eur: [1], rub: [1], vn: [] }), ['vn']);
+  assert.deepEqual(degradedSources({ stress: [1], usd: [1], eur: [1], rub: [1], vn: [1], gold: [1] }), []);
+  assert.deepEqual(degradedSources({ stress: [1], usd: [1], eur: [1], rub: [1], vn: [], gold: [1] }), ['vn']);
+});
+
+
+// ─── vn:gold-prices:v1 ──────────────────────────────────────────────────────────
+//
+// Shape per scripts/seed-vn-gold-prices.mjs: { store, asOf, products: { CODE:
+// { name, buyVndPerTael, sellVndPerTael, ... } } }. Gold is not an FX pair —
+// VNĐ per TAEEL for physical products — so it renders as its own tab.
+
+function vnGold(products, extra = {}) {
+  return { store: 'PNJ', asOf: '2026-10-24T09:38:51+07:00', products, ...extra };
+}
+
+test('maps the PNJ gold board with the SJC bar first', () => {
+  const rows = toVnGoldRows(vnGold({
+    N24K: { name: 'Nhẫn Trơn PNJ 999.9', buyVndPerTael: 138_000_000, sellVndPerTael: 141_000_000 },
+    SJC: { name: 'Vàng miếng SJC 999.9', buyVndPerTael: 138_700_000, sellVndPerTael: 141_700_000 },
+    '24K': { name: 'Vàng 24K PNJ', buyVndPerTael: 137_800_000, sellVndPerTael: 140_800_000 },
+  }));
+  // SJC is the headline price: always first, the rest keep board order.
+  assert.deepEqual(rows.map((r) => r.code), ['SJC', 'N24K', '24K']);
+  const sjc = rows[0];
+  assert.equal(sjc.name, 'Vàng miếng SJC 999.9');
+  assert.equal(sjc.buyVndPerTael, 138_700_000);
+  assert.equal(sjc.sellVndPerTael, 141_700_000);
+  assert.equal(sjc.store, 'PNJ');
+  assert.equal(sjc.asOf, '2026-10-24T09:38:51+07:00');
+});
+
+test('keeps gold rows with an empty leg, drops rows with no usable quote at all', () => {
+  const rows = toVnGoldRows(vnGold({
+    SJC: { name: 'Vàng miếng SJC 999.9', buyVndPerTael: 138_700_000, sellVndPerTael: 141_700_000 },
+    N24K: { buyVndPerTael: 138_000_000 },   // no display name
+    // Not-currently-quoted leg (RAW_* lines outside trading): null, kept.
+    RAW_9999: { name: 'Nguyên liệu vàng 999.9', buyVndPerTael: 136_800_000, sellVndPerTael: null },
+    KB: { name: 'Vàng Kim Bảo 999.9', buyVndPerTael: 0, sellVndPerTael: 141_000_000 }, // zero buy → null leg, kept
+    TL: { name: 'Vàng Phúc Lộc Tài 999.9', buyVndPerTael: -1, sellVndPerTael: -1 },    // no usable quote
+    PNJ: null,
+  }));
+  assert.deepEqual(rows.map((r) => r.code), ['SJC', 'RAW_9999', 'KB']);
+  const raw = rows.find((r) => r.code === 'RAW_9999');
+  assert.equal(raw.sellVndPerTael, null);
+  const kb = rows.find((r) => r.code === 'KB');
+  assert.equal(kb.buyVndPerTael, null);
+});
+
+test('tolerates a raw envelope and rejects unusable gold payloads', () => {
+  const payload = vnGold({ SJC: { name: 'Vàng miếng SJC 999.9', buyVndPerTael: 138_700_000, sellVndPerTael: 141_700_000 } });
+  assert.equal(toVnGoldRows({ _seed: {}, data: payload }).length, 1);
+  for (const bad of [undefined, null, {}, { products: [] }, { products: null }, [], 'x', 42]) {
+    assert.deepEqual(toVnGoldRows(bad), [], `expected [] for ${JSON.stringify(bad)}`);
+  }
 });

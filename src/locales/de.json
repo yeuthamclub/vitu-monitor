@@ -2896,7 +2896,8 @@
         "stress": "Währungs-Stress",
         "spot": "Spot",
         "rub": "RUB",
-        "vn": "Vietcombank (VND)"
+        "vn": "Vietcombank (VND)",
+        "gold": "PNJ-Gold"
       },
       "currency": "Währung",
       "pair": "Währungspaar",
@@ -2918,7 +2919,8 @@
         "usd": "USD-Wechselkurse",
         "eur": "Europäische Zentralbank Euro-Kurse",
         "rub": "Kurse der Russischen Zentralbank",
-        "vn": "Vietcombank-Kurse"
+        "vn": "Vietcombank-Kurse",
+        "gold": "PNJ-Goldpreise"
       },
       "rubBase": "Russische Zentralbank — Rubel pro 1 Einheit",
       "rubPerUnit": "Rubel pro Einheit",
@@ -2927,7 +2929,10 @@
       "vnBuy": "Ankauf",
       "vnTransfer": "Überweisung",
       "vnSell": "Verkauf",
-      "sourceVcb": "Quelle: Vietcombank (nur zur Orientierung)"
+      "sourceVcb": "Quelle: Vietcombank (nur zur Orientierung)",
+      "goldBase": "PNJ — Millionen VND pro Tael",
+      "goldType": "Produkt",
+      "sourcePnj": "Quelle: PNJ (inoffizielle Kursliste)"
     },
     "passkeyOffer": {
       "title": "Passkey speichern?",

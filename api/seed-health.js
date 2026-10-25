@@ -92,6 +92,7 @@ const SEED_DOMAINS = {
   'market:stablecoins':       { key: 'seed-meta:market:stablecoins',       intervalMin: 30 },
   'shared:fx-rates':          { key: 'seed-meta:shared:fx-rates',          intervalMin: 1800 }, // 60h staleness budget in api/health.js
   'vn:fx-rates':              { key: 'seed-meta:vn:fx-rates',              intervalMin: 10 }, // 30min staleness budget in api/health.js
+  'vn:gold-prices':           { key: 'seed-meta:vn:gold-prices',           intervalMin: 10 }, // 30min staleness budget in api/health.js
   // Phase 3 — Hybrid endpoints
   'natural:events':           { key: 'seed-meta:natural:events',           intervalMin: 270 },
   'weather:hko-warnings':     { key: 'seed-meta:weather:hko-warnings',     intervalMin: 270 },

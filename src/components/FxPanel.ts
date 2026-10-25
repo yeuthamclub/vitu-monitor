@@ -4,7 +4,7 @@ import { joinSafeHtml, safeHtml } from '@/utils/sanitize';
 import type { SafeHtml } from '@/utils/sanitize';
 
 import { FX_STRESS_THRESHOLD_PCT } from '@/services/economic/fx-rates';
-import type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow, FxUsdSpotRow, FxVnBankRateRow } from '@/services/economic/fx-rates';
+import type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow, FxUsdSpotRow, FxVnBankRateRow, FxVnGoldRow } from '@/services/economic/fx-rates';
 
 /**
  * FX panel — issue #6199 (#6231).
@@ -30,7 +30,7 @@ import type { FxEurSpotRow, FxPanelRows, FxRubQuoteRow, FxSourceId, FxStressRow,
  * down.
  */
 
-export type FxTabId = 'stress' | 'spot' | 'rub' | 'vn';
+export type FxTabId = 'stress' | 'spot' | 'rub' | 'vn' | 'gold';
 
 /**
  * FX rates span six orders of magnitude — one Kuwaiti dinar is 3.25 USD and one
@@ -86,6 +86,7 @@ export class FxPanel extends Panel {
   private eur: FxEurSpotRow[] = [];
   private rub: FxRubQuoteRow[] = [];
   private vn: FxVnBankRateRow[] = [];
+  private gold: FxVnGoldRow[] = [];
   private degraded: FxSourceId[] = [];
   private tab: FxTabId = DEFAULT_TAB;
   /** True when the tab-fallback moved us, not the user. See render(). */
@@ -142,6 +143,7 @@ export class FxPanel extends Panel {
     this.eur = data.eur;
     this.rub = data.rub;
     this.vn = data.vn;
+    this.gold = data.gold;
     this.degraded = data.degraded;
     this.loaded = true;
     this.render();
@@ -204,6 +206,10 @@ export class FxPanel extends Panel {
     return this.vn.length > 0;
   }
 
+  private hasGold(): boolean {
+    return this.gold.length > 0;
+  }
+
   private render(): void {
     if (!this.loaded) return;
 
@@ -216,7 +222,7 @@ export class FxPanel extends Panel {
     // data" would state as fact something we cannot know, and would skip the
     // retry that recovers it. Surface it as a failure so the error state
     // schedules one.
-    if (!this.hasStress() && !this.hasSpot() && !this.hasRub() && !this.hasVn()) {
+    if (!this.hasStress() && !this.hasSpot() && !this.hasRub() && !this.hasVn() && !this.hasGold()) {
       this.showError(t('common.failedMarketData'), () => void this.fetchData());
       return;
     }
@@ -239,11 +245,12 @@ export class FxPanel extends Panel {
     if (this.tab === 'stress' && !this.hasStress()) { this.tab = 'spot'; this.tabForced = true; }
     if (this.tab === 'spot' && !this.hasSpot()) { this.tab = 'rub'; this.tabForced = true; }
     if (this.tab === 'rub' && !this.hasRub()) { this.tab = 'vn'; this.tabForced = true; }
-    if (this.tab === 'vn' && !this.hasVn()) { this.tab = 'stress'; this.tabForced = true; }
+    if (this.tab === 'vn' && !this.hasVn()) { this.tab = 'gold'; this.tabForced = true; }
+    if (this.tab === 'gold' && !this.hasGold()) { this.tab = 'stress'; this.tabForced = true; }
 
     const body = this.tab === 'stress'
       ? this.renderStress()
-      : this.tab === 'spot' ? this.renderSpot() : this.tab === 'rub' ? this.renderRub() : this.renderVn();
+      : this.tab === 'spot' ? this.renderSpot() : this.tab === 'rub' ? this.renderRub() : this.tab === 'vn' ? this.renderVn() : this.renderGold();
     this.setSafeContent(safeHtml`${this.renderTabs()}${body}${this.renderDegradedNotice()}`);
   }
 
@@ -274,6 +281,9 @@ export class FxPanel extends Panel {
     }
     if (this.hasVn()) {
       tabs.push(safeHtml`<button class="panel-tab ${this.tab === 'vn' ? 'active' : ''}" data-tab="vn">${t('components.fx.tabs.vn')}</button>`);
+    }
+    if (this.hasGold()) {
+      tabs.push(safeHtml`<button class="panel-tab ${this.tab === 'gold' ? 'active' : ''}" data-tab="gold">${t('components.fx.tabs.gold')}</button>`);
     }
     return safeHtml`<div class="panel-tabs">${joinSafeHtml(tabs)}</div>`;
   }
@@ -493,5 +503,48 @@ export class FxPanel extends Panel {
         </table>
       </div>
       <div class="fx-footer">${t('components.fx.sourceVcb')}${asOf ? ` · ${asOf}` : ''}</div>`;
+  }
+
+  /**
+   * The PNJ gold board — fork PR-2b (`vn:gold-prices:v1`).
+   *
+   * Gold is not an FX pair: prices are VNĐ per TẠEL for physical products
+   * (SJC bar first, then PNJ ring/jewelry lines in board order), rendered in
+   * millions of VNĐ per tael — the unit the VN market itself quotes. The SJC
+   * service is Cloudflare-challenged for server-side fetches, so PNJ is the
+   * primary source; its board carries the SJC bar price.
+   */
+  private renderGold(): SafeHtml {
+    // Millions of VNĐ per tael, two decimals — "141.70" not "141,700,000".
+    const formatTaelMillions = (value: number): string => (value / 1_000_000).toFixed(2);
+    // An emptied/dashed leg (not currently quoted) renders as an explicit
+    // "--", never as an empty or zero cell.
+    const cell = (value: number | null): SafeHtml => (
+      value === null ? safeHtml`<td class="fx-na">--</td>`
+        : safeHtml`<td>${formatTaelMillions(value)}</td>`
+    );
+    const rows = joinSafeHtml(this.gold.map((r) => safeHtml`
+      <tr>
+        <td class="fx-ccy"><span class="fx-ccy-code">${r.name}</span></td>
+        ${cell(r.buyVndPerTael)}
+        ${cell(r.sellVndPerTael)}
+      </tr>`));
+
+    const asOf = this.gold.find((r) => r.asOf !== null)?.asOf ?? null;
+    return safeHtml`
+      <div class="fx-section-title">${t('components.fx.goldBase')}</div>
+      <div class="fx-scroll">
+        <table class="fx-table">
+          <thead>
+            <tr>
+              <th scope="col" class="fx-ccy">${t('components.fx.goldType')}</th>
+              <th scope="col">${t('components.fx.vnBuy')}</th>
+              <th scope="col">${t('components.fx.vnSell')}</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <div class="fx-footer">${t('components.fx.sourcePnj')}${asOf ? ` · ${asOf}` : ''}</div>`;
   }
 }
