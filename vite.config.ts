@@ -177,6 +177,9 @@ const PANEL_CLUSTER: Record<string, PanelChunkName> = {
   ThreatTimeline: 'panels-risk',
   TechHubs: 'panels-risk', TechReadiness: 'panels-risk', TorontoSafety: 'panels-risk',
   WorldClock: 'panels-risk',
+  // Realtime Monitor fork: Vietnam variant panels
+  VnStocks: 'panels-markets',
+  VnWeatherWarnings: 'panels-risk', VnEarthquakes: 'panels-risk',
 };
 
 const PANEL_SUPPORT_CLUSTER: Record<string, PanelSupportChunkName> = {

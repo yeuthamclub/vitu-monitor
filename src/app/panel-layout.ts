@@ -300,6 +300,9 @@ export const DEFERRED_PANEL_NATURAL_FOOTPRINTS: Readonly<Record<string, Deferred
   'threat-timeline': { rowSpan: 2 },
   'trade-policy': { rowSpan: 2 },
   'ucdp-events': { rowSpan: 2 },
+  'vn-earthquakes': { rowSpan: 2 },
+  'vn-stocks': { rowSpan: 2 },
+  'vn-weather-warnings': { rowSpan: 2 },
   'windy-webcams': { className: 'panel-wide' },
 };
 

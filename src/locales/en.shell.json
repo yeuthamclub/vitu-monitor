@@ -203,7 +203,10 @@
     "consumerPrices": "Consumer Prices",
     "fearGreed": "Fear & Greed",
     "marketBreadth": "Market Breadth",
-    "climateNews": "Climate News"
+    "climateNews": "Climate News",
+    "vn-stocks": "VN Stocks",
+    "vn-weather-warnings": "Weather warnings",
+    "vn-earthquakes": "Earthquakes (VN region)"
   },
   "common": {
     "dismiss": "Dismiss",

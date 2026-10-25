@@ -163,13 +163,13 @@
   "heroProofStats": {
     "mapLayers": 58,
     "feeds": 488,
-    "providers": 792,
+    "providers": 798,
     "alertOrigins": 5
   },
   "depthProofStats": {
     "mapLayers": 58,
     "feeds": 488,
-    "providers": 792,
+    "providers": 798,
     "alertOrigins": 5,
     "chokepoints": 13,
     "instabilityCountries": 31,
@@ -180,7 +180,7 @@
     "hotspots": 29,
     "stockExchanges": 29,
     "mcpTools": 95,
-    "commands": 628,
+    "commands": 631,
     "languages": 28
   },
   "resilienceCoverage": {

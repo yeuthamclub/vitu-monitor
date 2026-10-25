@@ -1706,6 +1706,16 @@ export const PANEL_CATEGORY_MAP: Record<string, { labelKey: string; panelKeys: s
     panelKeys: ['vn-breaking', 'vn-politics', 'vn-east-sea', 'vn-economy', 'vn-world', 'vn-international', 'vn-law-health-tech'],
     variants: ['vietnam'],
   },
+  vietnamMarkets: {
+    labelKey: 'header.panelCatMarkets',
+    panelKeys: ['vn-stocks', 'fx', 'fuel-prices'],
+    variants: ['vietnam'],
+  },
+  vietnamHazards: {
+    labelKey: 'header.panelCatDataTracking',
+    panelKeys: ['vn-weather-warnings', 'vn-earthquakes'],
+    variants: ['vietnam'],
+  },
 };
 
 export interface VariantPanelCategory {

@@ -253,6 +253,9 @@ export const COMMANDS: Command[] = [
   { id: 'panel:vn-world', keywords: ['thế giới', 'quốc tế', 'world news vietnamese'], label: 'World (Vietnamese Press)', icon: '\u{1F30F}', category: 'panels' },
   { id: 'panel:vn-international', keywords: ['vietnam english news', 'vnexpress international', 'bbc tiếng việt', 'rfi tiếng việt'], label: 'International Press on Vietnam', icon: '\u{1F4F0}', category: 'panels' },
   { id: 'panel:vn-law-health-tech', keywords: ['pháp luật', 'sức khỏe', 'công nghệ', 'vietnam law', 'vietnam health'], label: 'Vietnam Law, Health & Tech', icon: '\u{2696}\u{FE0F}', category: 'panels' },
+  { id: 'panel:vn-stocks', keywords: ['vn stocks', 'chứng khoán', 'vn-index', 'vn30', 'hose', 'hnx'], label: 'VN Stocks', icon: '\u{1F4CA}', category: 'panels' },
+  { id: 'panel:vn-weather-warnings', keywords: ['vietnam weather warnings', 'cảnh báo thời tiết', 'bão', 'áp thấp nhiệt đới', 'nchmf'], label: 'Vietnam Weather Warnings', icon: '\u{1F300}', category: 'panels' },
+  { id: 'panel:vn-earthquakes', keywords: ['vietnam earthquakes', 'động đất', 'địa chấn', 'usgs vietnam'], label: 'Earthquakes (VN region)', icon: '\u{1F30B}', category: 'panels' },
 
   // Finance variant panels
   { id: 'panel:analysis', keywords: ['market analysis', 'equity analysis', 'technical analysis'], label: 'Market Analysis', icon: '\u{1F4CA}', category: 'panels' },

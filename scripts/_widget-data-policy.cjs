@@ -215,6 +215,15 @@ const EXCLUDED_BOOTSTRAP_KEYS = {
   imdCycloneMarine: "IMD marine bulletin text by sea area; map-layer feed, not widget data",
   temporalAnomalies: "Internal anomaly detector output; usually empty",
   aaiiSentiment: "Stale fallback data (fallback=true, last update 2026-04-03)",
+  // Realtime Monitor fork: Vietnam variant feeds. Source redistribution terms are
+  // unconfirmed (BUILD-PLAN §7), so they stay off the public widget catalog.
+  vnFxRates: "Vietnam variant panel feed; source redistribution terms unconfirmed",
+  vnGoldPrices: "Vietnam variant panel feed; source redistribution terms unconfirmed",
+  vnStockIndices: "Vietnam variant panel feed; source redistribution terms unconfirmed",
+  vnStockQuotes: "Vietnam variant panel feed; source redistribution terms unconfirmed",
+  vnFuelPrices: "Vietnam variant panel feed; source redistribution terms unconfirmed",
+  vnWeatherWarnings: "Vietnam variant panel feed; source redistribution terms unconfirmed",
+  vnEarthquakes: "Vietnam variant panel feed; source redistribution terms unconfirmed",
 };
 
 const EXCLUDED_RPC_ROUTES = {
